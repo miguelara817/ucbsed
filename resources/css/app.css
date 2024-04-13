@@ -1,0 +1,81 @@
+.selector-full{
+    background-color: brown;
+    color: brown;
+}
+
+.tabla{
+    font-size: 12px;
+    width: 100%;
+    padding: 0;
+}
+
+div.dataTables_wrapper {
+    margin: 0 auto;
+}
+
+table form{
+    margin: 0;
+}
+
+.card-data-noconforme{
+    text-align: center;
+    color: white;
+    background-color: #d63939;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.card-data-noconforme span{
+    font-size: 20px;
+    text-align: center;
+}
+
+.card-data-conforme{
+    text-align: center;
+    color: white;
+    background-color: #0054a6;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.card-data-conforme span{
+    font-size: 20px;
+    text-align: center;
+}
+
+.card-data-faltantes{
+    text-align: center;
+    color: white;
+    background-color: #f59f00;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.card-data-faltantes span{
+    font-size: 20px;
+    text-align: center;
+}
+.card-data-completadas{
+    text-align: center;
+    color: white;
+    background-color: #2fb344;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.card-data-completadas span{
+    font-size: 20px;
+    text-align: center;
+}
+.card-data-asignaciones{
+    text-align: center;
+    color: white;
+    background-color: #6c757d;
+    /* margin-left: 10px; */
+    padding: 10px;
+}
+
+.card-data-asignaciones span{
+    font-size: 20px;
+    text-align: center;
+}

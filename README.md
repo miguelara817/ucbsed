@@ -1,4 +1,4 @@
-## Instalation steps
+## Installation steps
 
 You have to install npm dependencies
 >npm install

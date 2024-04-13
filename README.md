@@ -1,3 +1,17 @@
+## Instalation steps
+
+You have to install npm dependencies
+>npm install
+
+Then you have to install vendor dependencies.
+>composer install
+
+Last but not least, you need to create the .env file as the .env.example (in the root path).
+In this file you have to set a key.
+>php artisan key:generate
+
+Then in the .env file you have to set the credentials to connect to the database (ucbDB.sql).
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

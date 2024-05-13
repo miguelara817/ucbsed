@@ -18,7 +18,8 @@ import swal from 'sweetalert2';
 window.Swal = swal;
 
 new DataTable('#datatable', {
-    ordering: false,
+    ordering: true,
+    serverSide: false,
     language,
     layout: {
         bottomEnd: {
@@ -48,7 +49,8 @@ new DataTable('#datatable', {
 
 
 new DataTable('#datatable2', {
-    ordering: false,
+    ordering: true,
+    serverSide: false,
     language,
     layout: {
         bottomEnd: {
@@ -78,7 +80,8 @@ new DataTable('#datatable2', {
 
 
 new DataTable('#datatable3', {
-    ordering: false,
+    ordering: true,
+    serverSide: false,
     language,
     layout: {
         bottomEnd: {

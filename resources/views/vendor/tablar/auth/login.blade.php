@@ -69,6 +69,18 @@
                             <span class="form-check-label">Recordar en este dispositivo</span>
                         </label>
                     </div> --}}
+                    <br>
+                    <div class="d-flex align-items-center justify-content-center">
+                        {!! NoCaptcha::renderJs('es', false) !!}
+                        {!! NoCaptcha::display() !!}
+                    </div>
+                    <div>
+                        @if ($errors->has('g-recaptcha-response'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                            </span>
+                        @endif
+                    </div>
                     <div class="form-footer">
                         <button type="submit" class="btn btn-primary w-100">Iniciar</button>
                     </div>

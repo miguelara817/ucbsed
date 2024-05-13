@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `administrativoforms` (
   PRIMARY KEY (`id`),
   KEY `administrativoforms_formmodel_id_foreign` (`formmodel_id`),
   CONSTRAINT `administrativoforms_formmodel_id_foreign` FOREIGN KEY (`formmodel_id`) REFERENCES `formmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.administrativoforms: ~10 rows (aproximadamente)
 INSERT INTO `administrativoforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `competencia`, `ponderacion`, `created_at`, `updated_at`) VALUES
@@ -264,115 +264,52 @@ CREATE TABLE IF NOT EXISTS `assignments` (
   CONSTRAINT `assignments_evalprocess_id_foreign` FOREIGN KEY (`evalprocess_id`) REFERENCES `evalproces` (`id`) ON DELETE CASCADE,
   CONSTRAINT `assignments_evaluado_id_foreign` FOREIGN KEY (`evaluado_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `assignments_evaluador_id_foreign` FOREIGN KEY (`evaluador_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1748 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1989 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.assignments: ~103 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.assignments: ~42 rows (aproximadamente)
 INSERT INTO `assignments` (`id`, `evalprocess_id`, `evaluador_id`, `evaluado_id`, `evaluador_calificacion`, `evaluado_calificacion`, `evaluado_deacuerdo`, `finalizacion`, `created_at`, `updated_at`) VALUES
-	(1643, 1, 94, 131, 1, 1, 1, 1, '2024-04-08 02:43:32', '2024-04-08 03:26:39'),
-	(1644, 1, 121, 122, 0, 0, 0, 0, '2024-04-08 02:43:32', '2024-04-08 02:43:32'),
-	(1645, 1, 126, 127, 0, 0, 0, 0, '2024-04-08 02:43:32', '2024-04-08 02:43:32'),
-	(1646, 1, 94, 121, 1, 1, 1, 1, '2024-04-08 02:43:32', '2024-04-08 03:27:42'),
-	(1647, 1, 94, 123, 1, 1, 0, 1, '2024-04-08 02:43:33', '2024-04-08 03:28:28'),
-	(1648, 1, 112, 118, 0, 0, 0, 0, '2024-04-08 02:43:33', '2024-04-08 02:43:33'),
-	(1649, 1, 94, 95, 0, 0, 0, 0, '2024-04-08 02:43:33', '2024-04-08 02:43:33'),
-	(1650, 1, 94, 132, 1, 1, 1, 1, '2024-04-08 02:43:33', '2024-04-08 03:29:20'),
-	(1651, 1, 112, 117, 0, 0, 0, 0, '2024-04-08 02:43:34', '2024-04-08 02:43:34'),
-	(1652, 1, 165, 94, 0, 0, 0, 0, '2024-04-08 02:43:34', '2024-04-08 02:43:34'),
-	(1653, 1, 112, 119, 0, 0, 0, 0, '2024-04-08 02:43:34', '2024-04-08 02:43:34'),
-	(1654, 1, 112, 114, 0, 0, 0, 0, '2024-04-08 02:43:34', '2024-04-08 02:43:34'),
-	(1655, 1, 112, 120, 0, 0, 0, 0, '2024-04-08 02:43:34', '2024-04-08 02:43:34'),
-	(1656, 1, 112, 115, 0, 0, 0, 0, '2024-04-08 02:43:34', '2024-04-08 02:43:34'),
-	(1657, 1, 94, 126, 0, 0, 0, 0, '2024-04-08 02:43:34', '2024-04-08 02:43:34'),
-	(1658, 1, 133, 138, 0, 0, 0, 0, '2024-04-08 02:43:35', '2024-04-08 02:43:35'),
-	(1659, 1, 123, 124, 0, 0, 0, 0, '2024-04-08 02:43:35', '2024-04-08 02:43:35'),
-	(1660, 1, 94, 129, 0, 0, 0, 0, '2024-04-08 02:43:35', '2024-04-08 02:43:35'),
-	(1661, 1, 94, 130, 0, 0, 0, 0, '2024-04-08 02:43:35', '2024-04-08 02:43:35'),
-	(1662, 1, 94, 112, 0, 0, 0, 0, '2024-04-08 02:43:35', '2024-04-08 02:43:35'),
-	(1663, 1, 133, 191, 0, 0, 0, 0, '2024-04-08 02:43:35', '2024-04-08 02:43:35'),
-	(1664, 1, 112, 113, 0, 0, 0, 0, '2024-04-08 02:43:35', '2024-04-08 02:43:35'),
-	(1665, 1, 112, 116, 0, 0, 0, 0, '2024-04-08 02:43:35', '2024-04-08 02:43:35'),
-	(1666, 1, 123, 125, 0, 0, 0, 0, '2024-04-08 02:43:35', '2024-04-08 02:43:35'),
-	(1667, 1, 94, 176, 0, 0, 0, 0, '2024-04-08 02:43:35', '2024-04-08 02:43:35'),
-	(1668, 1, 201, 139, 0, 0, 0, 0, '2024-04-08 02:43:36', '2024-04-08 02:43:36'),
-	(1669, 1, 94, 128, 0, 0, 0, 0, '2024-04-08 02:43:36', '2024-04-08 02:43:36'),
-	(1670, 1, 13, 14, 0, 0, 0, 0, '2024-04-08 07:44:03', '2024-04-08 07:44:03'),
-	(1671, 1, 13, 16, 0, 0, 0, 0, '2024-04-08 07:44:03', '2024-04-08 07:44:03'),
-	(1672, 1, 13, 177, 0, 0, 0, 0, '2024-04-08 07:44:04', '2024-04-08 07:44:04'),
-	(1673, 1, 16, 17, 1, 1, 1, 1, '2024-04-08 07:44:04', '2024-04-09 19:40:05'),
-	(1674, 1, 16, 18, 1, 1, 1, 1, '2024-04-08 07:44:04', '2024-04-09 19:45:07'),
-	(1675, 1, 16, 19, 1, 1, 1, 1, '2024-04-08 07:44:04', '2024-04-09 19:46:03'),
-	(1676, 1, 16, 27, 1, 1, 0, 1, '2024-04-08 07:44:04', '2024-04-09 19:46:54'),
-	(1677, 1, 165, 13, 0, 0, 0, 0, '2024-04-08 07:44:04', '2024-04-08 07:44:04'),
-	(1678, 1, 14, 20, 0, 0, 0, 0, '2024-04-08 07:44:05', '2024-04-08 07:44:05'),
-	(1679, 1, 14, 21, 0, 0, 0, 0, '2024-04-08 07:44:05', '2024-04-08 07:44:05'),
-	(1680, 1, 14, 22, 0, 0, 0, 0, '2024-04-08 07:44:05', '2024-04-08 07:44:05'),
-	(1681, 1, 14, 23, 0, 0, 0, 0, '2024-04-08 07:44:05', '2024-04-08 07:44:05'),
-	(1682, 1, 14, 24, 0, 0, 0, 0, '2024-04-08 07:44:05', '2024-04-08 07:44:05'),
-	(1683, 1, 14, 25, 0, 0, 0, 0, '2024-04-08 07:44:05', '2024-04-08 07:44:05'),
-	(1684, 1, 14, 26, 0, 0, 0, 0, '2024-04-08 07:44:06', '2024-04-08 07:44:06'),
-	(1685, 1, 47, 48, 0, 0, 0, 0, '2024-04-08 07:44:06', '2024-04-08 07:44:06'),
-	(1686, 1, 47, 49, 0, 0, 0, 0, '2024-04-08 07:44:06', '2024-04-08 07:44:06'),
-	(1687, 1, 47, 50, 0, 0, 0, 0, '2024-04-08 07:44:06', '2024-04-08 07:44:06'),
-	(1688, 1, 47, 51, 0, 0, 0, 0, '2024-04-08 07:44:06', '2024-04-08 07:44:06'),
-	(1689, 1, 47, 52, 0, 0, 0, 0, '2024-04-08 07:44:06', '2024-04-08 07:44:06'),
-	(1690, 1, 47, 53, 0, 0, 0, 0, '2024-04-08 07:44:06', '2024-04-08 07:44:06'),
-	(1691, 1, 179, 38, 0, 0, 0, 0, '2024-04-08 07:44:06', '2024-04-08 07:44:06'),
-	(1692, 1, 179, 41, 0, 0, 0, 0, '2024-04-08 07:44:07', '2024-04-08 07:44:07'),
-	(1693, 1, 179, 47, 0, 0, 0, 0, '2024-04-08 07:44:07', '2024-04-08 07:44:07'),
-	(1694, 1, 179, 57, 0, 0, 0, 0, '2024-04-08 07:44:07', '2024-04-08 07:44:07'),
-	(1695, 1, 179, 62, 0, 0, 0, 0, '2024-04-08 07:44:07', '2024-04-08 07:44:07'),
-	(1696, 1, 179, 66, 0, 0, 0, 0, '2024-04-08 07:44:07', '2024-04-08 07:44:07'),
-	(1697, 1, 179, 91, 0, 0, 0, 0, '2024-04-08 07:44:07', '2024-04-08 07:44:07'),
-	(1698, 1, 179, 54, 0, 0, 0, 0, '2024-04-08 07:44:07', '2024-04-08 07:44:07'),
-	(1699, 1, 179, 93, 0, 0, 0, 0, '2024-04-08 07:44:07', '2024-04-08 07:44:07'),
-	(1700, 1, 179, 170, 0, 0, 0, 0, '2024-04-08 07:44:08', '2024-04-08 07:44:08'),
-	(1701, 1, 179, 42, 0, 0, 0, 0, '2024-04-08 07:44:08', '2024-04-08 07:44:08'),
-	(1702, 1, 179, 55, 0, 0, 0, 0, '2024-04-08 07:44:08', '2024-04-08 07:44:08'),
-	(1703, 1, 179, 56, 0, 0, 0, 0, '2024-04-08 07:44:08', '2024-04-08 07:44:08'),
-	(1704, 1, 66, 67, 0, 0, 0, 0, '2024-04-08 07:44:08', '2024-04-08 07:44:08'),
-	(1705, 1, 57, 58, 0, 0, 0, 0, '2024-04-08 07:44:08', '2024-04-08 07:44:08'),
-	(1706, 1, 57, 59, 0, 0, 0, 0, '2024-04-08 07:44:08', '2024-04-08 07:44:08'),
-	(1707, 1, 57, 60, 0, 0, 0, 0, '2024-04-08 07:44:09', '2024-04-08 07:44:09'),
-	(1708, 1, 57, 61, 0, 0, 0, 0, '2024-04-08 07:44:09', '2024-04-08 07:44:09'),
-	(1709, 1, 62, 63, 0, 0, 0, 0, '2024-04-08 07:44:09', '2024-04-08 07:44:09'),
-	(1710, 1, 62, 64, 0, 0, 0, 0, '2024-04-08 07:44:09', '2024-04-08 07:44:09'),
-	(1711, 1, 62, 65, 0, 0, 0, 0, '2024-04-08 07:44:09', '2024-04-08 07:44:09'),
-	(1712, 1, 165, 179, 0, 0, 0, 0, '2024-04-08 07:44:09', '2024-04-08 07:44:09'),
-	(1713, 1, 41, 43, 0, 0, 0, 0, '2024-04-08 07:44:10', '2024-04-08 07:44:10'),
-	(1714, 1, 41, 44, 0, 0, 0, 0, '2024-04-08 07:44:10', '2024-04-08 07:44:10'),
-	(1715, 1, 41, 45, 0, 0, 0, 0, '2024-04-08 07:44:10', '2024-04-08 07:44:10'),
-	(1716, 1, 41, 46, 0, 0, 0, 0, '2024-04-08 07:44:10', '2024-04-08 07:44:10'),
-	(1717, 1, 91, 92, 0, 0, 0, 0, '2024-04-08 07:44:10', '2024-04-08 07:44:10'),
-	(1718, 1, 67, 68, 0, 0, 0, 0, '2024-04-08 07:44:10', '2024-04-08 07:44:10'),
-	(1719, 1, 67, 69, 0, 0, 0, 0, '2024-04-08 07:44:10', '2024-04-08 07:44:10'),
-	(1720, 1, 67, 70, 0, 0, 0, 0, '2024-04-08 07:44:11', '2024-04-08 07:44:11'),
-	(1721, 1, 67, 71, 0, 0, 0, 0, '2024-04-08 07:44:11', '2024-04-08 07:44:11'),
-	(1722, 1, 67, 72, 0, 0, 0, 0, '2024-04-08 07:44:11', '2024-04-08 07:44:11'),
-	(1723, 1, 67, 73, 0, 0, 0, 0, '2024-04-08 07:44:11', '2024-04-08 07:44:11'),
-	(1724, 1, 67, 74, 0, 0, 0, 0, '2024-04-08 07:44:11', '2024-04-08 07:44:11'),
-	(1725, 1, 67, 75, 0, 0, 0, 0, '2024-04-08 07:44:11', '2024-04-08 07:44:11'),
-	(1726, 1, 67, 76, 0, 0, 0, 0, '2024-04-08 07:44:11', '2024-04-08 07:44:11'),
-	(1727, 1, 67, 77, 0, 0, 0, 0, '2024-04-08 07:44:12', '2024-04-08 07:44:12'),
-	(1728, 1, 67, 78, 0, 0, 0, 0, '2024-04-08 07:44:12', '2024-04-08 07:44:12'),
-	(1729, 1, 67, 79, 0, 0, 0, 0, '2024-04-08 07:44:12', '2024-04-08 07:44:12'),
-	(1730, 1, 67, 80, 0, 0, 0, 0, '2024-04-08 07:44:12', '2024-04-08 07:44:12'),
-	(1731, 1, 67, 81, 0, 0, 0, 0, '2024-04-08 07:44:12', '2024-04-08 07:44:12'),
-	(1732, 1, 67, 82, 0, 0, 0, 0, '2024-04-08 07:44:13', '2024-04-08 07:44:13'),
-	(1733, 1, 67, 83, 0, 0, 0, 0, '2024-04-08 07:44:13', '2024-04-08 07:44:13'),
-	(1734, 1, 67, 84, 0, 0, 0, 0, '2024-04-08 07:44:13', '2024-04-08 07:44:13'),
-	(1735, 1, 67, 85, 0, 0, 0, 0, '2024-04-08 07:44:13', '2024-04-08 07:44:13'),
-	(1736, 1, 67, 86, 0, 0, 0, 0, '2024-04-08 07:44:13', '2024-04-08 07:44:13'),
-	(1737, 1, 67, 87, 0, 0, 0, 0, '2024-04-08 07:44:13', '2024-04-08 07:44:13'),
-	(1738, 1, 67, 88, 0, 0, 0, 0, '2024-04-08 07:44:14', '2024-04-08 07:44:14'),
-	(1739, 1, 67, 89, 0, 0, 0, 0, '2024-04-08 07:44:14', '2024-04-08 07:44:14'),
-	(1740, 1, 67, 90, 0, 0, 0, 0, '2024-04-08 07:44:14', '2024-04-08 07:44:14'),
-	(1741, 1, 165, 154, 0, 0, 0, 0, '2024-04-08 07:44:14', '2024-04-08 07:44:14'),
-	(1742, 1, 154, 155, 0, 0, 0, 0, '2024-04-08 07:44:14', '2024-04-08 07:44:14'),
-	(1743, 1, 154, 156, 0, 0, 0, 0, '2024-04-08 07:44:15', '2024-04-08 07:44:15'),
-	(1744, 1, 154, 157, 0, 0, 0, 0, '2024-04-08 07:44:15', '2024-04-08 07:44:15'),
-	(1745, 1, 154, 158, 0, 0, 0, 0, '2024-04-08 07:44:15', '2024-04-08 07:44:15'),
-	(1746, 1, 154, 159, 0, 0, 0, 0, '2024-04-08 07:44:15', '2024-04-08 07:44:15'),
-	(1747, 1, 154, 181, 0, 0, 0, 0, '2024-04-08 07:44:15', '2024-04-08 07:44:15');
+	(1947, 4, 165, 13, 0, 0, 0, 0, '2024-05-13 06:25:42', '2024-05-13 06:25:42'),
+	(1948, 4, 16, 27, 0, 0, 0, 0, '2024-05-13 06:25:42', '2024-05-13 06:25:42'),
+	(1949, 4, 16, 17, 0, 0, 0, 0, '2024-05-13 06:25:42', '2024-05-13 06:25:42'),
+	(1950, 4, 14, 20, 0, 0, 0, 0, '2024-05-13 06:25:42', '2024-05-13 06:25:42'),
+	(1951, 4, 16, 18, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
+	(1952, 4, 14, 21, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
+	(1953, 4, 13, 16, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
+	(1954, 4, 14, 22, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
+	(1955, 4, 14, 23, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
+	(1956, 4, 14, 24, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
+	(1957, 4, 13, 177, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
+	(1958, 4, 13, 14, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
+	(1959, 4, 14, 25, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
+	(1960, 4, 14, 26, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
+	(1961, 4, 16, 19, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
+	(1962, 4, 94, 131, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
+	(1963, 4, 121, 122, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
+	(1964, 4, 126, 127, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
+	(1965, 4, 94, 121, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
+	(1966, 4, 94, 123, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
+	(1967, 4, 112, 118, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
+	(1968, 4, 94, 95, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
+	(1969, 4, 94, 132, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
+	(1970, 4, 112, 117, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
+	(1971, 4, 165, 94, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
+	(1972, 4, 112, 119, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
+	(1973, 4, 112, 114, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
+	(1974, 4, 112, 120, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
+	(1975, 4, 112, 115, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
+	(1976, 4, 94, 126, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
+	(1977, 4, 133, 138, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
+	(1978, 4, 123, 124, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
+	(1979, 4, 94, 129, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
+	(1980, 4, 94, 130, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
+	(1981, 4, 94, 112, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
+	(1982, 4, 133, 191, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
+	(1983, 4, 112, 113, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
+	(1984, 4, 112, 116, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
+	(1985, 4, 123, 125, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
+	(1986, 4, 94, 176, 0, 0, 0, 0, '2024-05-13 06:25:47', '2024-05-13 06:25:47'),
+	(1987, 4, 201, 139, 0, 0, 0, 0, '2024-05-13 06:25:47', '2024-05-13 06:25:47'),
+	(1988, 4, 94, 128, 0, 0, 0, 0, '2024-05-13 06:25:47', '2024-05-13 06:25:47');
 
 -- Volcando estructura para tabla ucb.auxiliarforms
 CREATE TABLE IF NOT EXISTS `auxiliarforms` (
@@ -387,7 +324,7 @@ CREATE TABLE IF NOT EXISTS `auxiliarforms` (
   PRIMARY KEY (`id`),
   KEY `auxiliarforms_formmodel_id_foreign` (`formmodel_id`),
   CONSTRAINT `auxiliarforms_formmodel_id_foreign` FOREIGN KEY (`formmodel_id`) REFERENCES `formmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.auxiliarforms: ~11 rows (aproximadamente)
 INSERT INTO `auxiliarforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `competencia`, `ponderacion`, `created_at`, `updated_at`) VALUES
@@ -429,27 +366,30 @@ CREATE TABLE IF NOT EXISTS `bodyresults` (
 CREATE TABLE IF NOT EXISTS `cadministrativoforms` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `conformmodel_id` bigint unsigned NOT NULL,
-  `factor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `factor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ponderacion` double(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `cadministrativoforms_conformmodel_id_foreign` (`conformmodel_id`),
   CONSTRAINT `cadministrativoforms_conformmodel_id_foreign` FOREIGN KEY (`conformmodel_id`) REFERENCES `conformmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.cadministrativoforms: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.cadministrativoforms: ~7 rows (aproximadamente)
 INSERT INTO `cadministrativoforms` (`id`, `conformmodel_id`, `factor`, `descripcion`, `ponderacion`, `created_at`, `updated_at`) VALUES
 	(1, 5, 'Conocimiento de puesto', 'Conoce los temas relativos al ejercicio del puesto, los procedimientos de trabajo y la vinculación del puesto con otros funcionarios.', 25.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35'),
 	(2, 5, 'Calidad de Trabajo', 'Presenta orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 25.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35'),
 	(3, 5, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 25.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35'),
-	(4, 5, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 25.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35');
+	(4, 5, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 25.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35'),
+	(5, 6, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 10.00, '2024-04-29 01:28:43', '2024-04-29 01:28:43'),
+	(6, 6, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 20.00, '2024-04-29 01:28:43', '2024-04-29 01:28:43'),
+	(7, 6, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 70.00, '2024-04-29 01:28:44', '2024-04-29 01:28:44');
 
 -- Volcando estructura para tabla ucb.cargos
 CREATE TABLE IF NOT EXISTS `cargos` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `cargo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cargo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `nivel_id` bigint unsigned DEFAULT NULL,
   `area_id` bigint unsigned DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -461,7 +401,7 @@ CREATE TABLE IF NOT EXISTS `cargos` (
   CONSTRAINT `cargos_nivel_id_foreign` FOREIGN KEY (`nivel_id`) REFERENCES `niveles` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=174 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.cargos: ~155 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.cargos: ~171 rows (aproximadamente)
 INSERT INTO `cargos` (`id`, `cargo`, `nivel_id`, `area_id`, `created_at`, `updated_at`) VALUES
 	(1, 'ASESOR(A) LEGAL DE SEDE', 2, 8, '2024-01-02 08:05:03', '2024-01-02 08:05:03'),
 	(2, 'PROCURADOR', 4, 8, '2024-01-02 08:07:55', '2024-01-02 08:07:55'),
@@ -639,37 +579,39 @@ INSERT INTO `cargos` (`id`, `cargo`, `nivel_id`, `area_id`, `created_at`, `updat
 CREATE TABLE IF NOT EXISTS `cauxiliarforms` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `conformmodel_id` bigint unsigned NOT NULL,
-  `factor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `factor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ponderacion` double(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `cauxiliarforms_conformmodel_id_foreign` (`conformmodel_id`),
   CONSTRAINT `cauxiliarforms_conformmodel_id_foreign` FOREIGN KEY (`conformmodel_id`) REFERENCES `conformmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.cauxiliarforms: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.cauxiliarforms: ~5 rows (aproximadamente)
 INSERT INTO `cauxiliarforms` (`id`, `conformmodel_id`, `factor`, `descripcion`, `ponderacion`, `created_at`, `updated_at`) VALUES
 	(1, 5, 'Conocimiento de puesto', 'Conoce los temas relativos al ejercicio del puesto, los procedimientos de trabajo y la vinculación del puesto con otros funcionarios.', 50.00, '2024-01-22 02:29:36', '2024-01-22 02:29:36'),
 	(2, 5, 'Calidad de Trabajo', 'Presenta orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 30.00, '2024-01-22 02:29:36', '2024-01-22 02:29:36'),
-	(3, 5, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 20.00, '2024-01-22 02:29:36', '2024-01-22 02:29:36');
+	(3, 5, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 20.00, '2024-01-22 02:29:36', '2024-01-22 02:29:36'),
+	(4, 6, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 50.00, '2024-04-29 01:28:44', '2024-04-29 01:28:44'),
+	(5, 6, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 50.00, '2024-04-29 01:28:44', '2024-04-29 01:28:44');
 
 -- Volcando estructura para tabla ucb.cejecutivoforms
 CREATE TABLE IF NOT EXISTS `cejecutivoforms` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `conformmodel_id` bigint unsigned NOT NULL,
-  `factor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `factor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ponderacion` double(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `cejecutivoforms_conformmodel_id_foreign` (`conformmodel_id`),
   CONSTRAINT `cejecutivoforms_conformmodel_id_foreign` FOREIGN KEY (`conformmodel_id`) REFERENCES `conformmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.cejecutivoforms: ~8 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.cejecutivoforms: ~11 rows (aproximadamente)
 INSERT INTO `cejecutivoforms` (`id`, `conformmodel_id`, `factor`, `descripcion`, `ponderacion`, `created_at`, `updated_at`) VALUES
 	(1, 5, 'Conocimiento de puesto', 'Conoce los temas relativos al ejercicio del puesto, los procedimientos de trabajo y la vinculación del puesto con otros funcionarios.', 10.00, '2024-01-22 02:29:28', '2024-01-22 02:29:28'),
 	(2, 5, 'Calidad de Trabajo', 'Presenta orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 10.00, '2024-01-22 02:29:29', '2024-01-22 02:29:29'),
@@ -678,23 +620,26 @@ INSERT INTO `cejecutivoforms` (`id`, `conformmodel_id`, `factor`, `descripcion`,
 	(5, 5, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 10.00, '2024-01-22 02:29:30', '2024-01-22 02:29:30'),
 	(6, 5, 'Calidad de las relaciones humanas', 'Establece y mantiene relaciones de trabajo armónicas con sus superiores y compañero(a)s de trabajo.', 10.00, '2024-01-22 02:29:31', '2024-01-22 02:29:31'),
 	(7, 5, 'Calidad de las relaciones con terceros', 'Establece y mantiene relaciones armónicas con el personas externas a la institución y el público en general.', 10.00, '2024-01-22 02:29:31', '2024-01-22 02:29:31'),
-	(8, 5, 'Disciplina', 'Cumple las normas, disposiciones y reglamentos que regulan el trabajo.', 30.00, '2024-01-22 02:29:31', '2024-01-22 02:29:31');
+	(8, 5, 'Disciplina', 'Cumple las normas, disposiciones y reglamentos que regulan el trabajo.', 30.00, '2024-01-22 02:29:31', '2024-01-22 02:29:31'),
+	(9, 6, 'Conocimiento de puesto', 'Conoce los temas relativos al ejercicio del puesto, los procedimientos de trabajo y la vinculación del puesto con otros funcionarios.', 20.00, '2024-04-29 01:28:39', '2024-04-29 01:28:39'),
+	(10, 6, 'Calidad de Trabajo', 'Presenta orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 50.00, '2024-04-29 01:28:39', '2024-04-29 01:28:39'),
+	(11, 6, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 30.00, '2024-04-29 01:28:39', '2024-04-29 01:28:39');
 
 -- Volcando estructura para tabla ucb.cmediosforms
 CREATE TABLE IF NOT EXISTS `cmediosforms` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `conformmodel_id` bigint unsigned NOT NULL,
-  `factor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `factor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ponderacion` double(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `cmediosforms_conformmodel_id_foreign` (`conformmodel_id`),
   CONSTRAINT `cmediosforms_conformmodel_id_foreign` FOREIGN KEY (`conformmodel_id`) REFERENCES `conformmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.cmediosforms: ~7 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.cmediosforms: ~10 rows (aproximadamente)
 INSERT INTO `cmediosforms` (`id`, `conformmodel_id`, `factor`, `descripcion`, `ponderacion`, `created_at`, `updated_at`) VALUES
 	(1, 5, 'Conocimiento de puesto', 'Conoce los temas relativos al ejercicio del puesto, los procedimientos de trabajo y la vinculación del puesto con otros funcionarios.', 20.00, '2024-01-22 02:29:31', '2024-01-22 02:29:31'),
 	(2, 5, 'Calidad de Trabajo', 'Presenta orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 10.00, '2024-01-22 02:29:31', '2024-01-22 02:29:31'),
@@ -702,7 +647,10 @@ INSERT INTO `cmediosforms` (`id`, `conformmodel_id`, `factor`, `descripcion`, `p
 	(4, 5, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 10.00, '2024-01-22 02:29:32', '2024-01-22 02:29:32'),
 	(5, 5, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 10.00, '2024-01-22 02:29:32', '2024-01-22 02:29:32'),
 	(6, 5, 'Calidad de las relaciones humanas', 'Establece y mantiene relaciones de trabajo armónicas con sus superiores y compañero(a)s de trabajo.', 20.00, '2024-01-22 02:29:32', '2024-01-22 02:29:32'),
-	(7, 5, 'Calidad de las relaciones con terceros', 'Establece y mantiene relaciones armónicas con el personas externas a la institución y el público en general.', 20.00, '2024-01-22 02:29:32', '2024-01-22 02:29:32');
+	(7, 5, 'Calidad de las relaciones con terceros', 'Establece y mantiene relaciones armónicas con el personas externas a la institución y el público en general.', 20.00, '2024-01-22 02:29:32', '2024-01-22 02:29:32'),
+	(8, 6, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 20.00, '2024-04-29 01:28:40', '2024-04-29 01:28:40'),
+	(9, 6, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 30.00, '2024-04-29 01:28:41', '2024-04-29 01:28:41'),
+	(10, 6, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 50.00, '2024-04-29 01:28:41', '2024-04-29 01:28:41');
 
 -- Volcando estructura para tabla ucb.competencias
 CREATE TABLE IF NOT EXISTS `competencias` (
@@ -713,23 +661,22 @@ CREATE TABLE IF NOT EXISTS `competencias` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.competencias: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.competencias: ~4 rows (aproximadamente)
 INSERT INTO `competencias` (`id`, `competencias`, `created_at`, `updated_at`) VALUES
 	(3, 'COMPETENCIAS TÉCNICAS', '2023-11-13 02:49:01', '2023-12-18 00:00:39'),
 	(4, 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', '2023-11-14 00:53:05', '2023-11-14 04:24:45'),
 	(6, 'COMPETENCIAS PERSONALES / GESTIÓN', '2023-12-18 00:04:35', '2023-12-18 00:04:35'),
-	(7, 'COMPETENCIAS PARA CONFIRMACIÓN', '2023-12-18 02:14:52', '2023-12-18 02:14:52'),
-	(8, 'COMPETENCIAS DE PRUEBA', '2024-02-01 18:29:55', '2024-02-01 18:29:55');
+	(7, 'COMPETENCIAS PARA CONFIRMACIÓN', '2023-12-18 02:14:52', '2023-12-18 02:14:52');
 
 -- Volcando estructura para tabla ucb.confirmdetailsresults
 CREATE TABLE IF NOT EXISTS `confirmdetailsresults` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `confproces_id` bigint unsigned NOT NULL,
-  `factor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `factor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ponderacion` int NOT NULL,
   `nota` double(8,2) NOT NULL,
-  `comentario` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `comentario` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -743,8 +690,8 @@ CREATE TABLE IF NOT EXISTS `confirmdetailsresults` (
 CREATE TABLE IF NOT EXISTS `confirmforms` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `conformmodel_id` bigint unsigned NOT NULL,
-  `factor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `factor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ponderacion` double(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -753,7 +700,7 @@ CREATE TABLE IF NOT EXISTS `confirmforms` (
   CONSTRAINT `confirmforms_conformmodel_id_foreign` FOREIGN KEY (`conformmodel_id`) REFERENCES `conformmodels` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.confirmforms: ~8 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.confirmforms: ~0 rows (aproximadamente)
 
 -- Volcando estructura para tabla ucb.confirmresults
 CREATE TABLE IF NOT EXISTS `confirmresults` (
@@ -762,10 +709,10 @@ CREATE TABLE IF NOT EXISTS `confirmresults` (
   `evaluado_id` bigint unsigned NOT NULL,
   `evaluado_nivel_id` bigint unsigned NOT NULL,
   `evaluador_id` bigint unsigned NOT NULL,
-  `fortalezas` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `debilidades` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `comentarios_evaluador` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `propuestas` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fortalezas` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `debilidades` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comentarios_evaluador` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `propuestas` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `nota_final` double(8,2) NOT NULL DEFAULT '0.00',
   `recomendado` tinyint unsigned NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -786,16 +733,17 @@ CREATE TABLE IF NOT EXISTS `confirmresults` (
 -- Volcando estructura para tabla ucb.conformmodels
 CREATE TABLE IF NOT EXISTS `conformmodels` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `creador` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creador` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.conformmodels: ~2 rows (aproximadamente)
 INSERT INTO `conformmodels` (`id`, `creador`, `descripcion`, `created_at`, `updated_at`) VALUES
-	(5, 'Miguel Angel Lara Nisttahuz', 'Versión para la gestión 2024.', '2024-01-22 02:29:28', '2024-01-22 02:29:28');
+	(5, 'Miguel Angel Lara Nisttahuz', 'Versión para la gestión 2024.', '2024-01-22 02:29:28', '2024-01-22 02:29:28'),
+	(6, 'John Doe', '.', '2024-04-29 01:28:37', '2024-04-29 01:28:37');
 
 -- Volcando estructura para tabla ucb.confproces
 CREATE TABLE IF NOT EXISTS `confproces` (
@@ -840,46 +788,66 @@ CREATE TABLE IF NOT EXISTS `contratos` (
 CREATE TABLE IF NOT EXISTS `cprofesionalforms` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `conformmodel_id` bigint unsigned NOT NULL,
-  `factor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `factor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ponderacion` double(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `cprofesionalforms_conformmodel_id_foreign` (`conformmodel_id`),
   CONSTRAINT `cprofesionalforms_conformmodel_id_foreign` FOREIGN KEY (`conformmodel_id`) REFERENCES `conformmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.cprofesionalforms: ~6 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.cprofesionalforms: ~7 rows (aproximadamente)
 INSERT INTO `cprofesionalforms` (`id`, `conformmodel_id`, `factor`, `descripcion`, `ponderacion`, `created_at`, `updated_at`) VALUES
 	(1, 5, 'Conocimiento de puesto', 'Conoce los temas relativos al ejercicio del puesto, los procedimientos de trabajo y la vinculación del puesto con otros funcionarios.', 20.00, '2024-01-22 02:29:33', '2024-01-22 02:29:33'),
 	(2, 5, 'Calidad de Trabajo', 'Presenta orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 10.00, '2024-01-22 02:29:33', '2024-01-22 02:29:33'),
 	(3, 5, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 10.00, '2024-01-22 02:29:33', '2024-01-22 02:29:33'),
 	(4, 5, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 20.00, '2024-01-22 02:29:33', '2024-01-22 02:29:33'),
 	(5, 5, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 20.00, '2024-01-22 02:29:34', '2024-01-22 02:29:34'),
-	(6, 5, 'Calidad de las relaciones humanas', 'Establece y mantiene relaciones de trabajo armónicas con sus superiores y compañero(a)s de trabajo.', 20.00, '2024-01-22 02:29:34', '2024-01-22 02:29:34');
+	(6, 5, 'Calidad de las relaciones humanas', 'Establece y mantiene relaciones de trabajo armónicas con sus superiores y compañero(a)s de trabajo.', 20.00, '2024-01-22 02:29:34', '2024-01-22 02:29:34'),
+	(7, 6, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 100.00, '2024-04-29 01:28:41', '2024-04-29 01:28:41');
+
+-- Volcando estructura para tabla ucb.criterios
+CREATE TABLE IF NOT EXISTS `criterios` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Volcando datos para la tabla ucb.criterios: ~4 rows (aproximadamente)
+INSERT INTO `criterios` (`id`, `descripcion`, `created_at`, `updated_at`) VALUES
+	(1, 'DÉBIL', '2024-05-13 04:12:47', '2024-05-13 04:12:48'),
+	(2, 'BUENO', '2024-05-13 04:13:01', '2024-05-13 04:13:03'),
+	(3, 'MUY BUENO', '2024-05-13 04:13:10', '2024-05-13 04:13:11'),
+	(4, 'EXCELENTE', '2024-05-13 04:13:19', '2024-05-13 04:13:19');
 
 -- Volcando estructura para tabla ucb.ctecnicoforms
 CREATE TABLE IF NOT EXISTS `ctecnicoforms` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `conformmodel_id` bigint unsigned NOT NULL,
-  `factor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `factor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ponderacion` double(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `ctecnicoforms_conformmodel_id_foreign` (`conformmodel_id`),
   CONSTRAINT `ctecnicoforms_conformmodel_id_foreign` FOREIGN KEY (`conformmodel_id`) REFERENCES `conformmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.ctecnicoforms: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.ctecnicoforms: ~8 rows (aproximadamente)
 INSERT INTO `ctecnicoforms` (`id`, `conformmodel_id`, `factor`, `descripcion`, `ponderacion`, `created_at`, `updated_at`) VALUES
 	(1, 5, 'Conocimiento de puesto', 'Conoce los temas relativos al ejercicio del puesto, los procedimientos de trabajo y la vinculación del puesto con otros funcionarios.', 20.00, '2024-01-22 02:29:34', '2024-01-22 02:29:34'),
 	(2, 5, 'Calidad de Trabajo', 'Presenta orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 20.00, '2024-01-22 02:29:34', '2024-01-22 02:29:34'),
 	(3, 5, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 20.00, '2024-01-22 02:29:34', '2024-01-22 02:29:34'),
 	(4, 5, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 20.00, '2024-01-22 02:29:34', '2024-01-22 02:29:34'),
-	(5, 5, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 20.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35');
+	(5, 5, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 20.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35'),
+	(6, 6, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 20.00, '2024-04-29 01:28:42', '2024-04-29 01:28:42'),
+	(7, 6, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 50.00, '2024-04-29 01:28:42', '2024-04-29 01:28:42'),
+	(8, 6, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 30.00, '2024-04-29 01:28:43', '2024-04-29 01:28:43');
 
 -- Volcando estructura para tabla ucb.departamentos
 CREATE TABLE IF NOT EXISTS `departamentos` (
@@ -897,7 +865,7 @@ INSERT INTO `departamentos` (`id`, `departamento`, `created_at`, `updated_at`) V
 -- Volcando estructura para tabla ucb.deptos
 CREATE TABLE IF NOT EXISTS `deptos` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `departamento` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `departamento` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `area_id` bigint unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -906,7 +874,7 @@ CREATE TABLE IF NOT EXISTS `deptos` (
   CONSTRAINT `deptos_area_id_foreign` FOREIGN KEY (`area_id`) REFERENCES `areas` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.deptos: ~38 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.deptos: ~39 rows (aproximadamente)
 INSERT INTO `deptos` (`id`, `departamento`, `area_id`, `created_at`, `updated_at`) VALUES
 	(1, 'ASESORÍA LEGAL', 8, '2023-12-16 09:16:05', '2023-12-16 09:16:05'),
 	(2, 'DEPARTAMENTO ACADEMICO DE ADMINISTRACION DE EMPRESAS', 11, '2023-12-16 09:16:20', '2023-12-16 09:16:20'),
@@ -961,7 +929,7 @@ CREATE TABLE IF NOT EXISTS `ejecutivoforms` (
   PRIMARY KEY (`id`),
   KEY `ejecutivoforms_formmodel_id_foreign` (`formmodel_id`),
   CONSTRAINT `ejecutivoforms_formmodel_id_foreign` FOREIGN KEY (`formmodel_id`) REFERENCES `formmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.ejecutivoforms: ~16 rows (aproximadamente)
 INSERT INTO `ejecutivoforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `competencia`, `ponderacion`, `created_at`, `updated_at`) VALUES
@@ -986,122 +954,23 @@ INSERT INTO `ejecutivoforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `co
 CREATE TABLE IF NOT EXISTS `evaldetailsresults` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `evalresult_id` bigint unsigned NOT NULL,
-  `factor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `competencia` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `factor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `competencia` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ponderacion` int NOT NULL,
   `nota` double(8,2) NOT NULL,
-  `comentario` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `criterio_id` bigint unsigned DEFAULT NULL,
+  `comentario` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `evaldetailsresults_evalresult_id_foreign` (`evalresult_id`),
+  KEY `evaldetailsresults_criterio_id_foreign` (`criterio_id`),
+  CONSTRAINT `evaldetailsresults_criterio_id_foreign` FOREIGN KEY (`criterio_id`) REFERENCES `criterios` (`id`) ON DELETE CASCADE,
   CONSTRAINT `evaldetailsresults_evalresult_id_foreign` FOREIGN KEY (`evalresult_id`) REFERENCES `evalresults` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.evaldetailsresults: ~98 rows (aproximadamente)
-INSERT INTO `evaldetailsresults` (`id`, `evalresult_id`, `factor`, `descripcion`, `competencia`, `ponderacion`, `nota`, `comentario`, `created_at`, `updated_at`) VALUES
-	(65, 6, 'Destreza laboral', 'Capacidad de aplicar destrezas, habilidades y conocimientos que sean necesarios para ser efectivo en el contenido funcional específico del puesto', 'COMPETENCIAS TÉCNICAS', 40, 40.00, NULL, '2024-04-08 03:21:31', '2024-04-08 03:21:31'),
-	(66, 6, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 30, 30.00, NULL, '2024-04-08 03:21:31', '2024-04-08 03:21:31'),
-	(67, 6, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 30, 30.00, NULL, '2024-04-08 03:21:31', '2024-04-08 03:21:31'),
-	(68, 6, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, 20.00, NULL, '2024-04-08 03:21:32', '2024-04-08 03:21:32'),
-	(69, 6, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 22.50, NULL, '2024-04-08 03:21:32', '2024-04-08 03:21:32'),
-	(70, 6, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 30.00, NULL, '2024-04-08 03:21:32', '2024-04-08 03:21:32'),
-	(71, 6, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 15.00, NULL, '2024-04-08 03:21:32', '2024-04-08 03:21:32'),
-	(72, 6, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 15.00, NULL, '2024-04-08 03:21:32', '2024-04-08 03:21:32'),
-	(73, 6, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 15.00, NULL, '2024-04-08 03:21:32', '2024-04-08 03:21:32'),
-	(74, 6, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 10.00, NULL, '2024-04-08 03:21:32', '2024-04-08 03:21:32'),
-	(75, 6, 'Iniciativa', 'Capacidad de emprender acciones, solucionar problemas rutinarios y mejorar resultados de acuerdo a la situación laboral que se presente.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 20.00, NULL, '2024-04-08 03:21:33', '2024-04-08 03:21:33'),
-	(76, 7, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 20, 15.00, NULL, '2024-04-08 03:22:16', '2024-04-08 03:22:16'),
-	(77, 7, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 20, 10.00, NULL, '2024-04-08 03:22:16', '2024-04-08 03:22:16'),
-	(78, 7, 'Gestión en el puesto', 'Capacidad de planificar, organizar, ejecutar y controlar cada una de las etapas de desarrollo de sus funciones en el puesto.', 'COMPETENCIAS TÉCNICAS', 20, 15.00, NULL, '2024-04-08 03:22:16', '2024-04-08 03:22:16'),
-	(79, 7, 'Dominio funcional', 'Capacidad de aplicar destrezas, habilidades y conocimientos que son necesarios para ser efectivo en el contenido funcional específico del puesto.', 'COMPETENCIAS TÉCNICAS', 20, 20.00, NULL, '2024-04-08 03:22:17', '2024-04-08 03:22:17'),
-	(80, 7, 'Propuesta', 'Capacidad de proponer iniciativas, proyectos, que permitan potenciar el desarrollo de las actividades de su área de trabajo.', 'COMPETENCIAS TÉCNICAS', 20, 10.00, NULL, '2024-04-08 03:22:17', '2024-04-08 03:22:17'),
-	(81, 7, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, 40.00, NULL, '2024-04-08 03:22:17', '2024-04-08 03:22:17'),
-	(82, 7, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 22.50, NULL, '2024-04-08 03:22:17', '2024-04-08 03:22:17'),
-	(83, 7, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 30.00, NULL, '2024-04-08 03:22:18', '2024-04-08 03:22:18'),
-	(84, 7, 'Liderazgo', 'Capacidad de ejercer influencia eficaz sobre las actividades de los miembros del equipo para lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 2.50, NULL, '2024-04-08 03:22:18', '2024-04-08 03:22:18'),
-	(85, 7, 'Orientación a  resultados', 'Capacidad de desafiarse y desafiar a la organización  para sobresalir y lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 7.50, NULL, '2024-04-08 03:22:18', '2024-04-08 03:22:18'),
-	(86, 7, 'Dirección de equipos', 'Capacidad de trabajar y colaborar de manera efectiva con otros, generando sinergias,  para lograr una meta común', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 7.50, NULL, '2024-04-08 03:22:18', '2024-04-08 03:22:18'),
-	(87, 7, 'Capacidad de negociación', 'Capacidad de identificar las necesidades y motivaciones de las partes en conflicto, para lograr compromisos mutuamente benéficos', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 7.50, NULL, '2024-04-08 03:22:18', '2024-04-08 03:22:18'),
-	(88, 7, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 7.50, NULL, '2024-04-08 03:22:18', '2024-04-08 03:22:18'),
-	(89, 7, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 5.00, NULL, '2024-04-08 03:22:18', '2024-04-08 03:22:18'),
-	(90, 7, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 15.00, NULL, '2024-04-08 03:22:18', '2024-04-08 03:22:18'),
-	(91, 7, 'Toma de decisiones', 'Capacidad de reunir los elementos necesarios y efectuar un análisis cuidadoso para la mejor toma de decisiones.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 15.00, NULL, '2024-04-08 03:22:19', '2024-04-08 03:22:19'),
-	(92, 8, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 20, 15.00, NULL, '2024-04-08 03:23:26', '2024-04-08 03:23:26'),
-	(93, 8, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 20, 20.00, NULL, '2024-04-08 03:23:26', '2024-04-08 03:23:26'),
-	(94, 8, 'Gestión en el puesto', 'Capacidad de planificar, organizar, ejecutar y controlar cada una de las etapas de desarrollo de sus funciones en el puesto.', 'COMPETENCIAS TÉCNICAS', 20, 20.00, NULL, '2024-04-08 03:23:26', '2024-04-08 03:23:26'),
-	(95, 8, 'Dominio funcional', 'Capacidad de aplicar destrezas, habilidades y conocimientos que son necesarios para ser efectivo en el contenido funcional específico del puesto.', 'COMPETENCIAS TÉCNICAS', 20, 20.00, NULL, '2024-04-08 03:23:26', '2024-04-08 03:23:26'),
-	(96, 8, 'Propuesta', 'Capacidad de proponer iniciativas, proyectos, que permitan potenciar el desarrollo de las actividades de su área de trabajo.', 'COMPETENCIAS TÉCNICAS', 20, 20.00, NULL, '2024-04-08 03:23:27', '2024-04-08 03:23:27'),
-	(97, 8, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, 20.00, NULL, '2024-04-08 03:23:27', '2024-04-08 03:23:27'),
-	(98, 8, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 30.00, NULL, '2024-04-08 03:23:28', '2024-04-08 03:23:28'),
-	(99, 8, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 15.00, NULL, '2024-04-08 03:23:28', '2024-04-08 03:23:28'),
-	(100, 8, 'Liderazgo', 'Capacidad de ejercer influencia eficaz sobre las actividades de los miembros del equipo para lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 7.50, NULL, '2024-04-08 03:23:28', '2024-04-08 03:23:28'),
-	(101, 8, 'Orientación a  resultados', 'Capacidad de desafiarse y desafiar a la organización  para sobresalir y lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 10.00, NULL, '2024-04-08 03:23:28', '2024-04-08 03:23:28'),
-	(102, 8, 'Dirección de equipos', 'Capacidad de trabajar y colaborar de manera efectiva con otros, generando sinergias,  para lograr una meta común', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 7.50, NULL, '2024-04-08 03:23:28', '2024-04-08 03:23:28'),
-	(103, 8, 'Capacidad de negociación', 'Capacidad de identificar las necesidades y motivaciones de las partes en conflicto, para lograr compromisos mutuamente benéficos', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 10.00, NULL, '2024-04-08 03:23:28', '2024-04-08 03:23:28'),
-	(104, 8, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 5.00, NULL, '2024-04-08 03:23:29', '2024-04-08 03:23:29'),
-	(105, 8, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 10.00, NULL, '2024-04-08 03:23:29', '2024-04-08 03:23:29'),
-	(106, 8, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 15.00, NULL, '2024-04-08 03:23:29', '2024-04-08 03:23:29'),
-	(107, 8, 'Toma de decisiones', 'Capacidad de reunir los elementos necesarios y efectuar un análisis cuidadoso para la mejor toma de decisiones.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 15.00, NULL, '2024-04-08 03:23:29', '2024-04-08 03:23:29'),
-	(108, 9, 'Destreza laboral', 'Capacidad de aplicar destrezas, habilidades y conocimientos que sean necesarios para ser efectivo en el contenido funcional específico del puesto', 'COMPETENCIAS TÉCNICAS', 40, 40.00, NULL, '2024-04-08 03:24:00', '2024-04-08 03:24:00'),
-	(109, 9, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 30, 30.00, NULL, '2024-04-08 03:24:00', '2024-04-08 03:24:00'),
-	(110, 9, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 30, 30.00, NULL, '2024-04-08 03:24:01', '2024-04-08 03:24:01'),
-	(111, 9, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 50, 12.50, NULL, '2024-04-08 03:24:01', '2024-04-08 03:24:01'),
-	(112, 9, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 50, 12.50, NULL, '2024-04-08 03:24:01', '2024-04-08 03:24:01'),
-	(113, 9, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 20.00, NULL, '2024-04-08 03:24:01', '2024-04-08 03:24:01'),
-	(114, 9, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 20.00, NULL, '2024-04-08 03:24:01', '2024-04-08 03:24:01'),
-	(115, 9, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 20.00, NULL, '2024-04-08 03:24:01', '2024-04-08 03:24:01'),
-	(116, 9, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 20.00, NULL, '2024-04-08 03:24:02', '2024-04-08 03:24:02'),
-	(117, 9, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 20.00, NULL, '2024-04-08 03:24:02', '2024-04-08 03:24:02'),
-	(118, 10, 'Destreza laboral', 'Capacidad de aplicar destrezas, habilidades y conocimientos que sean necesarios para ser efectivo en el contenido funcional específico del puesto', 'COMPETENCIAS TÉCNICAS', 40, 30.00, NULL, '2024-04-09 19:37:08', '2024-04-09 19:37:08'),
-	(119, 10, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 30, 22.50, NULL, '2024-04-09 19:37:08', '2024-04-09 19:37:08'),
-	(120, 10, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 30, 30.00, NULL, '2024-04-09 19:37:08', '2024-04-09 19:37:08'),
-	(121, 10, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, 20.00, NULL, '2024-04-09 19:37:09', '2024-04-09 19:37:09'),
-	(122, 10, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 15.00, NULL, '2024-04-09 19:37:09', '2024-04-09 19:37:09'),
-	(123, 10, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 30.00, NULL, '2024-04-09 19:37:09', '2024-04-09 19:37:09'),
-	(124, 10, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 7.50, NULL, '2024-04-09 19:37:10', '2024-04-09 19:37:10'),
-	(125, 10, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 10.00, NULL, '2024-04-09 19:37:11', '2024-04-09 19:37:11'),
-	(126, 10, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 15.00, NULL, '2024-04-09 19:37:11', '2024-04-09 19:37:11'),
-	(127, 10, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 20.00, NULL, '2024-04-09 19:37:11', '2024-04-09 19:37:11'),
-	(128, 10, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 20.00, NULL, '2024-04-09 19:37:12', '2024-04-09 19:37:12'),
-	(129, 10, 'Atención al detalle', 'Capacidad de prestar atención a las particularidades de un tema, para obtener un resultado lógico y preciso.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 7.50, NULL, '2024-04-09 19:37:12', '2024-04-09 19:37:12'),
-	(130, 11, 'Destreza laboral', 'Capacidad de aplicar destrezas, habilidades y conocimientos que sean necesarios para ser efectivo en el contenido funcional específico del puesto', 'COMPETENCIAS TÉCNICAS', 40, 30.00, NULL, '2024-04-09 19:37:43', '2024-04-09 19:37:43'),
-	(131, 11, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 30, 30.00, NULL, '2024-04-09 19:37:43', '2024-04-09 19:37:43'),
-	(132, 11, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 30, 30.00, NULL, '2024-04-09 19:37:43', '2024-04-09 19:37:43'),
-	(133, 11, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, 30.00, NULL, '2024-04-09 19:37:43', '2024-04-09 19:37:43'),
-	(134, 11, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 22.50, NULL, '2024-04-09 19:37:44', '2024-04-09 19:37:44'),
-	(135, 11, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 22.50, NULL, '2024-04-09 19:37:44', '2024-04-09 19:37:44'),
-	(136, 11, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 5.00, NULL, '2024-04-09 19:37:44', '2024-04-09 19:37:44'),
-	(137, 11, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 10.00, NULL, '2024-04-09 19:37:45', '2024-04-09 19:37:45'),
-	(138, 11, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 10.00, NULL, '2024-04-09 19:37:45', '2024-04-09 19:37:45'),
-	(139, 11, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 10.00, NULL, '2024-04-09 19:37:45', '2024-04-09 19:37:45'),
-	(140, 11, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 10.00, NULL, '2024-04-09 19:37:45', '2024-04-09 19:37:45'),
-	(141, 11, 'Atención al detalle', 'Capacidad de prestar atención a las particularidades de un tema, para obtener un resultado lógico y preciso.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 5.00, NULL, '2024-04-09 19:37:46', '2024-04-09 19:37:46'),
-	(142, 12, 'Destreza laboral', 'Capacidad de aplicar destrezas, habilidades y conocimientos que sean necesarios para ser efectivo en el contenido funcional específico del puesto', 'COMPETENCIAS TÉCNICAS', 40, 40.00, NULL, '2024-04-09 19:38:21', '2024-04-09 19:38:21'),
-	(143, 12, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 30, 30.00, NULL, '2024-04-09 19:38:21', '2024-04-09 19:38:21'),
-	(144, 12, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 30, 30.00, NULL, '2024-04-09 19:38:21', '2024-04-09 19:38:21'),
-	(145, 12, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, 30.00, NULL, '2024-04-09 19:38:22', '2024-04-09 19:38:22'),
-	(146, 12, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 22.50, NULL, '2024-04-09 19:38:22', '2024-04-09 19:38:22'),
-	(147, 12, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 30.00, NULL, '2024-04-09 19:38:22', '2024-04-09 19:38:22'),
-	(148, 12, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 10.00, NULL, '2024-04-09 19:38:22', '2024-04-09 19:38:22'),
-	(149, 12, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 20.00, NULL, '2024-04-09 19:38:22', '2024-04-09 19:38:22'),
-	(150, 12, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 15.00, NULL, '2024-04-09 19:38:23', '2024-04-09 19:38:23'),
-	(151, 12, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 20.00, NULL, '2024-04-09 19:38:23', '2024-04-09 19:38:23'),
-	(152, 12, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 20.00, NULL, '2024-04-09 19:38:23', '2024-04-09 19:38:23'),
-	(153, 12, 'Atención al detalle', 'Capacidad de prestar atención a las particularidades de un tema, para obtener un resultado lógico y preciso.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 10.00, NULL, '2024-04-09 19:38:23', '2024-04-09 19:38:23'),
-	(154, 13, 'Destreza laboral', 'Capacidad de aplicar destrezas, habilidades y conocimientos que sean necesarios para ser efectivo en el contenido funcional específico del puesto', 'COMPETENCIAS TÉCNICAS', 40, 20.00, NULL, '2024-04-09 19:38:55', '2024-04-09 19:38:55'),
-	(155, 13, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 30, 15.00, NULL, '2024-04-09 19:38:55', '2024-04-09 19:38:55'),
-	(156, 13, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 30, 7.50, NULL, '2024-04-09 19:38:55', '2024-04-09 19:38:55'),
-	(157, 13, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, 30.00, NULL, '2024-04-09 19:38:55', '2024-04-09 19:38:55'),
-	(158, 13, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 22.50, NULL, '2024-04-09 19:38:55', '2024-04-09 19:38:55'),
-	(159, 13, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, 15.00, NULL, '2024-04-09 19:38:55', '2024-04-09 19:38:55'),
-	(160, 13, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 2.50, NULL, '2024-04-09 19:38:56', '2024-04-09 19:38:56'),
-	(161, 13, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 5.00, NULL, '2024-04-09 19:38:56', '2024-04-09 19:38:56'),
-	(162, 13, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 5.00, NULL, '2024-04-09 19:38:57', '2024-04-09 19:38:57'),
-	(163, 13, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 15.00, NULL, '2024-04-09 19:38:57', '2024-04-09 19:38:57'),
-	(164, 13, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, 15.00, NULL, '2024-04-09 19:38:57', '2024-04-09 19:38:57'),
-	(165, 13, 'Atención al detalle', 'Capacidad de prestar atención a las particularidades de un tema, para obtener un resultado lógico y preciso.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, 5.00, NULL, '2024-04-09 19:38:57', '2024-04-09 19:38:57');
+-- Volcando datos para la tabla ucb.evaldetailsresults: ~0 rows (aproximadamente)
 
 -- Volcando estructura para tabla ucb.evalproces
 CREATE TABLE IF NOT EXISTS `evalproces` (
@@ -1117,11 +986,11 @@ CREATE TABLE IF NOT EXISTS `evalproces` (
   PRIMARY KEY (`id`),
   KEY `evalproces_form_version_id_foreign` (`form_version_id`),
   CONSTRAINT `evalplocess_formmodels_id_foreign` FOREIGN KEY (`form_version_id`) REFERENCES `formmodels` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.evalproces: ~0 rows (aproximadamente)
 INSERT INTO `evalproces` (`id`, `form_version_id`, `texto_encabezado`, `fecha_inicio`, `fecha_conclusion`, `texto_instruccion`, `finalizacion`, `created_at`, `updated_at`) VALUES
-	(1, 47, 'A través del presente formulario, se evaluará el desempeño mediante el análisis de la aplicación de competencias en el desarrollo de las funciones de cada colaborador(a), durante  el periodo 2024', '2024-04-01', '2025-01-06', 'Marque en la columna que mejor expresa su opinión sobre la forma cómo el funcionario actuó con relación a cada factor, en el periodo de evaluación 2024', 0, '2024-04-08 02:43:32', '2024-04-08 03:02:43');
+	(4, 47, '.', '2024-05-12', '2024-05-16', '.', 0, '2024-05-13 06:25:42', '2024-05-13 06:25:42');
 
 -- Volcando estructura para tabla ucb.evalresults
 CREATE TABLE IF NOT EXISTS `evalresults` (
@@ -1130,12 +999,12 @@ CREATE TABLE IF NOT EXISTS `evalresults` (
   `evaluado_id` bigint unsigned NOT NULL,
   `evaluado_nivel_id` bigint unsigned NOT NULL,
   `evaluador_id` bigint unsigned NOT NULL,
-  `fortalezas` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `debilidades` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `comentarios_evaluador` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `propuestas` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fortalezas` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `debilidades` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comentarios_evaluador` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `propuestas` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `nota_final` double(8,2) NOT NULL DEFAULT '0.00',
-  `comentarios_evaluado` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `comentarios_evaluado` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -1147,58 +1016,24 @@ CREATE TABLE IF NOT EXISTS `evalresults` (
   CONSTRAINT `evalresults_evaluado_id_foreign` FOREIGN KEY (`evaluado_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `evalresults_evaluado_nivel_id_foreign` FOREIGN KEY (`evaluado_nivel_id`) REFERENCES `niveles` (`id`) ON DELETE CASCADE,
   CONSTRAINT `evalresults_evaluador_id_foreign` FOREIGN KEY (`evaluador_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.evalresults: ~8 rows (aproximadamente)
-INSERT INTO `evalresults` (`id`, `evalprocess_id`, `evaluado_id`, `evaluado_nivel_id`, `evaluador_id`, `fortalezas`, `debilidades`, `comentarios_evaluador`, `propuestas`, `nota_final`, `comentarios_evaluado`, `created_at`, `updated_at`) VALUES
-	(6, 1, 131, 6, 94, '.', '.', '.', '.', 82.50, '.', '2024-04-08 03:21:31', '2024-04-08 03:26:38'),
-	(7, 1, 121, 2, 94, '.', '.', '.', '.', 76.67, '.', '2024-04-08 03:22:16', '2024-04-08 03:27:41'),
-	(8, 1, 123, 2, 94, '.', '.', '.', '.', 80.00, '.', '2024-04-08 03:23:26', '2024-04-08 03:28:28'),
-	(9, 1, 132, 5, 94, '.', '.', '.', '.', 75.00, '.', '2024-04-08 03:24:00', '2024-04-08 03:29:20'),
-	(10, 1, 17, 4, 16, '.', '.', '.', '.', 75.83, '.', '2024-04-09 19:37:08', '2024-04-09 19:40:04'),
-	(11, 1, 18, 4, 16, '.', '.', '.', '.', 71.67, '.', '2024-04-09 19:37:43', '2024-04-09 19:45:07'),
-	(12, 1, 19, 4, 16, '.', '.', '.', '.', 92.50, '.', '2024-04-09 19:38:21', '2024-04-09 19:46:03'),
-	(13, 1, 27, 4, 16, '.', '.', '.', '.', 52.50, '.', '2024-04-09 19:38:54', '2024-04-09 19:46:53');
+-- Volcando datos para la tabla ucb.evalresults: ~0 rows (aproximadamente)
 
 -- Volcando estructura para tabla ucb.evalxcomps
 CREATE TABLE IF NOT EXISTS `evalxcomps` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `evalresult_id` bigint unsigned NOT NULL,
-  `competencia` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `competencia` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `nota` double(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `evalxcomps_evalresult_id_foreign` (`evalresult_id`),
   CONSTRAINT `evalxcomps_evalresult_id_foreign` FOREIGN KEY (`evalresult_id`) REFERENCES `evalresults` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.evalxcomps: ~22 rows (aproximadamente)
-INSERT INTO `evalxcomps` (`id`, `evalresult_id`, `competencia`, `nota`, `created_at`, `updated_at`) VALUES
-	(16, 6, 'COMPETENCIAS TÉCNICAS', 100.00, '2024-04-08 03:21:33', '2024-04-08 03:21:33'),
-	(17, 6, 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 72.50, '2024-04-08 03:21:33', '2024-04-08 03:21:33'),
-	(18, 6, 'COMPETENCIAS PERSONALES / GESTIÓN', 75.00, '2024-04-08 03:21:33', '2024-04-08 03:21:33'),
-	(19, 7, 'COMPETENCIAS TÉCNICAS', 70.00, '2024-04-08 03:22:19', '2024-04-08 03:22:19'),
-	(20, 7, 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 92.50, '2024-04-08 03:22:19', '2024-04-08 03:22:19'),
-	(21, 7, 'COMPETENCIAS PERSONALES / GESTIÓN', 67.50, '2024-04-08 03:22:19', '2024-04-08 03:22:19'),
-	(22, 8, 'COMPETENCIAS TÉCNICAS', 95.00, '2024-04-08 03:23:29', '2024-04-08 03:23:29'),
-	(23, 8, 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 65.00, '2024-04-08 03:23:29', '2024-04-08 03:23:29'),
-	(24, 8, 'COMPETENCIAS PERSONALES / GESTIÓN', 80.00, '2024-04-08 03:23:29', '2024-04-08 03:23:29'),
-	(25, 9, 'COMPETENCIAS TÉCNICAS', 100.00, '2024-04-08 03:24:02', '2024-04-08 03:24:02'),
-	(26, 9, 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 25.00, '2024-04-08 03:24:02', '2024-04-08 03:24:02'),
-	(27, 9, 'COMPETENCIAS PERSONALES / GESTIÓN', 100.00, '2024-04-08 03:24:02', '2024-04-08 03:24:02'),
-	(28, 10, 'COMPETENCIAS TÉCNICAS', 82.50, '2024-04-09 19:37:12', '2024-04-09 19:37:12'),
-	(29, 10, 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 65.00, '2024-04-09 19:37:12', '2024-04-09 19:37:12'),
-	(30, 10, 'COMPETENCIAS PERSONALES / GESTIÓN', 80.00, '2024-04-09 19:37:12', '2024-04-09 19:37:12'),
-	(31, 11, 'COMPETENCIAS TÉCNICAS', 90.00, '2024-04-09 19:37:46', '2024-04-09 19:37:46'),
-	(32, 11, 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 75.00, '2024-04-09 19:37:46', '2024-04-09 19:37:46'),
-	(33, 11, 'COMPETENCIAS PERSONALES / GESTIÓN', 50.00, '2024-04-09 19:37:46', '2024-04-09 19:37:46'),
-	(34, 12, 'COMPETENCIAS TÉCNICAS', 100.00, '2024-04-09 19:38:23', '2024-04-09 19:38:23'),
-	(35, 12, 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 82.50, '2024-04-09 19:38:23', '2024-04-09 19:38:23'),
-	(36, 12, 'COMPETENCIAS PERSONALES / GESTIÓN', 95.00, '2024-04-09 19:38:23', '2024-04-09 19:38:23'),
-	(37, 13, 'COMPETENCIAS TÉCNICAS', 42.50, '2024-04-09 19:38:57', '2024-04-09 19:38:57'),
-	(38, 13, 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 67.50, '2024-04-09 19:38:57', '2024-04-09 19:38:57'),
-	(39, 13, 'COMPETENCIAS PERSONALES / GESTIÓN', 47.50, '2024-04-09 19:38:57', '2024-04-09 19:38:57');
+-- Volcando datos para la tabla ucb.evalxcomps: ~0 rows (aproximadamente)
 
 -- Volcando estructura para tabla ucb.factors
 CREATE TABLE IF NOT EXISTS `factors` (
@@ -1264,11 +1099,11 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
 CREATE TABLE IF NOT EXISTS `formmodels` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `creador` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `descripcion` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.formmodels: ~0 rows (aproximadamente)
 INSERT INTO `formmodels` (`id`, `creador`, `descripcion`, `created_at`, `updated_at`) VALUES
@@ -1397,13 +1232,14 @@ CREATE TABLE IF NOT EXISTS `jerarquias` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `jerarquias_cargo_jefe_cargo_dependiente_unique` (`cargo_jefe`,`cargo_dependiente`),
   KEY `jerarquias_cargo_jefe_foreign` (`cargo_jefe`),
   KEY `jerarquias_cargo_dependiente_foreign` (`cargo_dependiente`),
   CONSTRAINT `jerarquias_cargo_dependiente_foreign` FOREIGN KEY (`cargo_dependiente`) REFERENCES `cargos` (`id`),
   CONSTRAINT `jerarquias_cargo_jefe_foreign` FOREIGN KEY (`cargo_jefe`) REFERENCES `cargos` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=167 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.jerarquias: ~139 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.jerarquias: ~160 rows (aproximadamente)
 INSERT INTO `jerarquias` (`id`, `cargo_jefe`, `cargo_dependiente`, `created_at`, `updated_at`) VALUES
 	(1, 1, 2, '2024-01-02 05:55:20', '2024-01-03 08:21:09'),
 	(2, 5, 6, '2024-01-03 08:32:20', '2024-01-03 08:32:20'),
@@ -1579,7 +1415,7 @@ CREATE TABLE IF NOT EXISTS `mediosforms` (
   PRIMARY KEY (`id`),
   KEY `mediosforms_formmodel_id_foreign` (`formmodel_id`),
   CONSTRAINT `mediosforms_formmodel_id_foreign` FOREIGN KEY (`formmodel_id`) REFERENCES `formmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.mediosforms: ~16 rows (aproximadamente)
 INSERT INTO `mediosforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `competencia`, `ponderacion`, `created_at`, `updated_at`) VALUES
@@ -1606,9 +1442,9 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.migrations: ~61 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.migrations: ~85 rows (aproximadamente)
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(1, '2014_10_12_000000_create_users_table', 1),
 	(2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
@@ -1692,7 +1528,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(90, '2024_01_21_204704_create_cprofesionalforms_table', 42),
 	(91, '2024_01_21_204721_create_ctecnicoforms_table', 42),
 	(92, '2024_01_21_204737_create_cadministrativoforms_table', 42),
-	(93, '2024_01_21_204747_create_cauxiliarforms_table', 42);
+	(93, '2024_01_21_204747_create_cauxiliarforms_table', 42),
+	(94, '2023_12_10_170000_create_criterios_table', 43),
+	(95, '2023_12_10_211410_create_evaldetailsresults_table', 43);
 
 -- Volcando estructura para tabla ucb.niveles
 CREATE TABLE IF NOT EXISTS `niveles` (
@@ -1707,7 +1545,7 @@ CREATE TABLE IF NOT EXISTS `niveles` (
 INSERT INTO `niveles` (`id`, `nivel`, `created_at`, `updated_at`) VALUES
 	(1, 'NIVEL EJECUTIVO', '2023-11-10 06:32:54', '2023-12-01 06:38:21'),
 	(2, 'NIVEL MANDOS MEDIOS', '2023-11-10 06:33:09', '2023-12-01 06:38:39'),
-	(3, 'NIVEL OPERATIVOS - PROFESIONAL', '2023-11-14 02:56:09', '2023-12-01 06:40:54'),
+	(3, 'NIVEL OPERATIVO - PROFESIONAL', '2023-11-14 02:56:09', '2023-12-01 06:40:54'),
 	(4, 'NIVEL OPERATIVO - TECNICO', '2023-11-14 02:56:58', '2023-12-01 06:40:44'),
 	(5, 'NIVEL OPERATIVO - ADMINISTRATIVO', '2023-11-14 02:57:21', '2023-12-01 06:40:35'),
 	(6, 'NIVEL OPERATIVO - AUXILIAR', '2023-11-14 02:57:54', '2023-12-01 06:41:15');
@@ -1730,7 +1568,7 @@ CREATE TABLE IF NOT EXISTS `password_reset_tokens` (
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.password_reset_tokens: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.password_reset_tokens: ~1 rows (aproximadamente)
 INSERT INTO `password_reset_tokens` (`email`, `token`, `created_at`) VALUES
 	('starmiguelara@gmail.com', '$2y$12$wNUXQibQsqauOabmHwErRuMQch04cTvzROjaTrGIyJvYgyKvtgpYq', '2023-12-21 05:25:11');
 
@@ -1803,7 +1641,7 @@ CREATE TABLE IF NOT EXISTS `profesionalforms` (
   PRIMARY KEY (`id`),
   KEY `profesionalforms_formmodel_id_foreign` (`formmodel_id`),
   CONSTRAINT `profesionalforms_formmodel_id_foreign` FOREIGN KEY (`formmodel_id`) REFERENCES `formmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.profesionalforms: ~14 rows (aproximadamente)
 INSERT INTO `profesionalforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `competencia`, `ponderacion`, `created_at`, `updated_at`) VALUES
@@ -1825,7 +1663,7 @@ INSERT INTO `profesionalforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `
 -- Volcando estructura para tabla ucb.secciones
 CREATE TABLE IF NOT EXISTS `secciones` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `seccion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `seccion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `area_id` bigint unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -1834,7 +1672,7 @@ CREATE TABLE IF NOT EXISTS `secciones` (
   CONSTRAINT `secciones_area_id_foreign` FOREIGN KEY (`area_id`) REFERENCES `areas` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.secciones: ~39 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.secciones: ~40 rows (aproximadamente)
 INSERT INTO `secciones` (`id`, `seccion`, `area_id`, `created_at`, `updated_at`) VALUES
 	(1, 'PROCESOS TÉCNICOS DE BIBLIOTECA', 3, '2023-12-15 02:50:52', '2023-12-15 02:50:52'),
 	(2, 'SERVICIOS BIBLIOTECA', 3, '2023-12-15 02:51:16', '2023-12-15 02:51:16'),
@@ -1886,7 +1724,7 @@ CREATE TABLE IF NOT EXISTS `seccions` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.seccions: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.seccions: ~1 rows (aproximadamente)
 INSERT INTO `seccions` (`id`, `seccion`, `created_at`, `updated_at`) VALUES
 	(1, 'Principal', '2023-11-18 23:00:39', '2023-11-18 23:00:39');
 
@@ -1901,7 +1739,7 @@ CREATE TABLE IF NOT EXISTS `selects` (
   CONSTRAINT `selects_factor_id_foreign` FOREIGN KEY (`factor_id`) REFERENCES `factors` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.selects: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.selects: ~0 rows (aproximadamente)
 
 -- Volcando estructura para tabla ucb.tecnicoforms
 CREATE TABLE IF NOT EXISTS `tecnicoforms` (
@@ -1916,7 +1754,7 @@ CREATE TABLE IF NOT EXISTS `tecnicoforms` (
   PRIMARY KEY (`id`),
   KEY `tecnicoforms_formmodel_id_foreign` (`formmodel_id`),
   CONSTRAINT `tecnicoforms_formmodel_id_foreign` FOREIGN KEY (`formmodel_id`) REFERENCES `formmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.tecnicoforms: ~12 rows (aproximadamente)
 INSERT INTO `tecnicoforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `competencia`, `ponderacion`, `created_at`, `updated_at`) VALUES
@@ -1950,7 +1788,7 @@ INSERT INTO `tipos` (`id`, `tipo_formulario`, `created_at`, `updated_at`) VALUES
 -- Volcando estructura para tabla ucb.unidades
 CREATE TABLE IF NOT EXISTS `unidades` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `unidad` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `unidad` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `area_id` bigint unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -1959,7 +1797,7 @@ CREATE TABLE IF NOT EXISTS `unidades` (
   CONSTRAINT `unidades_area_id_foreign` FOREIGN KEY (`area_id`) REFERENCES `areas` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.unidades: ~17 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.unidades: ~18 rows (aproximadamente)
 INSERT INTO `unidades` (`id`, `unidad`, `area_id`, `created_at`, `updated_at`) VALUES
 	(1, 'ADMINISTRACIÓN DE PERSONAL', 8, '2023-12-15 03:05:35', '2023-12-15 03:05:35'),
 	(2, 'ADMINISTRACIÓN DE PERSONAL', 6, '2023-12-15 03:05:47', '2023-12-15 03:05:47'),
@@ -1989,7 +1827,7 @@ CREATE TABLE IF NOT EXISTS `unidads` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.unidads: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.unidads: ~1 rows (aproximadamente)
 INSERT INTO `unidads` (`id`, `unidad`, `created_at`, `updated_at`) VALUES
 	(1, 'Reclutamiento', '2023-11-18 23:00:26', '2023-11-18 23:00:26');
 
@@ -2032,9 +1870,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   CONSTRAINT `users_deptos_id_foreign` FOREIGN KEY (`depto_id`) REFERENCES `deptos` (`id`) ON DELETE SET NULL,
   CONSTRAINT `users_secciones_id_foreign` FOREIGN KEY (`seccion_id`) REFERENCES `secciones` (`id`) ON DELETE SET NULL,
   CONSTRAINT `users_unidades_id_foreign` FOREIGN KEY (`unidad_id`) REFERENCES `unidades` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=212 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=216 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.users: ~192 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.users: ~193 rows (aproximadamente)
 INSERT INTO `users` (`id`, `codigo`, `name`, `apellido`, `email`, `email_verified_at`, `password`, `remember_token`, `role`, `cargo_id`, `id_cargo`, `depto_id`, `area_id`, `unidad_id`, `seccion_id`, `fecha_ingreso`, `fecha_nacimiento`, `doc_identidad`, `tipocontrato_id`, `created_at`, `updated_at`) VALUES
 	(1, NULL, 'MIGUEL ANGEL', 'LARA NISTTAHUZ', 'starmiguelara@gmail.com', NULL, '$2y$12$ETsHvgkrDFI6Y9EvNIeGe.oK0Ogs7qfT3yZTWP8Z5AwbIMWFgGM5e', NULL, 'admin', 23, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-11-10 05:59:41', '2023-11-10 05:59:41'),
 	(11, 'ALR-02', 'MARIO PORFIRIO', 'QUISPE JIMENEZ', 'mquispe@ucb.edu.bo', NULL, '$2y$12$tiSaaW1HOBDrY9GHyIgqNubRfop1nOeyLIlwYG9QaSiwkSGIu/rw6', NULL, 'user', 1, 2, 1, 8, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 08:09:12', '2024-01-04 07:21:46'),
@@ -2227,7 +2065,8 @@ INSERT INTO `users` (`id`, `codigo`, `name`, `apellido`, `email`, `email_verifie
 	(208, 'ACAD-02', 'ORLANDO', 'RIVERA JURADO', 'orivera@ucb.edu.bo', NULL, '$2y$12$v4w2B15c/E.rLXdy32zgIe9WmMh3YtMr3pskkEsgkvBOUXigqQtjC', NULL, 'user', NULL, 161, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 07:04:25', '2024-01-15 07:04:25'),
 	(209, 'ACAD-02', 'FABIO RICHARD', 'DIAZ PALACIOS', 'fdiaz@ucb.edu.bo', NULL, '$2y$12$R3Rk.n2/Qj7eYn29m14By.7EkU4.AoLGORuJNUIT/VQH.xQvu23cC', NULL, 'user', NULL, 164, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 07:05:21', '2024-01-15 07:05:21'),
 	(210, 'ACAD-03', 'RUDY ARIEL', 'GUARAZ VILLEGAS', 'rguaraz@ucb.edu.bo', NULL, '$2y$12$.Vp2UWq90u7wszwbNEmWCunwVtkQKyvma7Tkp9c2i5pB4pUxQG5gO', NULL, 'user', NULL, 168, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 07:06:36', '2024-01-15 07:06:36'),
-	(211, 'ACAD-03', 'ELIAS RUBEN', 'CALIZAYA MAMANI', 'ecalizaya@ucb.edu.bo', NULL, '$2y$12$MUakPjjE5J5CD8.YVof6leHK3eKC2xfS5sOufALykRSgs2tHb5lRi', NULL, 'user', NULL, 167, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 07:07:34', '2024-01-15 07:07:34');
+	(211, 'ACAD-03', 'ELIAS RUBEN', 'CALIZAYA MAMANI', 'ecalizaya@ucb.edu.bo', NULL, '$2y$12$MUakPjjE5J5CD8.YVof6leHK3eKC2xfS5sOufALykRSgs2tHb5lRi', NULL, 'user', NULL, 167, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 07:07:34', '2024-01-15 07:07:34'),
+	(213, NULL, 'JAVIER', 'GRIFFITHS', 'javier@correo.com', NULL, '$2y$12$Fyb6E6t/VziGdm20yZrn2e1Q2zwCTYtfYCzTyw0dlNo67jp4cqDsu', NULL, 'admin', NULL, 159, 4, 12, NULL, 13, NULL, NULL, NULL, NULL, '2024-05-07 07:08:45', '2024-05-07 07:08:45');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

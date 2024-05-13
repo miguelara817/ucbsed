@@ -67,6 +67,7 @@
                                                 <th class="w-1">No.</th>
                                                 <th>Iniciar sesión</th>
                                                 <th>Proceso</th>
+                                                <th>Área</th>
                                                 <th>Evaluador</th>
                                                 <th>Evaluado</th>
                                                 <th>Evaluador Calificacion</th>
@@ -88,7 +89,7 @@
                                                     </form>
                                                 </td>
                                                 <td>{{ $assignment->evalprocess_id }}</td>
-                                                
+                                                <td>{{ $assignment->user_evaluador->area["area"] }}</td>
                                                 <td>{{ $assignment->user_evaluador->apellido }} {{ $assignment->user_evaluador->name }}</td>
                                                 <td>{{ $assignment->user_evaluado->apellido }} {{ $assignment->user_evaluado->name }}</td>
                                                 @if ($assignment->evaluador_calificacion)

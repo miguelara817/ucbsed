@@ -153,8 +153,9 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'g-recaptcha-response' => [
+            'required' => 'Por favor verifica que no eres un robot..',
+            'captcha' => '¡Error de CAPTCHA! Vuelva a intentarlo más tarde o comuníquese con el administrador del sitio.',
         ],
     ],
 

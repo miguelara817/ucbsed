@@ -101,10 +101,10 @@
                                                                 </tr>
                                                             @endif
                                                         @endforeach
-                                                        {{-- <tr>
+                                                        <tr>
                                                             <td colspan="3">La sumatoria debe ser 100</td>
                                                             <td id="total{{$competencias->id}}">NOTA</td>
-                                                        </tr> --}}
+                                                        </tr>
                                                     </tbody>
                                                 </table>
                                                 {{-- <div style="border: 2px solid">
@@ -315,9 +315,6 @@
                                 </div>
                             </div>
                             
-                            
-                            
-                            
                             <div class="card-body">
                                 <div class="form-footer">
                                     <div class="text-end">
@@ -354,10 +351,25 @@
         // }
         for (let i = 1; i < total.children[1].children.length; i+= 2) {
             const element = total.children[1].children[i];
-            console.log(element);
+            // console.log(element.children[1].children);
+            const item = element.children[1].children;
+            // console.log(item);
+            for (let index = 0; index < item.length; index++) {
+                const elemento = item[index];
+                console.log(elemento.children[3])
+                const el = elemento.children[3]
+                el.addEventListener('input', e => {
+                    console.log(e)
+                })
+                
+            }
             
         }
-        console.log(total.children[1].children)
+        // console.log(total.children[1].children)
+        // console.log(total.children[1])
+
+        const total1 = document.querySelector("#tabs-ejecutivo-ex1 table tbody td input");
+        console.log(total1.element)
     </script>
     
 @endsection

@@ -20,10 +20,9 @@ class CompetenciaController extends Controller
      */
     public function index()
     {
-        $competencias = Competencia::paginate(10);
-
+        $competencias = Competencia::all();
         return view('competencia.index', compact('competencias'))
-            ->with('i', (request()->input('page', 1) - 1) * $competencias->perPage());
+            ->with('i');
     }
 
     /**

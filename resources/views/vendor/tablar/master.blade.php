@@ -19,6 +19,7 @@
                 @yield('title_postfix', config('tablar.title_postfix', ''))
             </title>
             <title>Dashboard</title>
+            {{-- @vite(['resources/scss//app.css', 'resources/js/app.js']) --}}
 
             <style>
                 #contenedor-carga{
@@ -64,7 +65,7 @@
 
         @yield('body')
         @include('tablar::extra.modal')
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
         <script type="module">
             window.onload = function () {
                 let contenedor = document.getElementById('contenedor-carga');

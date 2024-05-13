@@ -3,13 +3,6 @@
 @section('title')
     Proceso de evaluación
 @endsection
-@section('css')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
-
-    <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
-@endsection
 @section('content')
     <!-- Page header -->
     <div class="page-header d-print-none">
@@ -94,7 +87,7 @@
                         <div class="table-responsive">
                             <div class="card-body">
                                 <div class="table card-table">
-                                    <table id="evaltabla" class="stripe compact tabla">
+                                    <table id="datatable" class="stripe compact tabla">
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
@@ -175,27 +168,20 @@
     </div>
 @endsection
 @section('js')
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
-    <script>
+    <script type="module">
         const formulario = document.querySelector('#form_cerrar');
-
         if (formulario) {
             formulario.addEventListener('submit', seguro);
 
             function seguro(e) {
                 e.preventDefault();
                 const swalWithBootstrapButtons = Swal.mixin({
+                buttonsStyling: false,
                 customClass: {
-                    confirmButton: "btn btn-success",
-                    cancelButton: "btn btn-danger"
+                    confirmButton: "btn btn-success m-1",
+                    cancelButton: "btn btn-danger m-1"
                 },
-                buttonsStyling: false
+                
                 });
                 swalWithBootstrapButtons.fire({
                 title: "¿Está seguro?",
@@ -203,7 +189,7 @@
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonText: "¡Si, estoy seguro de cerrarlo!",
-                cancelButtonText: "¡No, cancelar!",
+                cancelButtonText: `¡No, cancelar!`,
                 reverseButtons: true
                 }).then((result) => {
                 if (result.isConfirmed) {
@@ -225,14 +211,6 @@
                 }
                 });
             }
-            console.log(formulario);
         }
-        new DataTable('#evaltabla', {
-            
-            language: {
-                url: '//cdn.datatables.net/plug-ins/2.0.3/i18n/es-ES.json',
-            },
-        });	
-   
     </script>
 @endsection

@@ -4,7 +4,7 @@
 }
 
 .tabla{
-    font-size: 12px;
+    font-size: 13px;
     width: 100%;
     padding: 0;
 }
@@ -78,4 +78,48 @@ table form{
 .card-data-asignaciones span{
     font-size: 20px;
     text-align: center;
+}
+
+/*  MENU */
+#sidebar-menu ul li:hover{
+    background-color: #eff1f4;
+}
+
+#sidebar-menu ul li div a{
+    text-wrap: wrap;
+}
+#sidebar-menu ul li div a:hover{
+    background-color: #b0cdfa;
+}
+
+/* SUMADOR SUBTOTALES */
+.sumador-subtotal-ejecutivos, 
+.sumador-subtotal-medios, 
+.sumador-subtotal-profesional,
+.sumador-subtotal-tecnico,
+.sumador-subtotal-administrativo,
+.sumador-subtotal-auxiliar{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+}
+.sumador-subtotal-ejecutivos,
+.sumador-subtotal-medios, 
+.sumador-subtotal-profesional,
+.sumador-subtotal-tecnico,
+.sumador-subtotal-administrativo,
+.sumador-subtotal-auxiliar strong{
+    padding-left: 20px;
+}
+.sumador-subtotal-ejecutivos,
+.sumador-subtotal-medios, 
+.sumador-subtotal-profesional,
+.sumador-subtotal-tecnico,
+.sumador-subtotal-administrativo,
+.sumador-subtotal-auxiliar span{
+    text-align: left;
+    padding-right: 70px;
+    font-weight: bold;
 }

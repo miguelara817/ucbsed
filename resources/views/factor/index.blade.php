@@ -4,10 +4,6 @@
     Factores
 @endsection
 
-@section('css')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-@endsection
-
 @section('content')
     <!-- Page header -->
     <div class="page-header d-print-none">
@@ -55,29 +51,10 @@
             <div class="row row-deck row-cards">
                 <div class="col-12">
                     <div class="card">
-                        {{-- <div class="card-body border-bottom py-3">
-                            <div class="d-flex">
-                                <div class="text-muted">
-                                    Ver
-                                    <div class="mx-2 d-inline-block">
-                                        <input type="text" class="form-control form-control-sm" value="10" size="3"
-                                               aria-label="Invoices count">
-                                    </div>
-                                    entradas
-                                </div>
-                                <div class="ms-auto text-muted">
-                                    Search:
-                                    <div class="ms-2 d-inline-block">
-                                        <input type="text" class="form-control form-control-sm"
-                                               aria-label="Search invoice">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
                         <div class="table-responsive min-vh-100">
                             <div class="card-body">
                                 <div class="table card-table">
-                                    <table id="factorestable" class="table card-table table-vcenter datatable">
+                                    <table id="datatable" class="stripe compact tabla">
                                         <thead>
                                         <tr>
                                             <th class="w-1">No.</th>
@@ -91,15 +68,10 @@
                                         <tbody>
                                         @forelse ($factores as $factor)
                                             <tr>
-                                                {{-- <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                                        aria-label="Select factor"></td> --}}
                                                 <td>{{ ++$i }}</td>
-                                                
-                                                    <td>{{ $factor->factor }}</td>
-                                                    <td>{{ $factor->descripcion }}</td>
-                                                    {{-- <td>{{ ($factor->competencia)->competencias }}</td> --}}
-                                                    <td>{{ $factor->competencias }}</td>
-
+                                                <td>{{ $factor->factor }}</td>
+                                                <td>{{ $factor->descripcion }}</td>
+                                                <td>{{ $factor->competencias }}</td>
                                                 <td>
                                                     <div class="btn-list flex-nowrap">
                                                         <div class="dropdown">
@@ -142,24 +114,9 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="card-footer d-flex align-items-center">
-                            {!! $factors->links('tablar::pagination') !!}
-                        </div> --}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-@endsection
-
-@section('js')
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script>	
-        var table = new DataTable('#factorestable', {
-            language: {
-                url: '//cdn.datatables.net/plug-ins/2.0.3/i18n/es-ES.json',
-            },
-        });
-    </script>
 @endsection

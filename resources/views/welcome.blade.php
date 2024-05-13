@@ -15,6 +15,36 @@
         </style>
 
         <style>
+            #contenedor-carga{
+                background-color: white;
+                height: 100%;
+                width: 100%;
+                position: fixed;
+                transition: all 1s ease;
+                z-index: 100000;
+            }
+    
+            #carga{
+                border: 15px solid #ccc;
+                border-top-color: #0054a6;
+                border-top-style: groove;
+                height: 100px;
+                width: 100px;
+                border-radius: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                animation: girar 2s linear infinite;
+            }
+    
+            @keyframes girar{
+                from{ transform: rotate(0deg);}
+                to { transform: rotate(360deg);}
+            }
+
             body {
                 font-family: 'Nunito';
             }
@@ -35,37 +65,81 @@
                 justify-content: space-evenly
             }
             .encabezado img{
-                width: 20%;
+                width: 15%;
+            }
+
+            .carousel-inner img{
+                background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75));
+                background-size: cover;
+                width: 20px
             }
         </style>
+
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="antialiased">
+        <div id="contenedor-carga">
+            <div id="carga"></div>
+        </div>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
             @if (Route::has('login'))
                 <div class="fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Espacio de trabajo</a>
+                        <a href="{{ url('/home') }}" class="btn btn-primary">Espacio de trabajo</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Iniciar sesión</a>
+                        <a href="{{ route('login') }}" class="btn btn-primary">Iniciar sesión</a>
 
-                        @if (Route::has('register'))
+                        {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Registrar</a>
-                        @endif
+                        @endif --}}
                     @endif
                 </div>
             @endif
+            
+            
+
 
             <div class="contenedor">
                 <div class="encabezado">
-                    {{-- <img src="images/ucb_logo.jpg" alt=""> --}}
                     <img src="assets/logo-ucb.png" alt="">
                     <h1>UCB - Evaluación de desempeño</h1>
                 </div>  
-                
-                <img class="portada" src="images/rrhh.jpg" alt="">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img class="d-block w-100" src="{{ asset('images/rrhh.jpg') }}">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('images/rrhh2.jpg') }}">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('images/rrhh3.jpg') }}">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ asset('images/rrhh4.jpg') }}">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                {{-- <img class="portada" src="images/rrhh.jpg" alt=""> --}}
             </div>
         </div>
 
-
+        <script type="module">
+            window.onload = function () {
+                let contenedor = document.getElementById('contenedor-carga');
+        
+                contenedor.style.visibility = 'hidden';
+                contenedor.style.opacity = 0;
+            }
+        </script>
     </body>
 </html>

@@ -215,9 +215,9 @@
                                                                 @foreach ($competencias_ejecutivo as $competencia)
                                                                 {{-- {{$competencia->id}} --}}
                                                                 <tr>
-                                                                    <td colspan="8" style="justify-content: center; background-color: rgb(254 240 138);">{{$competencia}}</td>
+                                                                    <td colspan="8" style="justify-content: center; background-color: rgb(254 240 138);">{{$competencia->competencia}}</td>
                                                                     @foreach ($factorjecutivo as $factor)
-                                                                        @if (($factor->competencia) == ($competencia))
+                                                                        @if (($factor->competencia) == ($competencia->competencia))
                                                                             <tr>
                                                                                 <td>{{++$numejecutivo}}</td>
                                                                                 <td>{{$factor->factor}}</td>
@@ -335,9 +335,9 @@
                                                                 @foreach ($competencias_medios as $competencia)
                                                                 {{-- {{$competencia->id}} --}}
                                                                 <tr>
-                                                                    <td colspan="8" style="justify-content: center; background-color: rgb(254 240 138);">{{$competencia}}</td>
+                                                                    <td colspan="8" style="justify-content: center; background-color: rgb(254 240 138);">{{$competencia->competencia}}</td>
                                                                     @foreach ($factormedios as $factor)
-                                                                        @if (($factor->competencia) == ($competencia))
+                                                                        @if (($factor->competencia) == ($competencia->competencia))
                                                                             <tr>
                                                                                 <td>{{++$nummedio}}</td>
                                                                                 <td>{{$factor->factor}}</td>
@@ -455,9 +455,9 @@
                                                                 @foreach ($competencias_profesional as $competencia)
                                                                 {{-- {{$competencia->id}} --}}
                                                                 <tr>
-                                                                    <td colspan="8" style="justify-content: center; background-color: rgb(254 240 138);">{{$competencia}}</td>
+                                                                    <td colspan="8" style="justify-content: center; background-color: rgb(254 240 138);">{{$competencia->competencia}}</td>
                                                                     @foreach ($factorprofesional as $factor)
-                                                                        @if (($factor->competencia) == ($competencia))
+                                                                        @if (($factor->competencia) == ($competencia->competencia))
                                                                             <tr>
                                                                                 <td>{{++$numprofesional}}</td>
                                                                                 <td>{{$factor->factor}}</td>
@@ -574,9 +574,9 @@
                                                             <tbody>
                                                                 @foreach ($competencias_tecnico as $competencia)
                                                                 <tr>
-                                                                    <td colspan="8" style="justify-content: center; background-color: rgb(254 240 138);">{{$competencia}}</td>
+                                                                    <td colspan="8" style="justify-content: center; background-color: rgb(254 240 138);">{{$competencia->competencia}}</td>
                                                                     @foreach ($factortecnico as $factor)
-                                                                        @if (($factor->competencia) == ($competencia))
+                                                                        @if (($factor->competencia) == ($competencia->competencia))
                                                                             <tr>
                                                                                 <td>{{++$numtecnico}}</td>
                                                                                 <td>{{$factor->factor}}</td>
@@ -693,9 +693,9 @@
                                                             <tbody>
                                                                 @foreach ($competencias_administrativo as $competencia)
                                                                 <tr>
-                                                                    <td colspan="8" style="justify-content: center; background-color: rgb(254 240 138);">{{$competencia}}</td>
+                                                                    <td colspan="8" style="justify-content: center; background-color: rgb(254 240 138);">{{$competencia->competencia}}</td>
                                                                     @foreach ($factoradministrativo as $factor)
-                                                                        @if (($factor->competencia) == ($competencia))
+                                                                        @if (($factor->competencia) == ($competencia->competencia))
                                                                             <tr>
                                                                                 <td>{{++$numadministrativo}}</td>
                                                                                 <td>{{$factor->factor}}</td>
@@ -812,9 +812,9 @@
                                                             <tbody>
                                                                 @foreach ($competencias_auxiliar as $competencia)
                                                                 <tr>
-                                                                    <td colspan="8" style="justify-content: center; background-color: rgb(254 240 138);">{{$competencia}}</td>
+                                                                    <td colspan="8" style="justify-content: center; background-color: rgb(254 240 138);">{{$competencia->competencia}}</td>
                                                                     @foreach ($factorauxiliar as $factor)
-                                                                        @if (($factor->competencia) == ($competencia))
+                                                                        @if (($factor->competencia) == ($competencia->competencia))
                                                                             <tr>
                                                                                 <td>{{++$numauxiliar}}</td>
                                                                                 <td>{{$factor->factor}}</td>

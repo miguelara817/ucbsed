@@ -18,10 +18,10 @@ class MatrizController extends Controller
 
     public function index()
     {
-        $versiones = Formmodel::orderBy('id', 'DESC')->paginate(10);
+        $versiones = Formmodel::orderBy('id', 'DESC')->get();
 
         return view('matriz.index', compact('versiones'))
-            ->with('i', (request()->input('page', 1) - 1) * $versiones->perPage());
+            ->with('i');
     }
 
     public function create()
@@ -32,93 +32,187 @@ class MatrizController extends Controller
                     ->orderBy('competencia_id')
                     ->get(['factors.id', 'factors.factor', 'factors.descripcion', 'competencias.competencias']);
         // $competencia = Competencia::all(); 'to_be_used_by_user_id', '!=' , 2
-        $competencia = Competencia::where('competencias', '!=', 'COMPETENCIAS PARA CONFIRMACIÓN')->get();
+        $competencia = Competencia::where('competencias', '!=', 'COMPETENCIAS PARA CONFIRMACIÓN')->orderBy('competencias')->get();
         $numeracion = 1;
         return view('matriz.create',compact('tipo','nivel','factor','competencia','numeracion'));
     }
 
 
     
+    // public function setdata(Request $request) {
+    //     $creador = $request->input('creador');
+    //     $descripcion = $request->input('descripcion');
+    //     $tipo_formulario = $request->input('tipo');
+    //     $tipo_id = intval($tipo_formulario);
+
+    //     $competencia = Competencia::where('competencias', '!=', 'COMPETENCIAS PARA CONFIRMACIÓN')->orderBy('competencias')->get();
+        
+    //     $competencias_ejecutivo = array();
+    //     $numejecutivo = 0;
+    //     $ejecutivo = array();
+    //     $factors_ejecutivo = $request->input('ejecutivo');
+    //     if ($factors_ejecutivo) {
+    //         foreach ($factors_ejecutivo as $factorid) {
+    //             $factores_ejec = Factor::find(intval($factorid));
+    //             array_push($ejecutivo, $factores_ejec);
+    //             array_push($competencias_ejecutivo, ['id' => $factores_ejec->competencia_id, 'competencia' => $factores_ejec->competencia->competencias]);
+    //         }
+    //     }
+        
+    //     $nummedio= 0;
+    //     $medio = array();
+    //     $factors_medios = $request->input('medios');
+    //     if ($factors_medios) {
+    //         foreach ($factors_medios as $factorid) {
+    //             $factores_med = Factor::find(intval($factorid));
+    //             array_push($medio, $factores_med);
+    //         }
+    //     }
+
+    //     $numprofesional = 0;
+    //     $profesional = array();
+    //     $factors_profesional = $request->input('profesional');
+    //     if ($factors_profesional) {
+    //         foreach ($factors_profesional as $factorid) {
+    //             $factores_pr = Factor::find(intval($factorid));
+    //             array_push($profesional, $factores_pr);
+    //         }
+    //     }
+
+        
+    //     $numtecnico = 0;
+    //     $tecnico = array();
+    //     $factors_tecnico = $request->input('tecnico');
+    //     if ($factors_tecnico) {
+    //         foreach ($factors_tecnico as $factorid) {
+    //             $factores_tc = Factor::find(intval($factorid));
+    //             array_push($tecnico, $factores_tc);
+    //         }
+    //     }
+
+    //     $numadministrativo = 0;
+    //     $administrativo = array();
+    //     $factors_administrativo = $request->input('administrativo');
+    //     if ($factors_administrativo) {
+    //         foreach ($factors_administrativo as $factorid) {
+    //             $factores_adm = Factor::find(intval($factorid));
+    //             array_push($administrativo, $factores_adm);
+    //         }
+    //     }
+
+    //     $numauxiliar= 0;
+    //     $auxiliar = array();
+    //     $factors_auxiliar = $request->input('auxiliar');
+    //     if ($factors_auxiliar) {
+    //         foreach ($factors_auxiliar as $factorid) {
+    //             $factores_aux = Factor::find(intval($factorid));
+    //             array_push($auxiliar, $factores_aux);
+    //         }
+    //     }
+
+    //     return view('matriz.setdata',compact('creador','descripcion','tipo_formulario','numejecutivo', 'competencia', 'factors_ejecutivo', 'ejecutivo', 'competencias_ejecutivo', 'nummedio','factors_medios','medio', 'numprofesional', 'factors_profesional', 'profesional', 'numtecnico','factors_tecnico', 'tecnico', 'numadministrativo', 'factors_administrativo', 'administrativo', 'numauxiliar', 'factors_auxiliar', 'auxiliar'));
+    // }
+
     public function setdata(Request $request) {
         $creador = $request->input('creador');
         $descripcion = $request->input('descripcion');
         $tipo_formulario = $request->input('tipo');
         $tipo_id = intval($tipo_formulario);
 
-        // $competencia = Competencia::all();
-        $competencia = Competencia::where('competencias', '!=', 'COMPETENCIAS PARA CONFIRMACIÓN')->get();
+        $competencia = Competencia::where('competencias', '!=', 'COMPETENCIAS PARA CONFIRMACIÓN')->orderBy('competencias')->get();
         
-        $competencias_ejecutivo = array();
         $numejecutivo = 0;
+        $competencias_ejecutivo = array();
         $ejecutivo = array();
         $factors_ejecutivo = $request->input('ejecutivo');
+        $factors_ejecutivo_existe = false;
         if ($factors_ejecutivo) {
+            $factors_ejecutivo_existe = true;
             foreach ($factors_ejecutivo as $factorid) {
                 $factores_ejec = Factor::find(intval($factorid));
                 array_push($ejecutivo, $factores_ejec);
                 array_push($competencias_ejecutivo, ['id' => $factores_ejec->competencia_id, 'competencia' => $factores_ejec->competencia->competencias]);
             }
         }
-        
-        // foreach ($factors_ejecutivo as $ejecutivo) {
-        //     array_push($competencias_ejecutivo, $ejecutivo->competencia);
-        // };
-
-        // $competencias_ejecutivo = array_unique($competencias_ejecutivo);
-
+        $competencias_ejecutivo = array_unique($competencias_ejecutivo, SORT_REGULAR);
 
         $nummedio= 0;
+        $competencias_medio = array();
         $medio = array();
         $factors_medios = $request->input('medios');
+        $factors_medios_existe = false;
         if ($factors_medios) {
+            $factors_medios_existe = true;
             foreach ($factors_medios as $factorid) {
                 $factores_med = Factor::find(intval($factorid));
                 array_push($medio, $factores_med);
+                array_push($competencias_medio, ['id' => $factores_med->competencia_id, 'competencia' => $factores_med->competencia->competencias]);
             }
         }
+        $competencias_medio = array_unique($competencias_medio, SORT_REGULAR);
 
         $numprofesional = 0;
+        $competencias_profesional = array();
         $profesional = array();
         $factors_profesional = $request->input('profesional');
+        $factors_profesional_existe = false;
         if ($factors_profesional) {
+            $factors_profesional_existe = true;
             foreach ($factors_profesional as $factorid) {
                 $factores_pr = Factor::find(intval($factorid));
                 array_push($profesional, $factores_pr);
+                array_push($competencias_profesional, ['id' => $factores_pr->competencia_id, 'competencia' => $factores_pr->competencia->competencias]);
             }
         }
+        $competencias_profesional = array_unique($competencias_profesional, SORT_REGULAR);
 
         
         $numtecnico = 0;
+        $competencias_tecnico = array();
         $tecnico = array();
         $factors_tecnico = $request->input('tecnico');
+        $factors_tecnico_existe = false;
         if ($factors_tecnico) {
+            $factors_tecnico_existe = true;
             foreach ($factors_tecnico as $factorid) {
                 $factores_tc = Factor::find(intval($factorid));
                 array_push($tecnico, $factores_tc);
+                array_push($competencias_tecnico, ['id' => $factores_tc->competencia_id, 'competencia' => $factores_tc->competencia->competencias]);
             }
         }
+        $competencias_tecnico = array_unique($competencias_tecnico, SORT_REGULAR);
 
         $numadministrativo = 0;
+        $competencias_administrativo = array();
         $administrativo = array();
         $factors_administrativo = $request->input('administrativo');
+        $factors_administrativo_existe = false;
         if ($factors_administrativo) {
+            $factors_administrativo_existe = true;
             foreach ($factors_administrativo as $factorid) {
                 $factores_adm = Factor::find(intval($factorid));
                 array_push($administrativo, $factores_adm);
+                array_push($competencias_administrativo, ['id' => $factores_adm->competencia_id, 'competencia' => $factores_adm->competencia->competencias]);
             }
         }
+        $competencias_administrativo = array_unique($competencias_administrativo, SORT_REGULAR);
 
         $numauxiliar= 0;
+        $competencias_auxiliar = array();
         $auxiliar = array();
         $factors_auxiliar = $request->input('auxiliar');
+        $factors_auxiliar_existe = false;
         if ($factors_auxiliar) {
+            $factors_auxiliar_existe = true;
             foreach ($factors_auxiliar as $factorid) {
                 $factores_aux = Factor::find(intval($factorid));
                 array_push($auxiliar, $factores_aux);
+                array_push($competencias_auxiliar, ['id' => $factores_aux->competencia_id, 'competencia' => $factores_aux->competencia->competencias]);
             }
         }
+        $competencias_auxiliar = array_unique($competencias_auxiliar, SORT_REGULAR);
 
-        return view('matriz.setdata',compact('creador','descripcion','tipo_formulario','numejecutivo', 'competencia', 'factors_ejecutivo', 'ejecutivo', 'competencias_ejecutivo', 'nummedio','factors_medios','medio', 'numprofesional', 'factors_profesional', 'profesional', 'numtecnico','factors_tecnico', 'tecnico', 'numadministrativo', 'factors_administrativo', 'administrativo', 'numauxiliar', 'factors_auxiliar', 'auxiliar'));
+        return view('matriz.pr',compact('creador','descripcion','tipo_formulario','numejecutivo', 'competencia', 'factors_ejecutivo', 'factors_ejecutivo_existe', 'ejecutivo', 'competencias_ejecutivo', 'nummedio', 'competencias_medio','factors_medios', 'factors_medios_existe','medio', 'numprofesional', 'competencias_profesional','factors_profesional', 'factors_profesional_existe','profesional', 'numtecnico', 'competencias_tecnico','factors_tecnico', 'factors_tecnico_existe','tecnico', 'numadministrativo', 'competencias_administrativo','factors_administrativo', 'factors_administrativo_existe','administrativo', 'numauxiliar', 'competencias_auxiliar','factors_auxiliar', 'factors_auxiliar_existe','auxiliar'));
     }
 
     // ------------------------------------------------------------------------//
@@ -137,7 +231,7 @@ class MatrizController extends Controller
         $p_ejecutivo = array();
         $ponderadoresejecutivo = array();
         // $competencias = Competencia::all();
-        $competencias = Competencia::where('competencias', '!=', 'COMPETENCIAS PARA CONFIRMACIÓN')->get();
+        $competencias = Competencia::where('competencias', '!=', 'COMPETENCIAS PARA CONFIRMACIÓN')->orderBy('competencias')->get();
         foreach ($competencias as $competencia) {
             // array_push($ponderadores, $competencia->id);
             // array_push($ponderadores, ($competencia->id)); 
@@ -160,7 +254,7 @@ class MatrizController extends Controller
         $factores_medio = $request->input('factores_medio');
         $p_medio = array();
         $ponderadoresmedios = array();
-        $competencias = Competencia::all();
+        // $competencias = Competencia::all();
         foreach ($competencias as $competencia) {
             $ponderadoresmedios = $request->input('medio' . strval($competencia->id));
             if (!($ponderadoresmedios==NULL)) {
@@ -179,7 +273,7 @@ class MatrizController extends Controller
         $factores_profesional = $request->input('factores_profesional');
         $p_profesional = array();
         $ponderadoresprofesional = array();
-        $competencias = Competencia::all();
+        // $competencias = Competencia::all();
         foreach ($competencias as $competencia) {
             $ponderadoresprofesional = $request->input('profesional' . strval($competencia->id));
             if (!($ponderadoresprofesional==NULL)) {
@@ -200,7 +294,7 @@ class MatrizController extends Controller
         $factores_tecnico = $request->input('factores_tecnico');
         $p_tecnico = array();
         $ponderadorestecnico = array();
-        $competencias = Competencia::all();
+        // $competencias = Competencia::all();
         foreach ($competencias as $competencia) {
             $ponderadorestecnico = $request->input('tecnico' . strval($competencia->id));
             if (!($ponderadorestecnico==NULL)) {
@@ -219,7 +313,7 @@ class MatrizController extends Controller
         $factores_administrativo = $request->input('factores_administrativo');
         $p_administrativo = array();
         $ponderadoresadministrativo = array();
-        $competencias = Competencia::all();
+        // $competencias = Competencia::all();
         foreach ($competencias as $competencia) {
             $ponderadoresadministrativo = $request->input('administrativo' . strval($competencia->id));
             if (!($ponderadoresadministrativo==NULL)) {
@@ -239,7 +333,7 @@ class MatrizController extends Controller
         $factores_auxiliar = $request->input('factores_auxiliar');
         $p_auxiliar = array();
         $ponderadoresauxiliar = array();
-        $competencias = Competencia::all();
+        // $competencias = Competencia::all();
         foreach ($competencias as $competencia) {
             $ponderadoresauxiliar = $request->input('auxiliar' . strval($competencia->id));
             if (!($ponderadoresauxiliar==NULL)) {
@@ -403,8 +497,7 @@ class MatrizController extends Controller
             }
         }
 
-        
-
+    
         // return view('matriz.recieve', compact('competencia','creador','tipo_id','factores_ejecutivo', 'p_ejecutivo' ,'factores_medio', 'p_medio','factores_profesional' ,'p_profesional','factores_tecnico' ,'p_tecnico','factores_administrativo' ,'p_administrativo', 'factores_auxiliar','p_auxiliar'));
         return redirect()->route('matriz.index')
             ->with('success', 'Versión creada exitosamente.');
@@ -413,175 +506,11 @@ class MatrizController extends Controller
 
     public function store(Request $request)
     {
-
-        //----------------------------------------------------------------------
-        // $creador = $request->input('creador');
-        // $tipo_formulario = $request->input('tipo');
-        // $tipo_id = intval($tipo_formulario);
-
-        // $now = DB::raw('CURRENT_TIMESTAMP');
-        // DB::table('formmodels')->insertGetId(
-        //     [
-        //       'creador' => $creador,
-        //       'tipo_id' => $tipo_id,
-        //       'created_at' => $now,
-        //       'updated_at' => $now
-        //     ]
-        // );
-
-        // $formmodelid = DB::getPdo()->lastInsertId();
-        // /* ---- Insercion de datos a las tablas de niveles -----*/
-        // $factors_ejecutivo = $request->input('ejecutivo');
-        // if ($factors_ejecutivo) {
-        //     foreach ($factors_ejecutivo as $factorid) {
-        //         $factores_ejec = Factor::find(intval($factorid));
-        //         $factor = $factores_ejec["factor"];
-        //         $descripcion = $factores_ejec["descripcion"];
-        //         $competencia = ($factores_ejec->competencia)["competencias"];
-        //         $now = DB::raw('CURRENT_TIMESTAMP');
-        //         DB::table('ejecutivoforms')->insertGetId(
-        //             [
-        //               'formmodel_id' => $formmodelid,
-        //               'factor' => $factor,
-        //               'descripcion' => $descripcion,
-        //               'competencia' => $competencia,
-        //               'created_at' => $now,
-        //               'updated_at' => $now
-        //             ]
-        //         );
-        //     }
-        // }
-        
-
-
-        // $factors_administrativo = $request->input('administrativo');
-        // // $factors_administrativo["nivel_id"] = 2;
-        // if ($factors_administrativo) {
-        //     foreach ($factors_administrativo as $factorid) {
-        //         $factors_adm = Factor::find(intval($factorid));
-        //         $factor = $factors_adm["factor"];
-        //         $descripcion = $factors_adm["descripcion"];
-        //         $competencia = ($factors_adm->competencia)["competencias"];
-        //         $now = DB::raw('CURRENT_TIMESTAMP');
-        //         DB::table('administrativoforms')->insertGetId(
-        //             [
-        //               'formmodel_id' => $formmodelid,
-        //               'factor' => $factor,
-        //               'descripcion' => $descripcion,
-        //               'competencia' => $competencia,
-        //               'created_at' => $now,
-        //               'updated_at' => $now
-        //             ]
-        //         );
-        //     }
-        // }
-        
-
-
-
-        // $factors_medios = $request->input('medios');
-        // // $factors_medios["nivel_id"] = 3;
-        // if ($factors_medios) {
-        //     foreach ($factors_medios as $factorid) {
-        //         $factors_md = Factor::find(intval($factorid));
-        //         $factor = $factors_md["factor"];
-        //         $descripcion = $factors_md["descripcion"];
-        //         $competencia = ($factors_md->competencia)["competencias"];
-        //         $now = DB::raw('CURRENT_TIMESTAMP');
-        //         DB::table('mediosforms')->insertGetId(
-        //             [
-        //               'formmodel_id' => $formmodelid,
-        //               'factor' => $factor,
-        //               'descripcion' => $descripcion,
-        //               'competencia' => $competencia,
-        //               'created_at' => $now,
-        //               'updated_at' => $now
-        //             ]
-        //         );
-        //     }
-        // }
-        
-
-        // $factors_profesional = $request->input('profesional');
-        // // $factors_profesional["nivel_id"] = 4;
-        // if ($factors_profesional) {
-        //     foreach ($factors_profesional as $factorid) {
-        //         $factors_pr = Factor::find(intval($factorid));
-        //         $factor = $factors_pr["factor"];
-        //         $descripcion = $factors_pr["descripcion"];
-        //         $competencia = ($factors_pr->competencia)["competencias"];
-        //         $now = DB::raw('CURRENT_TIMESTAMP');
-        //         DB::table('profesionalforms')->insertGetId(
-        //             [
-        //               'formmodel_id' => $formmodelid,
-        //               'factor' => $factor,
-        //               'descripcion' => $descripcion,
-        //               'competencia' => $competencia,
-        //               'created_at' => $now,
-        //               'updated_at' => $now
-        //             ]
-        //         );
-        //     }
-        // }
-        
-
-        // $factors_tecnico = $request->input('tecnico');
-        // // $factors_tecnico["nivel_id"] = 5;
-        // if ($factors_tecnico) {
-        //     foreach ($factors_tecnico as $factorid) {
-        //         $factors_tc = Factor::find(intval($factorid));
-        //         $factor = $factors_tc["factor"];
-        //         $descripcion = $factors_tc["descripcion"];
-        //         $competencia = ($factors_tc->competencia)["competencias"];
-        //         $now = DB::raw('CURRENT_TIMESTAMP');
-        //         DB::table('tecnicoforms')->insertGetId(
-        //             [
-        //               'formmodel_id' => $formmodelid,
-        //               'factor' => $factor,
-        //               'descripcion' => $descripcion,
-        //               'competencia' => $competencia,
-        //               'created_at' => $now,
-        //               'updated_at' => $now
-        //             ]
-        //         );
-        //     }
-        // }
-        
-
-        // $factors_auxiliar = $request->input('auxiliar');
-        // // $factors_auxiliar["nivel_id"] = 6;
-        // if ($factors_auxiliar) {
-        //     foreach ($factors_auxiliar as $factorid) {
-        //         $factors_aux = Factor::find(intval($factorid));
-        //         $factor = $factors_aux["factor"];
-        //         $descripcion = $factors_aux["descripcion"];
-        //         $competencia = ($factors_aux->competencia)["competencias"];
-        //         $now = DB::raw('CURRENT_TIMESTAMP');
-        //         DB::table('auxiliarforms')->insertGetId(
-        //             [
-        //               'formmodel_id' => $formmodelid,
-        //               'factor' => $factor,
-        //               'descripcion' => $descripcion,
-        //               'competencia' => $competencia,
-        //               'created_at' => $now,
-        //               'updated_at' => $now
-        //             ]
-        //         );
-        //     }
-        // }
-        
-
-        // return redirect()->route('matriz.index')
-        //     ->with('success', 'Version creada satisfactoriamente.');
-
-        //----------------------------------------------------------------------
-        
+        //
     }
 
     public function show($id)
     {
-        // $competencia = Competencia::all();
-        // $competencia = Competencia::where('competencias', '!=', 'COMPETENCIAS PARA CONFIRMACIÓN')->get();
         $version = Formmodel::find($id);
         $counter = 1;
         $numejecutivo = 0;
@@ -590,72 +519,48 @@ class MatrizController extends Controller
                         ->orderBy('factor','ASC')
                         ->get();
 
-        $competencias_ejecutivo = array();
-        foreach ($factorjecutivo as $ejecutivo) {
-            array_push($competencias_ejecutivo, $ejecutivo->competencia);
-        };
-
-        $competencias_ejecutivo = array_unique($competencias_ejecutivo);
-    
+        $competencias_ejecutivo = DB::select("SELECT ejecutivoforms.competencia,SUM(ejecutivoforms.ponderacion) suma FROM ejecutivoforms WHERE ejecutivoforms.formmodel_id = $id GROUP BY ejecutivoforms.competencia ORDER BY ejecutivoforms.competencia");
 
         $nummedio = 0;
         $factormedios = DB::table('mediosforms')
                         ->where("formmodel_id", "=", $id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_medios = array();
-        foreach ($factormedios as $medio) {
-            array_push($competencias_medios, $medio->competencia);
-        };
-        $competencias_medios = array_unique($competencias_medios);
-                
+
+        $competencias_medios = DB::select("SELECT mediosforms.competencia,SUM(mediosforms.ponderacion) suma FROM mediosforms WHERE mediosforms.formmodel_id = $id GROUP BY mediosforms.competencia ORDER BY mediosforms.competencia"); 
 
         $numprofesional = 0;
         $factorprofesional = DB::table('profesionalforms')
                         ->where("formmodel_id", "=", $id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_profesional = array();
-        foreach ($factorprofesional as $profesional) {
-            array_push($competencias_profesional, $profesional->competencia);
-        };
-        $competencias_profesional = array_unique($competencias_profesional);
+
+        $competencias_profesional = DB::select("SELECT profesionalforms.competencia,SUM(profesionalforms.ponderacion) suma FROM profesionalforms WHERE profesionalforms.formmodel_id = $id GROUP BY profesionalforms.competencia ORDER BY profesionalforms.competencia"); 
 
         $numtecnico = 0;
         $factortecnico = DB::table('tecnicoforms')
                         ->where("formmodel_id", "=", $id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_tecnico = array();
-        foreach ($factortecnico as $tecnico) {
-            array_push($competencias_tecnico, $tecnico->competencia);
-        };
-        $competencias_tecnico = array_unique($competencias_tecnico);
 
+        $competencias_tecnico = DB::select("SELECT tecnicoforms.competencia,SUM(tecnicoforms.ponderacion) suma FROM tecnicoforms WHERE tecnicoforms.formmodel_id = $id GROUP BY tecnicoforms.competencia ORDER BY tecnicoforms.competencia"); 
 
         $numadministrativo = 0;
         $factoradministrativo = DB::table('administrativoforms')
                         ->where("formmodel_id", "=", $id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_administrativo = array();
-        foreach ($factoradministrativo as $administrativo) {
-            array_push($competencias_administrativo, $administrativo->competencia);
-        };
-        $competencias_administrativo = array_unique($competencias_administrativo);
 
+        $competencias_administrativo = DB::select("SELECT administrativoforms.competencia,SUM(administrativoforms.ponderacion) suma FROM administrativoforms WHERE administrativoforms.formmodel_id = $id GROUP BY administrativoforms.competencia ORDER BY administrativoforms.competencia"); 
 
         $numauxiliar = 0;
         $factorauxiliar = DB::table('auxiliarforms')
                         ->where("formmodel_id", "=", $id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_auxiliar = array();
-        foreach ($factorauxiliar as $auxiliar) {
-            array_push($competencias_auxiliar, $auxiliar->competencia);
-        };
-        $competencias_auxiliar = array_unique($competencias_auxiliar);
-             
+  
+        $competencias_auxiliar = DB::select("SELECT auxiliarforms.competencia,SUM(auxiliarforms.ponderacion) suma FROM auxiliarforms WHERE auxiliarforms.formmodel_id = $id GROUP BY auxiliarforms.competencia ORDER BY auxiliarforms.competencia"); 
+
         return view('matriz.show', compact('version','counter','factorjecutivo', 'competencias_ejecutivo','numejecutivo','factormedios','competencias_medios','nummedio','factorprofesional','competencias_profesional','numprofesional','factortecnico','competencias_tecnico','numtecnico','factoradministrativo', 'competencias_administrativo','numadministrativo','factorauxiliar', 'competencias_auxiliar','numauxiliar'));
     }
 

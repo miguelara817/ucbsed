@@ -2,24 +2,12 @@
 
 @section('title', 'Usuarios')
 
-@section('css')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
-
-    <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
-@endsection
-
 @section('content')
     <!-- Page header -->
     <div class="page-header d-print-none">
         <div class="container-xl">
             <div class="row g-2 align-items-center">
                 <div class="col">
-                    <!-- Page pre-title -->
-                    {{-- <div class="page-pretitle">
-                        Lista de
-                    </div> --}}
                     <h2 class="page-title">
                         {{ __('Usuarios registrados ') }}
                     </h2>
@@ -36,6 +24,17 @@
                             <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M9 12l.01 0" /><path d="M13 12l2 0" /><path d="M9 16l.01 0" /><path d="M13 16l2 0" /></svg>
                             Lista de usuarios Jefe - Dependiente
+                        </a>
+                        <a href="{{ route('users.registrar') }}" class="btn btn-success d-none d-sm-inline-block">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            Crear nuevo Usuario
                         </a>
                     </div>
                 </div>
@@ -54,7 +53,7 @@
                         <div class="table-responsive">
                             <div class="card-body">
                                 <div class="table card-table">
-                                    <table id="maintabla" class="stripe compact tabla" >
+                                    <table id="datatable" class="stripe compact tabla" >
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
@@ -212,25 +211,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('js')
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
-
-    <script>
-        new DataTable('#maintabla', {
-            // scrollX: true,
-           
-            language: {
-                url: '//cdn.datatables.net/plug-ins/2.0.3/i18n/es-ES.json',
-            },
-        });	
-    </script>
 @endsection

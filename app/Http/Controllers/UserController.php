@@ -14,6 +14,8 @@ use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Takielias\TablarKit\DataTable\DataTable;
 use Takielias\TablarKit\Enums\ExportType;
 
@@ -56,9 +58,6 @@ class UserController extends Controller
     // }
 
     public function editar($id){
-
-       
-
         $cargos = Arbolcargo::orderBy('cargo_dependiente')->get();
         $tipo_contratos = Contrato::get();
         $cargos_jefe = Jcargo::get();
@@ -118,6 +117,74 @@ class UserController extends Controller
         return redirect()->route('users.index')
             ->with('success', 'El usuario fue actualizado');
         // return view('users.prueba', compact('user'));
+    }
+
+    public function crearUsuario() {
+        $cargos = Arbolcargo::orderBy('cargo_dependiente')->get();
+        $tipo_contratos = Contrato::all();
+        $cargos_jefe = Jcargo::get();
+        $areas = Area::get();
+        $departamentos = Depto::get();
+        $unidades = Unidade::get();
+        $secciones = Seccione::get();
+
+        $cargosid = Cargo::orderBy('cargo')->get();
+        return view('users.registrar',compact('cargos', 'cargosid','tipo_contratos','cargos_jefe','areas','departamentos','unidades','secciones'));
+        // return view('users.registrar');
+    }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'apellido' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+    }
+
+    public function guardarUsuario(Request $request) {
+        $codigo = $request->input('codigo');
+        $apellido = $request->input('apellido');
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $cargo_id = $request->input('cargo');
+        $area_id = $request->input('area');
+        $depto_id = $request->input('departamento');
+        $unidad_id = $request->input('unidad');
+        $seccion_id = $request->input('seccion');
+        $fecha_ingreso = $request->input('fecha_ingreso');
+        $fecha_nacimiento = $request->input('fecha_nacimiento');
+        $doc_identidad = $request->input('doc_identidad');
+        $tipocontrato = $request->input('tipocontrato');
+
+        // $this->validator($request->all())->validate();
+        // $this->validator($request->all())->validate();
+
+        if ($this->validator($request->all())->validate()) {
+            $nuevoUsuario = User::create([
+                'codigo' => $codigo,
+                'apellido'=>strtoupper(trim($apellido)),
+                'name'=>strtoupper(trim($name)),
+                'email'=>$email,
+                'password' => Hash::make($password),
+                'id_cargo'=>$cargo_id,
+                'area_id'=>$area_id,
+                'depto_id'=>$depto_id,
+                'unidad_id'=>$unidad_id,
+                'seccion_id'=>$seccion_id,
+                'fecha_ingreso'=>$fecha_ingreso,
+                'fecha_nacimiento'=>$fecha_nacimiento,
+                'doc_identidad'=>$doc_identidad,
+                'tipocontrato'=>$tipocontrato
+            ]);
+            
+            return redirect()->route('users.index')
+                ->with('success', 'El usuario fue creado exitosamente');
+    
+        }
+    
     }
 
     public function destroy($id)

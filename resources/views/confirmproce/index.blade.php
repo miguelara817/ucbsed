@@ -3,13 +3,6 @@
 @section('title')
     Procesos de confirmación
 @endsection
-@section('css')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
-
-    <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
-@endsection
 
 @section('content')
     <!-- Page header -->
@@ -55,7 +48,7 @@
                         <div class="table-responsive">
                             <div class="card-body">
                                 <div class="table card-table">
-                                    <table id="maintabla" class="stripe compact tabla">
+                                    <table id="datatable" class="stripe compact tabla">
                                         <thead>
                                         <tr>
                                             <th class="w-1">No.</th>
@@ -117,25 +110,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('js')
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
-
-    <script>
-        new DataTable('#maintabla', {
-            // scrollX: true,
-            language: {
-                // url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json',
-                url: '//cdn.datatables.net/plug-ins/2.0.3/i18n/es-ES.json',
-            },
-        });	
-    </script>
 @endsection

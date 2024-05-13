@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Cargo;
 use App\Models\Jerarquia;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class JerarquiaController extends Controller
 {
@@ -32,12 +34,16 @@ class JerarquiaController extends Controller
 
     public function store(Request $request)
     {
-        request()->validate(Jerarquia::$rules);
-
-        $jerarquia = Jerarquia::create($request->all());
-
-        return redirect()->route('jerarquias.index')
+        try {
+            $jerarquia = Jerarquia::create($request->all());
+            return redirect()->route('jerarquias.index')
             ->with('success', 'Relación creada exitosamente.');
+        } catch (UniqueConstraintViolationException $e) {
+            $errorCode = $e->errorInfo[1];
+            if($errorCode == 1062){
+                return redirect()->back()->with('message','Ya existe la relación');
+            }
+        }
     }
 
     public function show($id)

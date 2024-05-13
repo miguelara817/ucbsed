@@ -240,66 +240,72 @@ class EvalproceController extends Controller
                         ->orderBy('factor','ASC')
                         ->get();
 
-        $competencias_ejecutivo = array();
-        foreach ($factorjecutivo as $ejecutivo) {
-            array_push($competencias_ejecutivo, $ejecutivo->competencia);
-        };
-        $competencias_ejecutivo = array_unique($competencias_ejecutivo);
-
+        // $competencias_ejecutivo = array();
+        // foreach ($factorjecutivo as $ejecutivo) {
+        //     array_push($competencias_ejecutivo, $ejecutivo->competencia);
+        // };
+        // $competencias_ejecutivo = array_unique($competencias_ejecutivo);
+        $competencias_ejecutivo = DB::select("SELECT ejecutivoforms.competencia,SUM(ejecutivoforms.ponderacion) suma FROM ejecutivoforms WHERE ejecutivoforms.formmodel_id = $evalproces->form_version_id GROUP BY ejecutivoforms.competencia ORDER BY ejecutivoforms.competencia");
+        
         $nummedio = 0;
         $factormedios = DB::table('mediosforms')
                         ->where("formmodel_id", "=", $evalproces->form_version_id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_medios = array();
-        foreach ($factormedios as $medio) {
-            array_push($competencias_medios, $medio->competencia);
-        };
-        $competencias_medios = array_unique($competencias_medios);
+        // $competencias_medios = array();
+        // foreach ($factormedios as $medio) {
+        //     array_push($competencias_medios, $medio->competencia);
+        // };
+        // $competencias_medios = array_unique($competencias_medios);
+        $competencias_medios = DB::select("SELECT mediosforms.competencia,SUM(mediosforms.ponderacion) suma FROM mediosforms WHERE mediosforms.formmodel_id = $evalproces->form_version_id GROUP BY mediosforms.competencia ORDER BY mediosforms.competencia");
 
         $numprofesional = 0;
         $factorprofesional = DB::table('profesionalforms')
                         ->where("formmodel_id", "=", $evalproces->form_version_id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_profesional = array();
-        foreach ($factorprofesional as $profesional) {
-            array_push($competencias_profesional, $profesional->competencia);
-        };
-        $competencias_profesional = array_unique($competencias_profesional);
+        // $competencias_profesional = array();
+        // foreach ($factorprofesional as $profesional) {
+        //     array_push($competencias_profesional, $profesional->competencia);
+        // };
+        // $competencias_profesional = array_unique($competencias_profesional);
+        $competencias_profesional = DB::select("SELECT profesionalforms.competencia,SUM(profesionalforms.ponderacion) suma FROM profesionalforms WHERE profesionalforms.formmodel_id = $evalproces->form_version_id GROUP BY profesionalforms.competencia ORDER BY profesionalforms.competencia");
 
         $numtecnico = 0;
         $factortecnico = DB::table('tecnicoforms')
                         ->where("formmodel_id", "=", $evalproces->form_version_id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_tecnico = array();
-        foreach ($factortecnico as $tecnico) {
-            array_push($competencias_tecnico, $tecnico->competencia);
-        };
-        $competencias_tecnico = array_unique($competencias_tecnico);
+        // $competencias_tecnico = array();
+        // foreach ($factortecnico as $tecnico) {
+        //     array_push($competencias_tecnico, $tecnico->competencia);
+        // };
+        // $competencias_tecnico = array_unique($competencias_tecnico);
+        $competencias_tecnico = DB::select("SELECT tecnicoforms.competencia,SUM(tecnicoforms.ponderacion) suma FROM tecnicoforms WHERE tecnicoforms.formmodel_id = $evalproces->form_version_id GROUP BY tecnicoforms.competencia ORDER BY tecnicoforms.competencia");
 
         $numadministrativo = 0;
         $factoradministrativo = DB::table('administrativoforms')
                         ->where("formmodel_id", "=", $evalproces->form_version_id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_administrativo = array();
-        foreach ($factoradministrativo as $administrativo) {
-            array_push($competencias_administrativo, $administrativo->competencia);
-        };
-        $competencias_administrativo = array_unique($competencias_administrativo);
+        // $competencias_administrativo = array();
+        // foreach ($factoradministrativo as $administrativo) {
+        //     array_push($competencias_administrativo, $administrativo->competencia);
+        // };
+        // $competencias_administrativo = array_unique($competencias_administrativo);
+        $competencias_administrativo = DB::select("SELECT administrativoforms.competencia,SUM(administrativoforms.ponderacion) suma FROM administrativoforms WHERE administrativoforms.formmodel_id = $evalproces->form_version_id GROUP BY administrativoforms.competencia ORDER BY administrativoforms.competencia");
 
         $numauxiliar = 0;
         $factorauxiliar = DB::table('auxiliarforms')
                         ->where("formmodel_id", "=", $evalproces->form_version_id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_auxiliar = array();
-        foreach ($factorauxiliar as $auxiliar) {
-            array_push($competencias_auxiliar, $auxiliar->competencia);
-        };
-        $competencias_auxiliar = array_unique($competencias_auxiliar);
+        // $competencias_auxiliar = array();
+        // foreach ($factorauxiliar as $auxiliar) {
+        //     array_push($competencias_auxiliar, $auxiliar->competencia);
+        // };
+        // $competencias_auxiliar = array_unique($competencias_auxiliar);
+        $competencias_auxiliar = DB::select("SELECT auxiliarforms.competencia,SUM(auxiliarforms.ponderacion) suma FROM auxiliarforms WHERE auxiliarforms.formmodel_id = $evalproces->form_version_id GROUP BY auxiliarforms.competencia ORDER BY auxiliarforms.competencia");
 
         return view('evalproce.vistaPrevia', compact('evalproces','factorjecutivo','competencias_ejecutivo','numejecutivo','factormedios','competencias_medios','nummedio','numprofesional','factorprofesional','competencias_profesional','numtecnico','factortecnico','competencias_tecnico','numadministrativo','factoradministrativo','competencias_administrativo','numauxiliar','factorauxiliar','competencias_auxiliar'));
             
@@ -320,59 +326,40 @@ class EvalproceController extends Controller
                         ->orderBy('factor','ASC')
                         ->get();
 
-        $competencias_ejecutivo = array();
-        foreach ($factorjecutivo as $ejecutivo) {
-            array_push($competencias_ejecutivo, $ejecutivo->competencia);
-        };
-
-        $competencias_ejecutivo = array_unique($competencias_ejecutivo);
-    
+        $competencias_ejecutivo = DB::select("SELECT ejecutivoforms.competencia,SUM(ejecutivoforms.ponderacion) suma FROM ejecutivoforms WHERE ejecutivoforms.formmodel_id = $evalproce->form_version_id GROUP BY ejecutivoforms.competencia ORDER BY ejecutivoforms.competencia");
 
         $nummedio = 0;
         $factormedios = DB::table('mediosforms')
                         ->where("formmodel_id", "=", $evalproce->form_version_id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_medios = array();
-        foreach ($factormedios as $medio) {
-            array_push($competencias_medios, $medio->competencia);
-        };
-        $competencias_medios = array_unique($competencias_medios);
-                
+        
+        $competencias_medios = DB::select("SELECT mediosforms.competencia,SUM(mediosforms.ponderacion) suma FROM mediosforms WHERE mediosforms.formmodel_id = $evalproce->form_version_id GROUP BY mediosforms.competencia ORDER BY mediosforms.competencia");
+
 
         $numprofesional = 0;
         $factorprofesional = DB::table('profesionalforms')
                         ->where("formmodel_id", "=", $evalproce->form_version_id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_profesional = array();
-        foreach ($factorprofesional as $profesional) {
-            array_push($competencias_profesional, $profesional->competencia);
-        };
-        $competencias_profesional = array_unique($competencias_profesional);
+       
+        $competencias_profesional = DB::select("SELECT profesionalforms.competencia,SUM(profesionalforms.ponderacion) suma FROM profesionalforms WHERE profesionalforms.formmodel_id = $evalproce->form_version_id GROUP BY profesionalforms.competencia ORDER BY profesionalforms.competencia");
 
         $numtecnico = 0;
         $factortecnico = DB::table('tecnicoforms')
                         ->where("formmodel_id", "=", $evalproce->form_version_id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_tecnico = array();
-        foreach ($factortecnico as $tecnico) {
-            array_push($competencias_tecnico, $tecnico->competencia);
-        };
-        $competencias_tecnico = array_unique($competencias_tecnico);
-
+        
+        $competencias_tecnico = DB::select("SELECT tecnicoforms.competencia,SUM(tecnicoforms.ponderacion) suma FROM tecnicoforms WHERE tecnicoforms.formmodel_id = $evalproce->form_version_id GROUP BY tecnicoforms.competencia ORDER BY tecnicoforms.competencia");
 
         $numadministrativo = 0;
         $factoradministrativo = DB::table('administrativoforms')
                         ->where("formmodel_id", "=", $evalproce->form_version_id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_administrativo = array();
-        foreach ($factoradministrativo as $administrativo) {
-            array_push($competencias_administrativo, $administrativo->competencia);
-        };
-        $competencias_administrativo = array_unique($competencias_administrativo);
+
+        $competencias_administrativo = DB::select("SELECT administrativoforms.competencia,SUM(administrativoforms.ponderacion) suma FROM administrativoforms WHERE administrativoforms.formmodel_id = $evalproce->form_version_id GROUP BY administrativoforms.competencia ORDER BY administrativoforms.competencia");
 
 
         $numauxiliar = 0;
@@ -380,12 +367,12 @@ class EvalproceController extends Controller
                         ->where("formmodel_id", "=", $evalproce->form_version_id)
                         ->orderBy('factor','ASC')
                         ->get();
-        $competencias_auxiliar = array();
-        foreach ($factorauxiliar as $auxiliar) {
-            array_push($competencias_auxiliar, $auxiliar->competencia);
-        };
-        $competencias_auxiliar = array_unique($competencias_auxiliar);
-
+        // $competencias_auxiliar = array();
+        // foreach ($factorauxiliar as $auxiliar) {
+        //     array_push($competencias_auxiliar, $auxiliar->competencia);
+        // };
+        // $competencias_auxiliar = array_unique($competencias_auxiliar);
+        $competencias_auxiliar = DB::select("SELECT auxiliarforms.competencia,SUM(auxiliarforms.ponderacion) suma FROM auxiliarforms WHERE auxiliarforms.formmodel_id = $evalproce->form_version_id GROUP BY auxiliarforms.competencia ORDER BY auxiliarforms.competencia");
 
         return view('evalproce.show', compact('evalproce','factorjecutivo', 'competencias_ejecutivo','numejecutivo','factormedios','competencias_medios','nummedio','factorprofesional','competencias_profesional','numprofesional','factortecnico','competencias_tecnico','numtecnico','factoradministrativo', 'competencias_administrativo','numadministrativo','factorauxiliar', 'competencias_auxiliar','numauxiliar'));
     }

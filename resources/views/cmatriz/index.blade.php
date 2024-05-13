@@ -49,78 +49,41 @@
             <div class="row row-deck row-cards">
                 <div class="col-12">
                     <div class="card">
-                        {{-- <div class="card-header">
-                            <h3 class="card-title">Versiones</h3>
-                        </div> --}}
-                        <div class="table-responsive min-vh-100">
-                            <table class="table card-table table-vcenter datatable">
-                                <thead>
-                                <tr>                
-										<th>Versión</th>
-										<th>Creador</th>
-										<th>Descripción</th>
-										<th>Fecha de creación</th>
-										
-
-                                    <th class="w-1"></th>
-                                </tr>
-                                </thead>
-
-                                <tbody>
-                                @forelse ($versiones as $version)
-                                    <tr>
-											<td>{{ $version->id }}</td>
-											<td>{{ $version->creador }}</td>
-											<td>{{ $version->descripcion }}</td>
-											{{-- <td>{{ $version->tipo->tipo_formulario }}</td> --}}
-											<td>{{date('d/m/Y',strtotime($version->created_at))}}</td>
-
-                                        <td>
-                                            <div class="btn-list flex-nowrap">
-                                                <a class="btn align-text-top"
-                                                href="{{ route('cmatriz.show',$version->id) }}">
-                                                 Ver detalles
-                                                </a>
-                                                {{-- <div class="dropdown">
-                                                    <button class="btn dropdown-toggle align-text-top"
-                                                            data-bs-toggle="dropdown">
-                                                        Acciones
-                                                    </button>
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item"
-                                                           href="{{ route('cmatriz.show',$version->id) }}">
-                                                            Ver
+                        <div class="table-responsive">
+                            <div class="card-body">
+                                <div class="table card-table">
+                                    <table id="datatable" class="stripe compact tabla">
+                                        <thead>
+                                            <tr>                
+                                                <th>Versión</th>
+                                                <th>Creador</th>
+                                                <th>Descripción</th>
+                                                <th>Fecha de creación</th>
+                                                <th class="w-1"></th>
+                                            </tr>
+                                        </thead>
+        
+                                        <tbody>
+                                        @foreach ($versiones as $version)
+                                            <tr>
+                                                <td>{{ $version->id }}</td>
+                                                <td>{{ $version->creador }}</td>
+                                                <td>{{ $version->descripcion }}</td>
+                                                <td>{{date('d/m/Y',strtotime($version->created_at))}}</td>
+                                                <td>
+                                                    <div class="btn-list flex-nowrap">
+                                                        <a class="btn align-text-top"
+                                                        href="{{ route('cmatriz.show',$version->id) }}">
+                                                         Ver detalles
                                                         </a>
-                                                        <a class="dropdown-item"
-                                                           href="{{ route('matriz.edit',$version->id) }}">
-                                                            Edit
-                                                        </a>
-                                                        <form
-                                                            action="{{ route('matriz.destroy',$version->id) }}"
-                                                            method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit"
-                                                                    onclick="if(!confirm('Do you Want to Proceed?')){return false;}"
-                                                                    class="dropdown-item text-red"><i
-                                                                    class="fa fa-fw fa-trash"></i>
-                                                                Delete
-                                                            </button>
-                                                        </form>
                                                     </div>
-                                                </div> --}}
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <td>No se encontraron registros</td>
-                                @endforelse
-                                </tbody>
-
-                            </table>
-                        </div>
-                       <div class="card-footer d-flex align-items-center">
-                            {!! $versiones->links('tablar::pagination') !!}
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('competencia');
             $table->integer('ponderacion');
             $table->float('nota');
+            $table->unsignedBigInteger('criterio_id');
+            $table->foreign('criterio_id')->references('id')->on('criterios')
+            ->onDelete('cascade');
             $table->string('comentario')->nullable();
             $table->timestamps();
         });

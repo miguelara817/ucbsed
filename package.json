@@ -30,6 +30,11 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "sweetalert2": "^11.10.4"
+        "datatables.net-buttons-dt": "^3.0.2",
+        "datatables.net-dt": "^2.0.5",
+        "datatables.net-plugins": "^2.0.5",
+        "jszip": "^3.10.1",
+        "pdfmake": "^0.2.10",
+        "sweetalert2": "^11.10.8"
     }
 }

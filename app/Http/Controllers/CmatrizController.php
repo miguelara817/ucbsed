@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\DB;
 class CmatrizController extends Controller
 {
     public function index() {
-        $versiones = Conformmodel::orderBy('id', 'DESC')->paginate(10);
+        $versiones = Conformmodel::orderBy('id', 'DESC')->get();
         return view('cmatriz.index', compact('versiones'))
-            ->with('i', (request()->input('page', 1) - 1) * $versiones->perPage());
+            ->with('i');
     }
 
     public function create() {
@@ -35,7 +35,9 @@ class CmatrizController extends Controller
         $numejecutivo = 0;
         $ejecutivo = array();
         $factors_ejecutivo = $request->input('ejecutivo');
+        $factors_ejecutivo_existe = false;
         if ($factors_ejecutivo) {
+            $factors_ejecutivo_existe = true;
             foreach ($factors_ejecutivo as $factorid) {
                 $factores_ejec = Factor::find(intval($factorid));
                 array_push($ejecutivo, $factores_ejec);
@@ -44,8 +46,10 @@ class CmatrizController extends Controller
 
         $nummedio= 0;
         $medio = array();
+        $factors_medios_existe = false;
         $factors_medios = $request->input('medios');
         if ($factors_medios) {
+            $factors_medios_existe = true;
             foreach ($factors_medios as $factorid) {
                 $factores_med = Factor::find(intval($factorid));
                 array_push($medio, $factores_med);
@@ -54,8 +58,10 @@ class CmatrizController extends Controller
 
         $numprofesional = 0;
         $profesional = array();
+        $factors_profesional_existe = false;
         $factors_profesional = $request->input('profesional');
         if ($factors_profesional) {
+            $factors_profesional_existe = true;
             foreach ($factors_profesional as $factorid) {
                 $factores_pr = Factor::find(intval($factorid));
                 array_push($profesional, $factores_pr);
@@ -65,8 +71,10 @@ class CmatrizController extends Controller
         
         $numtecnico = 0;
         $tecnico = array();
+        $factors_tecnico_existe = false;
         $factors_tecnico = $request->input('tecnico');
         if ($factors_tecnico) {
+            $factors_tecnico_existe = true;
             foreach ($factors_tecnico as $factorid) {
                 $factores_tc = Factor::find(intval($factorid));
                 array_push($tecnico, $factores_tc);
@@ -75,8 +83,10 @@ class CmatrizController extends Controller
 
         $numadministrativo = 0;
         $administrativo = array();
+        $factors_administrativo_existe = false;
         $factors_administrativo = $request->input('administrativo');
         if ($factors_administrativo) {
+            $factors_administrativo_existe = true;
             foreach ($factors_administrativo as $factorid) {
                 $factores_adm = Factor::find(intval($factorid));
                 array_push($administrativo, $factores_adm);
@@ -85,15 +95,18 @@ class CmatrizController extends Controller
 
         $numauxiliar= 0;
         $auxiliar = array();
+        $factors_auxiliar_existe = false;
         $factors_auxiliar = $request->input('auxiliar');
         if ($factors_auxiliar) {
+            $factors_auxiliar_existe = true;
             foreach ($factors_auxiliar as $factorid) {
                 $factores_aux = Factor::find(intval($factorid));
                 array_push($auxiliar, $factores_aux);
             }
         }
 
-        return view('cmatriz.setdata',compact('creador','descripcion','competencias','numejecutivo', 'factors_ejecutivo', 'ejecutivo', 'nummedio','factors_medios','medio', 'numprofesional', 'factors_profesional', 'profesional', 'numtecnico','factors_tecnico', 'tecnico', 'numadministrativo', 'factors_administrativo', 'administrativo', 'numauxiliar', 'factors_auxiliar', 'auxiliar'));
+        // return view('cmatriz.setdata',compact('creador','descripcion','competencias','numejecutivo', 'factors_ejecutivo', 'ejecutivo', 'nummedio','factors_medios','medio', 'numprofesional', 'factors_profesional', 'profesional', 'numtecnico','factors_tecnico', 'tecnico', 'numadministrativo', 'factors_administrativo', 'administrativo', 'numauxiliar', 'factors_auxiliar', 'auxiliar'));
+        return view('cmatriz.pr',compact('creador','descripcion','competencias','numejecutivo', 'factors_ejecutivo', 'factors_ejecutivo_existe','ejecutivo', 'nummedio','factors_medios_existe','factors_medios','medio', 'numprofesional', 'factors_profesional_existe','factors_profesional', 'profesional', 'numtecnico','factors_tecnico_existe','factors_tecnico', 'tecnico', 'numadministrativo', 'factors_administrativo_existe','factors_administrativo', 'administrativo', 'numauxiliar', 'factors_auxiliar_existe','factors_auxiliar', 'auxiliar'));
     }
 
     public function recieve(Request $request) {

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreign('cargo_jefe')->references('id')->on('cargos');
             $table->unsignedBigInteger('cargo_dependiente');
             $table->foreign('cargo_dependiente')->references('id')->on('cargos');
+            $table->unique(['cargo_jefe', 'cargo_dependiente']);
             $table->timestamps();
         });
     }

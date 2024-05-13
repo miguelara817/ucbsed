@@ -4,10 +4,6 @@
     Cargo
 @endsection
 
-@section('css')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-@endsection
-
 @section('content')
     <!-- Page header -->
     <div class="page-header d-print-none">
@@ -58,7 +54,7 @@
                         <div class="table-responsive min-vh-100">
                             <div class="card-body">
                                 <div class="table card-table">
-                                    <table id="cargostable" class="table card-table table-vcenter text-nowrap datatable">
+                                    <table id="datatable" class="stripe compact tabla">
                                         <thead>
                                         <tr>
                                             <th class="w-1">No.</th>
@@ -130,18 +126,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('js')
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script>	
-        var table = new DataTable('#cargostable', {
-            language: {
-                url: '//cdn.datatables.net/plug-ins/2.0.3/i18n/es-ES.json',
-            },
-        });
-
-        
-    </script>
 @endsection

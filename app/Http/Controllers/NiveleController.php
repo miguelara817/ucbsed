@@ -19,10 +19,10 @@ class NiveleController extends Controller
      */
     public function index()
     {
-        $niveles = Nivele::paginate(10);
+        $niveles = Nivele::all();
 
         return view('nivele.index', compact('niveles'))
-            ->with('i', (request()->input('page', 1) - 1) * $niveles->perPage());
+            ->with('i');
     }
 
     /**

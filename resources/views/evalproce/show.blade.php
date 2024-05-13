@@ -42,9 +42,6 @@
             <div class="row row-deck row-cards">
                 <div class="col-12">
                     <div class="card">
-                        {{-- <div class="card-header">
-                            <h3 class="card-title">Proceso de evaluación: {{$evalproce->id}}</h3>
-                        </div> --}}
                         <div class="card-body">
                             <div class="form-group">
                                 <strong>PROCESO DE EVALUACIÓN: </strong>
@@ -125,8 +122,7 @@
                                                     {{-- --------------------------COMPETENCIAS------------------- --}}
                                                     @forelse ($competencias_ejecutivo as $competencias)
                                                         <div class="card-header">
-                                                            {{-- <h3 class="card-title">{{$competencias->competencias}}</h3> --}}
-                                                            <h3 class="card-title">{{$competencias}}</h3>
+                                                            <h3 class="card-title">{{$competencias->competencia}}</h3>
                                                         </div>
                                                         <table class="table card-table datatable">
                                                             <thead>
@@ -139,7 +135,7 @@
                                                                 {{-- --------------------Factores Ejecutivo------------------------------ --}}
                                                                 @foreach ($factorjecutivo as $ejecutivos)
                                                                     {{-- ---------------Por competencia--------- --}}
-                                                                    @if (($ejecutivos->competencia)==($competencias))
+                                                                    @if (($ejecutivos->competencia)==($competencias->competencia))
                                                                         <tr>
                                                                             <td>{{++$numejecutivo}}</td>
                                                                             <td>{{$ejecutivos->factor}}</td>
@@ -149,7 +145,13 @@
                                                                     @endif
                                                                 @endforeach
                                                             </tbody>
-                                                        </table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colspan="3" style="text-align: center; background-color: #0054a6; color: white;">SUBTOTAL</td>
+                                                                    <td style="text-align: center; background-color: #0054a6; color: white;">{{$competencias->suma}}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>       
                                                     @empty
                                                         <div class="card-header">
                                                             <h3>¡No existen datos!</h3>
@@ -172,7 +174,7 @@
                                                     {{-- --------------------------COMPETENCIAS------------------- --}}
                                                     @forelse ($competencias_medios as $competencias)
                                                         <div class="card-header">
-                                                            <h3 class="card-title">{{$competencias}}</h3>
+                                                            <h3 class="card-title">{{$competencias->competencia}}</h3>
                                                         </div>
                                                         <table class="table card-table datatable">
                                                             <thead>
@@ -185,7 +187,7 @@
                                                                 {{-- --------------------Factores Ejecutivo------------------------------ --}}
                                                                 @foreach ($factormedios as $medio)
                                                                     {{-- ---------------Por competencia--------- --}}
-                                                                    @if (($medio->competencia)==($competencias))
+                                                                    @if (($medio->competencia)==($competencias->competencia))
                                                                         <tr>
                                                                             <td>{{++$nummedio}}</td>
                                                                             <td>{{$medio->factor}}</td>
@@ -194,6 +196,12 @@
                                                                         </tr>
                                                                     @endif
                                                                 @endforeach
+                                                            </tbody>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colspan="3" style="text-align: center; background-color: #0054a6; color: white;">SUBTOTAL</td>
+                                                                    <td style="text-align: center; background-color: #0054a6; color: white;">{{$competencias->suma}}</td>
+                                                                </tr>
                                                             </tbody>
                                                         </table>
                                                     @empty
@@ -212,13 +220,13 @@
                                         <div class="col-12">
                                             <div class="card">
                                                 <div class="card-header" style="justify-content: center; background-color: #0054a6;">
-                                                    <h3 class="card-title" style="color: #fcfdfe">NIVEL OPERATIVOS-PROFESIONAL</h3>
+                                                    <h3 class="card-title" style="color: #fcfdfe">NIVEL OPERATIVO-PROFESIONAL</h3>
                                                 </div>
                                                 <div class="table-responsive">
                                                     {{-- --------------------------COMPETENCIAS------------------- --}}
                                                     @forelse ($competencias_profesional as $competencias)
                                                         <div class="card-header">
-                                                            <h3 class="card-title">{{$competencias}}</h3>
+                                                            <h3 class="card-title">{{$competencias->competencia}}</h3>
                                                         </div>
                                                         <table class="table card-table datatable">
                                                             <thead>
@@ -231,7 +239,7 @@
                                                                 {{-- --------------------Factores Ejecutivo------------------------------ --}}
                                                                 @foreach ($factorprofesional as $profesional)
                                                                     {{-- ---------------Por competencia--------- --}}
-                                                                    @if (($profesional->competencia)==($competencias))
+                                                                    @if (($profesional->competencia)==($competencias->competencia))
                                                                         <tr>
                                                                             <td>{{++$numprofesional}}</td>
                                                                             <td>{{$profesional->factor}}</td>
@@ -240,6 +248,12 @@
                                                                         </tr>
                                                                     @endif
                                                                 @endforeach
+                                                            </tbody>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colspan="3" style="text-align: center; background-color: #0054a6; color: white;">SUBTOTAL</td>
+                                                                    <td style="text-align: center; background-color: #0054a6; color: white;">{{$competencias->suma}}</td>
+                                                                </tr>
                                                             </tbody>
                                                         </table>
                                                     @empty
@@ -264,7 +278,7 @@
                                                     {{-- --------------------------COMPETENCIAS------------------- --}}
                                                     @forelse ($competencias_tecnico as $competencias)
                                                         <div class="card-header">
-                                                            <h3 class="card-title">{{$competencias}}</h3>
+                                                            <h3 class="card-title">{{$competencias->competencia}}</h3>
                                                         </div>
                                                         <table class="table card-table datatable">
                                                             <thead>
@@ -277,7 +291,7 @@
                                                                 {{-- --------------------Factores Ejecutivo------------------------------ --}}
                                                                 @foreach ($factortecnico as $tecnico)
                                                                     {{-- ---------------Por competencia--------- --}}
-                                                                    @if (($tecnico->competencia)==($competencias))
+                                                                    @if (($tecnico->competencia)==($competencias->competencia))
                                                                         <tr>
                                                                             <td>{{++$numtecnico}}</td>
                                                                             <td>{{$tecnico->factor}}</td>
@@ -286,6 +300,12 @@
                                                                         </tr>
                                                                     @endif
                                                                 @endforeach
+                                                            </tbody>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colspan="3" style="text-align: center; background-color: #0054a6; color: white;">SUBTOTAL</td>
+                                                                    <td style="text-align: center; background-color: #0054a6; color: white;">{{$competencias->suma}}</td>
+                                                                </tr>
                                                             </tbody>
                                                         </table>
                                                     @empty
@@ -310,7 +330,7 @@
                                                     {{-- --------------------------COMPETENCIAS------------------- --}}
                                                     @forelse ($competencias_administrativo as $competencias)
                                                         <div class="card-header">
-                                                            <h3 class="card-title">{{$competencias}}</h3>
+                                                            <h3 class="card-title">{{$competencias->competencia}}</h3>
                                                         </div>
                                                         <table class="table card-table datatable">
                                                             <thead>
@@ -323,7 +343,7 @@
                                                                 {{-- --------------------Factores Ejecutivo------------------------------ --}}
                                                                 @foreach ($factoradministrativo as $administrativo)
                                                                     {{-- ---------------Por competencia--------- --}}
-                                                                    @if (($administrativo->competencia)==($competencias))
+                                                                    @if (($administrativo->competencia)==($competencias->competencia))
                                                                         <tr>
                                                                             <td>{{++$numadministrativo}}</td>
                                                                             <td>{{$administrativo->factor}}</td>
@@ -332,6 +352,12 @@
                                                                         </tr>
                                                                     @endif
                                                                 @endforeach
+                                                            </tbody>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colspan="3" style="text-align: center; background-color: #0054a6; color: white;">SUBTOTAL</td>
+                                                                    <td style="text-align: center; background-color: #0054a6; color: white;">{{$competencias->suma}}</td>
+                                                                </tr>
                                                             </tbody>
                                                         </table>
                                                     @empty
@@ -356,7 +382,7 @@
                                                     {{-- --------------------------COMPETENCIAS------------------- --}}
                                                     @forelse ($competencias_auxiliar as $competencias)
                                                         <div class="card-header">
-                                                            <h3 class="card-title">{{$competencias}}</h3>
+                                                            <h3 class="card-title">{{$competencias->competencia}}</h3>
                                                         </div>
                                                         <table class="table card-table datatable">
                                                             <thead>
@@ -369,7 +395,7 @@
                                                                 {{-- --------------------Factores Ejecutivo------------------------------ --}}
                                                                 @foreach ($factorauxiliar as $auxiliar)
                                                                     {{-- ---------------Por competencia--------- --}}
-                                                                    @if (($auxiliar->competencia)==($competencias))
+                                                                    @if (($auxiliar->competencia)==($competencias->competencia))
                                                                         <tr>
                                                                             <td>{{++$numauxiliar}}</td>
                                                                             <td>{{$auxiliar->factor}}</td>
@@ -378,6 +404,12 @@
                                                                         </tr>
                                                                     @endif
                                                                 @endforeach
+                                                            </tbody>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colspan="3" style="text-align: center; background-color: #0054a6; color: white;">SUBTOTAL</td>
+                                                                    <td style="text-align: center; background-color: #0054a6; color: white;">{{$competencias->suma}}</td>
+                                                                </tr>
                                                             </tbody>
                                                         </table>
                                                     @empty

@@ -2,10 +2,6 @@
 
 @section('title', 'Relación de usuarios')
 
-@section('css')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-@endsection
-
 @section('content')
     <!-- Page header -->
     <div class="page-header d-print-none">
@@ -50,7 +46,7 @@
                         <div class="table-responsive">
                             <div class="card-body">
                                 <div class="table card-table">
-                                    <table id="maintabla" class="stripe compact tabla">
+                                    <table id="datatable" class="stripe compact tabla">
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
@@ -121,19 +117,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('js')
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script>
-        var table = new DataTable('#maintabla', {
-      
-            language: {
-                url: '//cdn.datatables.net/plug-ins/2.0.3/i18n/es-ES.json',
-            },
-        });
-
-        
-    </script>
 @endsection

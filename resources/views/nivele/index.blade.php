@@ -39,61 +39,28 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="table-responsive">
-                            <table class="table card-table table-vcenter text-nowrap datatable">
-                                <thead>
-                                <tr>
-                                    <th class="w-1">No.</th>
-                                    <th >Nivel</th>
-                                    <th class="w-1"></th>
-                                </tr>
-                                </thead>
-
-                                <tbody>
-                                @forelse ($niveles as $nivele)
-                                    <tr>
-                                        <td>{{ ++$i }}</td>
-                                        
-											<td>{{ $nivele->nivel }}</td>
-
-                                        <td>
-                                            {{-- <div class="btn-list flex-nowrap">
-                                                <div class="dropdown">
-                                                    <button class="btn dropdown-toggle align-text-top"
-                                                            data-bs-toggle="dropdown">
-                                                        Acciones
-                                                    </button>
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item"
-                                                           href="{{ route('niveles.show',$nivele->id) }}">
-                                                            Ver
-                                                        </a>
-                                                        <a class="dropdown-item"
-                                                           href="{{ route('niveles.edit',$nivele->id) }}">
-                                                            Editar
-                                                        </a>
-                                                        <form
-                                                            action="{{ route('niveles.destroy',$nivele->id) }}"
-                                                            method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit"
-                                                                    onclick="if(!confirm('Do you Want to Proceed?')){return false;}"
-                                                                    class="dropdown-item text-red"><i
-                                                                    class="fa fa-fw fa-trash"></i>
-                                                                Delete
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <td>No Data Found</td>
-                                @endforelse
-                                </tbody>
-
-                            </table>
+                            <div class="card-body">
+                                <div class="table card-table">
+                                    <table id="datatable" class="stripe compact tabla">
+                                        <thead>
+                                            <tr>
+                                                <th class="w-1">No.</th>
+                                                <th >Nivel</th>
+                                            </tr>
+                                        </thead>
+        
+                                        <tbody>
+                                        @foreach ($niveles as $nivele)
+                                            <tr>
+                                                <td>{{ ++$i }}</td>
+                                                <td>{{ $nivele->nivel }}</td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+        
+                                    </table>
+                                </div>
+                            </div>
                         </div>
 
                     </div>

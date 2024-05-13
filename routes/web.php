@@ -18,16 +18,46 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ConfirmPasswordController;
+use App\Http\Controllers\Auth\VerificationController;
+
+// Login and Logout Routes...
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class,'login']);
+Route::post('logout',  [LoginController::class,'logout'])->name('logout');
+
+// // Registration Routes...
+// Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+// Route::post('register', [RegisterController::class, 'register']);
+
+// Password Reset Routes...
+Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('password/reset/{token}', [ForgotPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ForgotPasswordController::class, 'reset'])->name('password.update');
+
+// Confirm Password 
+Route::get('password/confirm', [ConfirmPasswordController::class, 'showConfirmForm'])->name('password.confirm');
+Route::post('password/confirm', [ConfirmPasswordController::class, 'confirm']);
+
+// Email Verification Routes...
+Route::get('email/verify', [VerificationController::class, 'show'])->name('verification.notice');
+Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
+Route::get('email/resend',  [VerificationController::class, 'resend'])->name('verification.resend');
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-
-
+// Auth::routes();
 Route::middleware([AdminAuth::class])->group(function () {
+    // Registration Routes...
+    Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+    Route::post('register', [RegisterController::class, 'register']);
+
     Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/home2', [\App\Http\Controllers\HomeController::class, 'index'])->name('home2');
     Route::resource('/niveles', App\Http\Controllers\NiveleController::class);
@@ -140,6 +170,8 @@ Route::middleware([AdminAuth::class])->group(function () {
         Route::post('/usersedit/{id}', 'editar')->name('users.editar');
         Route::post('/users/{id}', 'actualizar')->name('users.actualizar');
         Route::post('resultadosUsuario', 'buscar')->name('users.buscar');
+        Route::get('/crearUsuario', 'crearUsuario')->name('users.registrar');
+        Route::post('/guardarUsuario', 'guardarUsuario')->name('users.store');
         Route::get('/relusers', 'relusers')->name('users.relacion');
         Route::get('/usersPrint', 'print')->name('users.print');
         Route::get('/relacionesPrint', 'printRelaciones')->name('users.relprint');

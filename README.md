@@ -12,6 +12,14 @@ In this file you have to set a key.
 
 Then in the .env file you have to set the credentials to connect to the database (ucbDB.sql).
 
+In the .env you have to specify the keys for reCaptcha v2, you can follow the steps from the link below:
+
+https://github.com/anhskohbo/no-captcha?tab=readme-ov-file
+
+Or just generate keys from google reCaptcha:
+
+https://www.google.com/recaptcha/admin
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

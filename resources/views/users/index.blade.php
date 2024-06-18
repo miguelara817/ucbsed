@@ -182,7 +182,7 @@
                                                                 
                                                                 <form
                                                                     action="{{ route('users.destroy',$user->id) }}"
-                                                                    method="POST">
+                                                                    method="GET">
                                                                     @csrf
                                                                     @method('DELETE')
                                                                     <button type="submit"

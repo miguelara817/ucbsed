@@ -47,14 +47,33 @@ class ConfirmproceController extends Controller
         //                 ->join('jerarquias', 'jerarquias.cargo_dependiente', '=', 'users.id_cargo')
         //                 ->distinct()
         //                 ->get();
-        $users = DB::select('SELECT DISTINCT usersJefes.jerarquia_id, usersJefes.jefe_id, usersJefes.jefe_apellido, usersJefes.jefe_name, usersJefes.cargo_jefe_id, usersJefes.cargo_jefe, usersJefes.jefe_area ,usersJefes.dependiente_cargo_id, cargos.cargo ,users.id AS dependiente_id, users.apellido AS dependiente_apellido, users.name AS dependiente_name, users.area_id FROM
-        (SELECT DISTINCT jerarquias.id AS jerarquia_id, users.id AS jefe_id, users.apellido AS jefe_apellido, users.name AS jefe_name, jerarquias.cargo_jefe AS cargo_jefe_id, cargos.cargo AS cargo_jefe, users.area_id AS jefe_area ,jerarquias.cargo_dependiente AS dependiente_cargo_id
-        FROM jerarquias
-        INNER JOIN users ON jerarquias.cargo_jefe = users.id_cargo
-        INNER JOIN cargos ON jerarquias.cargo_jefe = cargos.id) AS usersJefes
-        INNER JOIN users ON users.id_cargo = usersJefes.dependiente_cargo_id
-        INNER JOIN cargos ON usersJefes.dependiente_cargo_id = cargos.id
-        ORDER BY dependiente_apellido;');
+        
+        // $users = DB::select('SELECT DISTINCT usersJefes.jerarquia_id, usersJefes.jefe_id, usersJefes.jefe_apellido, usersJefes.jefe_name, usersJefes.cargo_jefe_id, usersJefes.cargo_jefe, usersJefes.jefe_area ,usersJefes.dependiente_cargo_id, cargos.cargo ,users.id AS dependiente_id, users.apellido AS dependiente_apellido, users.name AS dependiente_name, users.area_id FROM
+        // (SELECT DISTINCT jerarquias.id AS jerarquia_id, users.id AS jefe_id, users.apellido AS jefe_apellido, users.name AS jefe_name, jerarquias.cargo_jefe AS cargo_jefe_id, cargos.cargo AS cargo_jefe, users.area_id AS jefe_area ,jerarquias.cargo_dependiente AS dependiente_cargo_id
+        // FROM jerarquias
+        // INNER JOIN users ON jerarquias.cargo_jefe = users.id_cargo
+        // INNER JOIN cargos ON jerarquias.cargo_jefe = cargos.id) AS usersJefes
+        // INNER JOIN users ON users.id_cargo = usersJefes.dependiente_cargo_id
+        // INNER JOIN cargos ON usersJefes.dependiente_cargo_id = cargos.id
+        // ORDER BY dependiente_apellido;');
+
+        $users = DB::select(
+            'SELECT DISTINCT usersJefes.jerarquia_id, usersJefes.jefe_id, usersJefes.jefe_apellido, 
+            usersJefes.jefe_name, usersJefes.jefe_estado,usersJefes.cargo_jefe_id, usersJefes.cargo_jefe, usersJefes.jefe_area ,
+            usersJefes.dependiente_cargo_id, cargos.cargo ,users.id AS dependiente_id, 
+            users.apellido AS dependiente_apellido, users.name AS dependiente_name, users.estado AS dependiente_estado,users.area_id 
+            FROM
+            (SELECT DISTINCT jerarquias.id AS jerarquia_id, users.id AS jefe_id, users.apellido AS 
+            jefe_apellido, users.name AS jefe_name, users.estado AS jefe_estado,jerarquias.cargo_jefe AS cargo_jefe_id, 
+            cargos.cargo AS cargo_jefe, users.area_id AS jefe_area ,jerarquias.cargo_dependiente AS dependiente_cargo_id
+            FROM jerarquias
+            INNER JOIN users ON jerarquias.cargo_jefe = users.id_cargo
+            INNER JOIN cargos ON jerarquias.cargo_jefe = cargos.id) AS usersJefes
+            INNER JOIN users ON users.id_cargo = usersJefes.dependiente_cargo_id
+            INNER JOIN cargos ON usersJefes.dependiente_cargo_id = cargos.id
+            WHERE usersJefes.jefe_estado = 1 AND users.estado = 1
+            ORDER BY dependiente_apellido;'
+        );
 
         return view('confirmproce.confassign', compact('users','version_id','fecha_inicio','fecha_conclusion'));
     }

@@ -33,6 +33,7 @@ class User extends Authenticatable
         'fecha_nacimiento',
         'doc_identidad',
         'tipocontrato_id',
+        'estado'
     ];
 
     /**

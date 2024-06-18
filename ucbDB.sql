@@ -32,20 +32,20 @@ CREATE TABLE IF NOT EXISTS `administrativoforms` (
   PRIMARY KEY (`id`),
   KEY `administrativoforms_formmodel_id_foreign` (`formmodel_id`),
   CONSTRAINT `administrativoforms_formmodel_id_foreign` FOREIGN KEY (`formmodel_id`) REFERENCES `formmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.administrativoforms: ~10 rows (aproximadamente)
 INSERT INTO `administrativoforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `competencia`, `ponderacion`, `created_at`, `updated_at`) VALUES
-	(12, 47, 'Destreza laboral', 'Capacidad de aplicar destrezas, habilidades y conocimientos que sean necesarios para ser efectivo en el contenido funcional específico del puesto', 'COMPETENCIAS TÉCNICAS', 40, '2023-12-17 23:46:34', '2023-12-17 23:46:34'),
-	(13, 47, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 30, '2023-12-17 23:46:35', '2023-12-17 23:46:35'),
-	(14, 47, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 30, '2023-12-17 23:46:35', '2023-12-17 23:46:35'),
-	(15, 47, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 50, '2023-12-17 23:46:35', '2023-12-17 23:46:35'),
-	(16, 47, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 50, '2023-12-17 23:46:35', '2023-12-17 23:46:35'),
-	(17, 47, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:35', '2023-12-17 23:46:35'),
-	(18, 47, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:36', '2023-12-17 23:46:36'),
-	(19, 47, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:36', '2023-12-17 23:46:36'),
-	(20, 47, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:36', '2023-12-17 23:46:36'),
-	(21, 47, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:36', '2023-12-17 23:46:36');
+	(1, 1, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 50, '2024-05-21 05:35:02', '2024-05-21 05:35:02'),
+	(2, 1, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 50, '2024-05-21 05:35:02', '2024-05-21 05:35:02'),
+	(3, 1, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:02', '2024-05-21 05:35:02'),
+	(4, 1, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:02', '2024-05-21 05:35:02'),
+	(5, 1, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:02', '2024-05-21 05:35:02'),
+	(6, 1, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:02', '2024-05-21 05:35:02'),
+	(7, 1, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:03', '2024-05-21 05:35:03'),
+	(8, 1, 'Destreza laboral', 'Capacidad de aplicar destrezas, habilidades y conocimientos que sean necesarios para ser efectivo en el contenido funcional específico del puesto', 'COMPETENCIAS TÉCNICAS', 30, '2024-05-21 05:35:03', '2024-05-21 05:35:03'),
+	(9, 1, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 30, '2024-05-21 05:35:03', '2024-05-21 05:35:03'),
+	(10, 1, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 40, '2024-05-21 05:35:03', '2024-05-21 05:35:03');
 
 -- Volcando estructura para tabla ucb.arbolcargos
 CREATE TABLE IF NOT EXISTS `arbolcargos` (
@@ -266,50 +266,7 @@ CREATE TABLE IF NOT EXISTS `assignments` (
   CONSTRAINT `assignments_evaluador_id_foreign` FOREIGN KEY (`evaluador_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1989 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.assignments: ~42 rows (aproximadamente)
-INSERT INTO `assignments` (`id`, `evalprocess_id`, `evaluador_id`, `evaluado_id`, `evaluador_calificacion`, `evaluado_calificacion`, `evaluado_deacuerdo`, `finalizacion`, `created_at`, `updated_at`) VALUES
-	(1947, 4, 165, 13, 0, 0, 0, 0, '2024-05-13 06:25:42', '2024-05-13 06:25:42'),
-	(1948, 4, 16, 27, 0, 0, 0, 0, '2024-05-13 06:25:42', '2024-05-13 06:25:42'),
-	(1949, 4, 16, 17, 0, 0, 0, 0, '2024-05-13 06:25:42', '2024-05-13 06:25:42'),
-	(1950, 4, 14, 20, 0, 0, 0, 0, '2024-05-13 06:25:42', '2024-05-13 06:25:42'),
-	(1951, 4, 16, 18, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
-	(1952, 4, 14, 21, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
-	(1953, 4, 13, 16, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
-	(1954, 4, 14, 22, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
-	(1955, 4, 14, 23, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
-	(1956, 4, 14, 24, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
-	(1957, 4, 13, 177, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
-	(1958, 4, 13, 14, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
-	(1959, 4, 14, 25, 0, 0, 0, 0, '2024-05-13 06:25:43', '2024-05-13 06:25:43'),
-	(1960, 4, 14, 26, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
-	(1961, 4, 16, 19, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
-	(1962, 4, 94, 131, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
-	(1963, 4, 121, 122, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
-	(1964, 4, 126, 127, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
-	(1965, 4, 94, 121, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
-	(1966, 4, 94, 123, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
-	(1967, 4, 112, 118, 0, 0, 0, 0, '2024-05-13 06:25:44', '2024-05-13 06:25:44'),
-	(1968, 4, 94, 95, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
-	(1969, 4, 94, 132, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
-	(1970, 4, 112, 117, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
-	(1971, 4, 165, 94, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
-	(1972, 4, 112, 119, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
-	(1973, 4, 112, 114, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
-	(1974, 4, 112, 120, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
-	(1975, 4, 112, 115, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
-	(1976, 4, 94, 126, 0, 0, 0, 0, '2024-05-13 06:25:45', '2024-05-13 06:25:45'),
-	(1977, 4, 133, 138, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
-	(1978, 4, 123, 124, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
-	(1979, 4, 94, 129, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
-	(1980, 4, 94, 130, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
-	(1981, 4, 94, 112, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
-	(1982, 4, 133, 191, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
-	(1983, 4, 112, 113, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
-	(1984, 4, 112, 116, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
-	(1985, 4, 123, 125, 0, 0, 0, 0, '2024-05-13 06:25:46', '2024-05-13 06:25:46'),
-	(1986, 4, 94, 176, 0, 0, 0, 0, '2024-05-13 06:25:47', '2024-05-13 06:25:47'),
-	(1987, 4, 201, 139, 0, 0, 0, 0, '2024-05-13 06:25:47', '2024-05-13 06:25:47'),
-	(1988, 4, 94, 128, 0, 0, 0, 0, '2024-05-13 06:25:47', '2024-05-13 06:25:47');
+-- Volcando datos para la tabla ucb.assignments: ~0 rows (aproximadamente)
 
 -- Volcando estructura para tabla ucb.auxiliarforms
 CREATE TABLE IF NOT EXISTS `auxiliarforms` (
@@ -324,21 +281,21 @@ CREATE TABLE IF NOT EXISTS `auxiliarforms` (
   PRIMARY KEY (`id`),
   KEY `auxiliarforms_formmodel_id_foreign` (`formmodel_id`),
   CONSTRAINT `auxiliarforms_formmodel_id_foreign` FOREIGN KEY (`formmodel_id`) REFERENCES `formmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.auxiliarforms: ~11 rows (aproximadamente)
 INSERT INTO `auxiliarforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `competencia`, `ponderacion`, `created_at`, `updated_at`) VALUES
-	(11, 47, 'Destreza laboral', 'Capacidad de aplicar destrezas, habilidades y conocimientos que sean necesarios para ser efectivo en el contenido funcional específico del puesto', 'COMPETENCIAS TÉCNICAS', 40, '2023-12-17 23:46:36', '2023-12-17 23:46:36'),
-	(12, 47, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 30, '2023-12-17 23:46:37', '2023-12-17 23:46:37'),
-	(13, 47, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 30, '2023-12-17 23:46:37', '2023-12-17 23:46:37'),
-	(14, 47, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, '2023-12-17 23:46:37', '2023-12-17 23:46:37'),
-	(15, 47, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2023-12-17 23:46:38', '2023-12-17 23:46:38'),
-	(16, 47, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2023-12-17 23:46:38', '2023-12-17 23:46:38'),
-	(17, 47, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:38', '2023-12-17 23:46:38'),
-	(18, 47, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:38', '2023-12-17 23:46:38'),
-	(19, 47, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:38', '2023-12-17 23:46:38'),
-	(20, 47, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:38', '2023-12-17 23:46:38'),
-	(21, 47, 'Iniciativa', 'Capacidad de emprender acciones, solucionar problemas rutinarios y mejorar resultados de acuerdo a la situación laboral que se presente.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:39', '2023-12-17 23:46:39');
+	(1, 1, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2024-05-21 05:35:03', '2024-05-21 05:35:03'),
+	(2, 1, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2024-05-21 05:35:04', '2024-05-21 05:35:04'),
+	(3, 1, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, '2024-05-21 05:35:04', '2024-05-21 05:35:04'),
+	(4, 1, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:04', '2024-05-21 05:35:04'),
+	(5, 1, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:04', '2024-05-21 05:35:04'),
+	(6, 1, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:04', '2024-05-21 05:35:04'),
+	(7, 1, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:05', '2024-05-21 05:35:05'),
+	(8, 1, 'Iniciativa', 'Capacidad de emprender acciones, solucionar problemas rutinarios y mejorar resultados de acuerdo a la situación laboral que se presente.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:05', '2024-05-21 05:35:05'),
+	(9, 1, 'Destreza laboral', 'Capacidad de aplicar destrezas, habilidades y conocimientos que sean necesarios para ser efectivo en el contenido funcional específico del puesto', 'COMPETENCIAS TÉCNICAS', 30, '2024-05-21 05:35:05', '2024-05-21 05:35:05'),
+	(10, 1, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 30, '2024-05-21 05:35:05', '2024-05-21 05:35:05'),
+	(11, 1, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 40, '2024-05-21 05:35:05', '2024-05-21 05:35:05');
 
 -- Volcando estructura para tabla ucb.bodyresults
 CREATE TABLE IF NOT EXISTS `bodyresults` (
@@ -381,10 +338,7 @@ INSERT INTO `cadministrativoforms` (`id`, `conformmodel_id`, `factor`, `descripc
 	(1, 5, 'Conocimiento de puesto', 'Conoce los temas relativos al ejercicio del puesto, los procedimientos de trabajo y la vinculación del puesto con otros funcionarios.', 25.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35'),
 	(2, 5, 'Calidad de Trabajo', 'Presenta orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 25.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35'),
 	(3, 5, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 25.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35'),
-	(4, 5, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 25.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35'),
-	(5, 6, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 10.00, '2024-04-29 01:28:43', '2024-04-29 01:28:43'),
-	(6, 6, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 20.00, '2024-04-29 01:28:43', '2024-04-29 01:28:43'),
-	(7, 6, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 70.00, '2024-04-29 01:28:44', '2024-04-29 01:28:44');
+	(4, 5, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 25.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35');
 
 -- Volcando estructura para tabla ucb.cargos
 CREATE TABLE IF NOT EXISTS `cargos` (
@@ -593,9 +547,7 @@ CREATE TABLE IF NOT EXISTS `cauxiliarforms` (
 INSERT INTO `cauxiliarforms` (`id`, `conformmodel_id`, `factor`, `descripcion`, `ponderacion`, `created_at`, `updated_at`) VALUES
 	(1, 5, 'Conocimiento de puesto', 'Conoce los temas relativos al ejercicio del puesto, los procedimientos de trabajo y la vinculación del puesto con otros funcionarios.', 50.00, '2024-01-22 02:29:36', '2024-01-22 02:29:36'),
 	(2, 5, 'Calidad de Trabajo', 'Presenta orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 30.00, '2024-01-22 02:29:36', '2024-01-22 02:29:36'),
-	(3, 5, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 20.00, '2024-01-22 02:29:36', '2024-01-22 02:29:36'),
-	(4, 6, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 50.00, '2024-04-29 01:28:44', '2024-04-29 01:28:44'),
-	(5, 6, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 50.00, '2024-04-29 01:28:44', '2024-04-29 01:28:44');
+	(3, 5, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 20.00, '2024-01-22 02:29:36', '2024-01-22 02:29:36');
 
 -- Volcando estructura para tabla ucb.cejecutivoforms
 CREATE TABLE IF NOT EXISTS `cejecutivoforms` (
@@ -620,10 +572,7 @@ INSERT INTO `cejecutivoforms` (`id`, `conformmodel_id`, `factor`, `descripcion`,
 	(5, 5, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 10.00, '2024-01-22 02:29:30', '2024-01-22 02:29:30'),
 	(6, 5, 'Calidad de las relaciones humanas', 'Establece y mantiene relaciones de trabajo armónicas con sus superiores y compañero(a)s de trabajo.', 10.00, '2024-01-22 02:29:31', '2024-01-22 02:29:31'),
 	(7, 5, 'Calidad de las relaciones con terceros', 'Establece y mantiene relaciones armónicas con el personas externas a la institución y el público en general.', 10.00, '2024-01-22 02:29:31', '2024-01-22 02:29:31'),
-	(8, 5, 'Disciplina', 'Cumple las normas, disposiciones y reglamentos que regulan el trabajo.', 30.00, '2024-01-22 02:29:31', '2024-01-22 02:29:31'),
-	(9, 6, 'Conocimiento de puesto', 'Conoce los temas relativos al ejercicio del puesto, los procedimientos de trabajo y la vinculación del puesto con otros funcionarios.', 20.00, '2024-04-29 01:28:39', '2024-04-29 01:28:39'),
-	(10, 6, 'Calidad de Trabajo', 'Presenta orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 50.00, '2024-04-29 01:28:39', '2024-04-29 01:28:39'),
-	(11, 6, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 30.00, '2024-04-29 01:28:39', '2024-04-29 01:28:39');
+	(8, 5, 'Disciplina', 'Cumple las normas, disposiciones y reglamentos que regulan el trabajo.', 30.00, '2024-01-22 02:29:31', '2024-01-22 02:29:31');
 
 -- Volcando estructura para tabla ucb.cmediosforms
 CREATE TABLE IF NOT EXISTS `cmediosforms` (
@@ -647,10 +596,7 @@ INSERT INTO `cmediosforms` (`id`, `conformmodel_id`, `factor`, `descripcion`, `p
 	(4, 5, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 10.00, '2024-01-22 02:29:32', '2024-01-22 02:29:32'),
 	(5, 5, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 10.00, '2024-01-22 02:29:32', '2024-01-22 02:29:32'),
 	(6, 5, 'Calidad de las relaciones humanas', 'Establece y mantiene relaciones de trabajo armónicas con sus superiores y compañero(a)s de trabajo.', 20.00, '2024-01-22 02:29:32', '2024-01-22 02:29:32'),
-	(7, 5, 'Calidad de las relaciones con terceros', 'Establece y mantiene relaciones armónicas con el personas externas a la institución y el público en general.', 20.00, '2024-01-22 02:29:32', '2024-01-22 02:29:32'),
-	(8, 6, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 20.00, '2024-04-29 01:28:40', '2024-04-29 01:28:40'),
-	(9, 6, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 30.00, '2024-04-29 01:28:41', '2024-04-29 01:28:41'),
-	(10, 6, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 50.00, '2024-04-29 01:28:41', '2024-04-29 01:28:41');
+	(7, 5, 'Calidad de las relaciones con terceros', 'Establece y mantiene relaciones armónicas con el personas externas a la institución y el público en general.', 20.00, '2024-01-22 02:29:32', '2024-01-22 02:29:32');
 
 -- Volcando estructura para tabla ucb.competencias
 CREATE TABLE IF NOT EXISTS `competencias` (
@@ -698,7 +644,7 @@ CREATE TABLE IF NOT EXISTS `confirmforms` (
   PRIMARY KEY (`id`),
   KEY `confirmforms_conformmodel_id_foreign` (`conformmodel_id`),
   CONSTRAINT `confirmforms_conformmodel_id_foreign` FOREIGN KEY (`conformmodel_id`) REFERENCES `conformmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.confirmforms: ~0 rows (aproximadamente)
 
@@ -738,12 +684,11 @@ CREATE TABLE IF NOT EXISTS `conformmodels` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.conformmodels: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.conformmodels: ~1 rows (aproximadamente)
 INSERT INTO `conformmodels` (`id`, `creador`, `descripcion`, `created_at`, `updated_at`) VALUES
-	(5, 'Miguel Angel Lara Nisttahuz', 'Versión para la gestión 2024.', '2024-01-22 02:29:28', '2024-01-22 02:29:28'),
-	(6, 'John Doe', '.', '2024-04-29 01:28:37', '2024-04-29 01:28:37');
+	(5, 'Javier Griffiths', 'Versión para la gestión 2024.', '2024-01-22 02:29:28', '2024-01-22 02:29:28');
 
 -- Volcando estructura para tabla ucb.confproces
 CREATE TABLE IF NOT EXISTS `confproces` (
@@ -805,8 +750,7 @@ INSERT INTO `cprofesionalforms` (`id`, `conformmodel_id`, `factor`, `descripcion
 	(3, 5, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 10.00, '2024-01-22 02:29:33', '2024-01-22 02:29:33'),
 	(4, 5, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 20.00, '2024-01-22 02:29:33', '2024-01-22 02:29:33'),
 	(5, 5, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 20.00, '2024-01-22 02:29:34', '2024-01-22 02:29:34'),
-	(6, 5, 'Calidad de las relaciones humanas', 'Establece y mantiene relaciones de trabajo armónicas con sus superiores y compañero(a)s de trabajo.', 20.00, '2024-01-22 02:29:34', '2024-01-22 02:29:34'),
-	(7, 6, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 100.00, '2024-04-29 01:28:41', '2024-04-29 01:28:41');
+	(6, 5, 'Calidad de las relaciones humanas', 'Establece y mantiene relaciones de trabajo armónicas con sus superiores y compañero(a)s de trabajo.', 20.00, '2024-01-22 02:29:34', '2024-01-22 02:29:34');
 
 -- Volcando estructura para tabla ucb.criterios
 CREATE TABLE IF NOT EXISTS `criterios` (
@@ -844,10 +788,7 @@ INSERT INTO `ctecnicoforms` (`id`, `conformmodel_id`, `factor`, `descripcion`, `
 	(2, 5, 'Calidad de Trabajo', 'Presenta orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 20.00, '2024-01-22 02:29:34', '2024-01-22 02:29:34'),
 	(3, 5, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 20.00, '2024-01-22 02:29:34', '2024-01-22 02:29:34'),
 	(4, 5, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 20.00, '2024-01-22 02:29:34', '2024-01-22 02:29:34'),
-	(5, 5, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 20.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35'),
-	(6, 6, 'Oportunidad', 'Cumple las tareas asignadas en el plazo y condiciones que se le han fijado.', 20.00, '2024-04-29 01:28:42', '2024-04-29 01:28:42'),
-	(7, 6, 'Autonomía', 'Cumple con las funciones inherentes al puesto y las tareas encomendadas, sin necesidad de supervisión permanente.', 50.00, '2024-04-29 01:28:42', '2024-04-29 01:28:42'),
-	(8, 6, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 30.00, '2024-04-29 01:28:43', '2024-04-29 01:28:43');
+	(5, 5, 'Vocación de servicio', 'Muestra interés en cooperar a sus superiores y al personal en general.', 20.00, '2024-01-22 02:29:35', '2024-01-22 02:29:35');
 
 -- Volcando estructura para tabla ucb.departamentos
 CREATE TABLE IF NOT EXISTS `departamentos` (
@@ -929,26 +870,26 @@ CREATE TABLE IF NOT EXISTS `ejecutivoforms` (
   PRIMARY KEY (`id`),
   KEY `ejecutivoforms_formmodel_id_foreign` (`formmodel_id`),
   CONSTRAINT `ejecutivoforms_formmodel_id_foreign` FOREIGN KEY (`formmodel_id`) REFERENCES `formmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.ejecutivoforms: ~16 rows (aproximadamente)
 INSERT INTO `ejecutivoforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `competencia`, `ponderacion`, `created_at`, `updated_at`) VALUES
-	(15, 47, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:26', '2023-12-17 23:46:26'),
-	(16, 47, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:26', '2023-12-17 23:46:26'),
-	(17, 47, 'Gestión en el puesto', 'Capacidad de planificar, organizar, ejecutar y controlar cada una de las etapas de desarrollo de sus funciones en el puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:26', '2023-12-17 23:46:26'),
-	(18, 47, 'Dominio funcional', 'Capacidad de aplicar destrezas, habilidades y conocimientos que son necesarios para ser efectivo en el contenido funcional específico del puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:26', '2023-12-17 23:46:26'),
-	(19, 47, 'Propuesta', 'Capacidad de proponer iniciativas, proyectos, que permitan potenciar el desarrollo de las actividades de su área de trabajo.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:27', '2023-12-17 23:46:27'),
-	(20, 47, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, '2023-12-17 23:46:27', '2023-12-17 23:46:27'),
-	(21, 47, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2023-12-17 23:46:27', '2023-12-17 23:46:27'),
-	(22, 47, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2023-12-17 23:46:27', '2023-12-17 23:46:27'),
-	(23, 47, 'Liderazgo', 'Capacidad de ejercer influencia eficaz sobre las actividades de los miembros del equipo para lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:27', '2023-12-17 23:46:27'),
-	(24, 47, 'Orientación a  resultados', 'Capacidad de desafiarse y desafiar a la organización  para sobresalir y lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:27', '2023-12-17 23:46:27'),
-	(25, 47, 'Dirección de equipos', 'Capacidad de trabajar y colaborar de manera efectiva con otros, generando sinergias,  para lograr una meta común', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:27', '2023-12-17 23:46:27'),
-	(26, 47, 'Capacidad de negociación', 'Capacidad de identificar las necesidades y motivaciones de las partes en conflicto, para lograr compromisos mutuamente benéficos', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:28', '2023-12-17 23:46:28'),
-	(27, 47, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:28', '2023-12-17 23:46:28'),
-	(28, 47, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:28', '2023-12-17 23:46:28'),
-	(29, 47, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:28', '2023-12-17 23:46:28'),
-	(30, 47, 'Toma de decisiones', 'Capacidad de reunir los elementos necesarios y efectuar un análisis cuidadoso para la mejor toma de decisiones.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:28', '2023-12-17 23:46:28');
+	(1, 1, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2024-05-21 05:34:52', '2024-05-21 05:34:52'),
+	(2, 1, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2024-05-21 05:34:52', '2024-05-21 05:34:52'),
+	(3, 1, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, '2024-05-21 05:34:53', '2024-05-21 05:34:53'),
+	(4, 1, 'Liderazgo', 'Capacidad de ejercer influencia eficaz sobre las actividades de los miembros del equipo para lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:34:53', '2024-05-21 05:34:53'),
+	(5, 1, 'Orientación a  resultados', 'Capacidad de desafiarse y desafiar a la organización  para sobresalir y lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:53', '2024-05-21 05:34:53'),
+	(6, 1, 'Dirección de equipos', 'Capacidad de trabajar y colaborar de manera efectiva con otros, generando sinergias,  para lograr una meta común', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:53', '2024-05-21 05:34:53'),
+	(7, 1, 'Capacidad de negociación', 'Capacidad de identificar las necesidades y motivaciones de las partes en conflicto, para lograr compromisos mutuamente benéficos', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:54', '2024-05-21 05:34:54'),
+	(8, 1, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:54', '2024-05-21 05:34:54'),
+	(9, 1, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:54', '2024-05-21 05:34:54'),
+	(10, 1, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:54', '2024-05-21 05:34:54'),
+	(11, 1, 'Toma de decisiones', 'Capacidad de reunir los elementos necesarios y efectuar un análisis cuidadoso para la mejor toma de decisiones.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:34:55', '2024-05-21 05:34:55'),
+	(12, 1, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:55', '2024-05-21 05:34:55'),
+	(13, 1, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:55', '2024-05-21 05:34:55'),
+	(14, 1, 'Gestión en el puesto', 'Capacidad de planificar, organizar, ejecutar y controlar cada una de las etapas de desarrollo de sus funciones en el puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:55', '2024-05-21 05:34:55'),
+	(15, 1, 'Dominio funcional', 'Capacidad de aplicar destrezas, habilidades y conocimientos que son necesarios para ser efectivo en el contenido funcional específico del puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:55', '2024-05-21 05:34:55'),
+	(16, 1, 'Propuesta', 'Capacidad de proponer iniciativas, proyectos, que permitan potenciar el desarrollo de las actividades de su área de trabajo.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:55', '2024-05-21 05:34:55');
 
 -- Volcando estructura para tabla ucb.evaldetailsresults
 CREATE TABLE IF NOT EXISTS `evaldetailsresults` (
@@ -986,11 +927,9 @@ CREATE TABLE IF NOT EXISTS `evalproces` (
   PRIMARY KEY (`id`),
   KEY `evalproces_form_version_id_foreign` (`form_version_id`),
   CONSTRAINT `evalplocess_formmodels_id_foreign` FOREIGN KEY (`form_version_id`) REFERENCES `formmodels` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.evalproces: ~0 rows (aproximadamente)
-INSERT INTO `evalproces` (`id`, `form_version_id`, `texto_encabezado`, `fecha_inicio`, `fecha_conclusion`, `texto_instruccion`, `finalizacion`, `created_at`, `updated_at`) VALUES
-	(4, 47, '.', '2024-05-12', '2024-05-16', '.', 0, '2024-05-13 06:25:42', '2024-05-13 06:25:42');
 
 -- Volcando estructura para tabla ucb.evalresults
 CREATE TABLE IF NOT EXISTS `evalresults` (
@@ -1103,11 +1042,11 @@ CREATE TABLE IF NOT EXISTS `formmodels` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.formmodels: ~0 rows (aproximadamente)
 INSERT INTO `formmodels` (`id`, `creador`, `descripcion`, `created_at`, `updated_at`) VALUES
-	(47, 'Miguel Angel Lara Nisttahuz', 'Esta versión será utilizada en todos los procesos de evaluación hasta nuevo aviso.', '2023-12-17 23:46:25', '2023-12-17 23:46:25');
+	(1, 'Javier Griffiths', 'Esta versión será utilizada en los procesos de evaluación hasta nuevo aviso.', '2024-05-21 05:34:52', '2024-05-21 05:34:52');
 
 -- Volcando estructura para tabla ucb.formularios
 CREATE TABLE IF NOT EXISTS `formularios` (
@@ -1415,26 +1354,26 @@ CREATE TABLE IF NOT EXISTS `mediosforms` (
   PRIMARY KEY (`id`),
   KEY `mediosforms_formmodel_id_foreign` (`formmodel_id`),
   CONSTRAINT `mediosforms_formmodel_id_foreign` FOREIGN KEY (`formmodel_id`) REFERENCES `formmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.mediosforms: ~16 rows (aproximadamente)
 INSERT INTO `mediosforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `competencia`, `ponderacion`, `created_at`, `updated_at`) VALUES
-	(15, 47, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:28', '2023-12-17 23:46:28'),
-	(16, 47, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:29', '2023-12-17 23:46:29'),
-	(17, 47, 'Gestión en el puesto', 'Capacidad de planificar, organizar, ejecutar y controlar cada una de las etapas de desarrollo de sus funciones en el puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:29', '2023-12-17 23:46:29'),
-	(18, 47, 'Dominio funcional', 'Capacidad de aplicar destrezas, habilidades y conocimientos que son necesarios para ser efectivo en el contenido funcional específico del puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:29', '2023-12-17 23:46:29'),
-	(19, 47, 'Propuesta', 'Capacidad de proponer iniciativas, proyectos, que permitan potenciar el desarrollo de las actividades de su área de trabajo.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:29', '2023-12-17 23:46:29'),
-	(20, 47, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, '2023-12-17 23:46:29', '2023-12-17 23:46:29'),
-	(21, 47, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2023-12-17 23:46:29', '2023-12-17 23:46:29'),
-	(22, 47, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2023-12-17 23:46:29', '2023-12-17 23:46:29'),
-	(23, 47, 'Liderazgo', 'Capacidad de ejercer influencia eficaz sobre las actividades de los miembros del equipo para lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:29', '2023-12-17 23:46:29'),
-	(24, 47, 'Orientación a  resultados', 'Capacidad de desafiarse y desafiar a la organización  para sobresalir y lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:29', '2023-12-17 23:46:29'),
-	(25, 47, 'Dirección de equipos', 'Capacidad de trabajar y colaborar de manera efectiva con otros, generando sinergias,  para lograr una meta común', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:30', '2023-12-17 23:46:30'),
-	(26, 47, 'Capacidad de negociación', 'Capacidad de identificar las necesidades y motivaciones de las partes en conflicto, para lograr compromisos mutuamente benéficos', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:30', '2023-12-17 23:46:30'),
-	(27, 47, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:30', '2023-12-17 23:46:30'),
-	(28, 47, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:30', '2023-12-17 23:46:30'),
-	(29, 47, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:30', '2023-12-17 23:46:30'),
-	(30, 47, 'Toma de decisiones', 'Capacidad de reunir los elementos necesarios y efectuar un análisis cuidadoso para la mejor toma de decisiones.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:30', '2023-12-17 23:46:30');
+	(1, 1, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2024-05-21 05:34:55', '2024-05-21 05:34:55'),
+	(2, 1, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2024-05-21 05:34:56', '2024-05-21 05:34:56'),
+	(3, 1, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, '2024-05-21 05:34:56', '2024-05-21 05:34:56'),
+	(4, 1, 'Liderazgo', 'Capacidad de ejercer influencia eficaz sobre las actividades de los miembros del equipo para lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:34:56', '2024-05-21 05:34:56'),
+	(5, 1, 'Orientación a  resultados', 'Capacidad de desafiarse y desafiar a la organización  para sobresalir y lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:56', '2024-05-21 05:34:56'),
+	(6, 1, 'Dirección de equipos', 'Capacidad de trabajar y colaborar de manera efectiva con otros, generando sinergias,  para lograr una meta común', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:56', '2024-05-21 05:34:56'),
+	(7, 1, 'Capacidad de negociación', 'Capacidad de identificar las necesidades y motivaciones de las partes en conflicto, para lograr compromisos mutuamente benéficos', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:56', '2024-05-21 05:34:56'),
+	(8, 1, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:56', '2024-05-21 05:34:56'),
+	(9, 1, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:56', '2024-05-21 05:34:56'),
+	(10, 1, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:57', '2024-05-21 05:34:57'),
+	(11, 1, 'Toma de decisiones', 'Capacidad de reunir los elementos necesarios y efectuar un análisis cuidadoso para la mejor toma de decisiones.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:34:57', '2024-05-21 05:34:57'),
+	(12, 1, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:57', '2024-05-21 05:34:57'),
+	(13, 1, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:57', '2024-05-21 05:34:57'),
+	(14, 1, 'Gestión en el puesto', 'Capacidad de planificar, organizar, ejecutar y controlar cada una de las etapas de desarrollo de sus funciones en el puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:57', '2024-05-21 05:34:57'),
+	(15, 1, 'Dominio funcional', 'Capacidad de aplicar destrezas, habilidades y conocimientos que son necesarios para ser efectivo en el contenido funcional específico del puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:57', '2024-05-21 05:34:57'),
+	(16, 1, 'Propuesta', 'Capacidad de proponer iniciativas, proyectos, que permitan potenciar el desarrollo de las actividades de su área de trabajo.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:57', '2024-05-21 05:34:57');
 
 -- Volcando estructura para tabla ucb.migrations
 CREATE TABLE IF NOT EXISTS `migrations` (
@@ -1568,7 +1507,7 @@ CREATE TABLE IF NOT EXISTS `password_reset_tokens` (
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.password_reset_tokens: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.password_reset_tokens: ~0 rows (aproximadamente)
 INSERT INTO `password_reset_tokens` (`email`, `token`, `created_at`) VALUES
 	('starmiguelara@gmail.com', '$2y$12$wNUXQibQsqauOabmHwErRuMQch04cTvzROjaTrGIyJvYgyKvtgpYq', '2023-12-21 05:25:11');
 
@@ -1641,24 +1580,24 @@ CREATE TABLE IF NOT EXISTS `profesionalforms` (
   PRIMARY KEY (`id`),
   KEY `profesionalforms_formmodel_id_foreign` (`formmodel_id`),
   CONSTRAINT `profesionalforms_formmodel_id_foreign` FOREIGN KEY (`formmodel_id`) REFERENCES `formmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.profesionalforms: ~14 rows (aproximadamente)
 INSERT INTO `profesionalforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `competencia`, `ponderacion`, `created_at`, `updated_at`) VALUES
-	(14, 47, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:30', '2023-12-17 23:46:30'),
-	(15, 47, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:31', '2023-12-17 23:46:31'),
-	(16, 47, 'Gestión en el puesto', 'Capacidad de planificar, organizar, ejecutar y controlar cada una de las etapas de desarrollo de sus funciones en el puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:31', '2023-12-17 23:46:31'),
-	(17, 47, 'Dominio funcional', 'Capacidad de aplicar destrezas, habilidades y conocimientos que son necesarios para ser efectivo en el contenido funcional específico del puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:31', '2023-12-17 23:46:31'),
-	(18, 47, 'Propuesta', 'Capacidad de proponer iniciativas, proyectos, que permitan potenciar el desarrollo de las actividades de su área de trabajo.', 'COMPETENCIAS TÉCNICAS', 20, '2023-12-17 23:46:31', '2023-12-17 23:46:31'),
-	(19, 47, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, '2023-12-17 23:46:31', '2023-12-17 23:46:31'),
-	(20, 47, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2023-12-17 23:46:31', '2023-12-17 23:46:31'),
-	(21, 47, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2023-12-17 23:46:31', '2023-12-17 23:46:31'),
-	(22, 47, 'Orientación a  resultados', 'Capacidad de desafiarse y desafiar a la organización  para sobresalir y lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:31', '2023-12-17 23:46:31'),
-	(23, 47, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:32', '2023-12-17 23:46:32'),
-	(24, 47, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:32', '2023-12-17 23:46:32'),
-	(25, 47, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:32', '2023-12-17 23:46:32'),
-	(26, 47, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:32', '2023-12-17 23:46:32'),
-	(27, 47, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:32', '2023-12-17 23:46:32');
+	(1, 1, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2024-05-21 05:34:57', '2024-05-21 05:34:57'),
+	(2, 1, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2024-05-21 05:34:58', '2024-05-21 05:34:58'),
+	(3, 1, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, '2024-05-21 05:34:58', '2024-05-21 05:34:58'),
+	(4, 1, 'Orientación a  resultados', 'Capacidad de desafiarse y desafiar a la organización  para sobresalir y lograr resultados.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:34:58', '2024-05-21 05:34:58'),
+	(5, 1, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:34:58', '2024-05-21 05:34:58'),
+	(6, 1, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:58', '2024-05-21 05:34:58'),
+	(7, 1, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:34:58', '2024-05-21 05:34:58'),
+	(8, 1, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:34:59', '2024-05-21 05:34:59'),
+	(9, 1, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:34:59', '2024-05-21 05:34:59'),
+	(10, 1, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:59', '2024-05-21 05:34:59'),
+	(11, 1, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:59', '2024-05-21 05:34:59'),
+	(12, 1, 'Gestión en el puesto', 'Capacidad de planificar, organizar, ejecutar y controlar cada una de las etapas de desarrollo de sus funciones en el puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:59', '2024-05-21 05:34:59'),
+	(13, 1, 'Dominio funcional', 'Capacidad de aplicar destrezas, habilidades y conocimientos que son necesarios para ser efectivo en el contenido funcional específico del puesto.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:59', '2024-05-21 05:34:59'),
+	(14, 1, 'Propuesta', 'Capacidad de proponer iniciativas, proyectos, que permitan potenciar el desarrollo de las actividades de su área de trabajo.', 'COMPETENCIAS TÉCNICAS', 20, '2024-05-21 05:34:59', '2024-05-21 05:34:59');
 
 -- Volcando estructura para tabla ucb.secciones
 CREATE TABLE IF NOT EXISTS `secciones` (
@@ -1724,7 +1663,7 @@ CREATE TABLE IF NOT EXISTS `seccions` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.seccions: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.seccions: ~0 rows (aproximadamente)
 INSERT INTO `seccions` (`id`, `seccion`, `created_at`, `updated_at`) VALUES
 	(1, 'Principal', '2023-11-18 23:00:39', '2023-11-18 23:00:39');
 
@@ -1754,22 +1693,22 @@ CREATE TABLE IF NOT EXISTS `tecnicoforms` (
   PRIMARY KEY (`id`),
   KEY `tecnicoforms_formmodel_id_foreign` (`formmodel_id`),
   CONSTRAINT `tecnicoforms_formmodel_id_foreign` FOREIGN KEY (`formmodel_id`) REFERENCES `formmodels` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla ucb.tecnicoforms: ~12 rows (aproximadamente)
 INSERT INTO `tecnicoforms` (`id`, `formmodel_id`, `factor`, `descripcion`, `competencia`, `ponderacion`, `created_at`, `updated_at`) VALUES
-	(13, 47, 'Destreza laboral', 'Capacidad de aplicar destrezas, habilidades y conocimientos que sean necesarios para ser efectivo en el contenido funcional específico del puesto', 'COMPETENCIAS TÉCNICAS', 40, '2023-12-17 23:46:32', '2023-12-17 23:46:32'),
-	(14, 47, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 30, '2023-12-17 23:46:33', '2023-12-17 23:46:33'),
-	(15, 47, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 30, '2023-12-17 23:46:33', '2023-12-17 23:46:33'),
-	(16, 47, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, '2023-12-17 23:46:33', '2023-12-17 23:46:33'),
-	(17, 47, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2023-12-17 23:46:33', '2023-12-17 23:46:33'),
-	(18, 47, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2023-12-17 23:46:33', '2023-12-17 23:46:33'),
-	(19, 47, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:33', '2023-12-17 23:46:33'),
-	(20, 47, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:33', '2023-12-17 23:46:33'),
-	(21, 47, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:34', '2023-12-17 23:46:34'),
-	(22, 47, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:34', '2023-12-17 23:46:34'),
-	(23, 47, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2023-12-17 23:46:34', '2023-12-17 23:46:34'),
-	(24, 47, 'Atención al detalle', 'Capacidad de prestar atención a las particularidades de un tema, para obtener un resultado lógico y preciso.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2023-12-17 23:46:34', '2023-12-17 23:46:34');
+	(1, 1, 'Principios éticos y de respeto', 'Su conducta, comportamiento y acciones se enmarcan en los principios éticos y de respeto que promueve la Universidad', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2024-05-21 05:34:59', '2024-05-21 05:34:59'),
+	(2, 1, 'Servicio y el bien común', 'Su conducta, comportamiento y acciones se enmarcan en el servicio y el bien común, en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 30, '2024-05-21 05:35:00', '2024-05-21 05:35:00'),
+	(3, 1, 'Justicia social, verdad y honestidad', 'Su conducta y comportamiento se enmarcan en la justicia social, verdad y honestidad en el marco de valores y principios que promueve la Universidad.', 'ALINEACION ESTRATEGICA CON LOS VALORES DE LA UNIVERSIDAD', 40, '2024-05-21 05:35:00', '2024-05-21 05:35:00'),
+	(4, 1, 'Comunicación', 'Capacidad de comunicarse de manera clara y efectiva con las personas dentro y fuera de la Organización', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:00', '2024-05-21 05:35:00'),
+	(5, 1, 'Colaboración', 'Capacidad de dar respuesta y apoyo al personal de la Organización que lo requiera a través de las instancias pertinentes.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:35:00', '2024-05-21 05:35:00'),
+	(6, 1, 'Resolución de problemas', 'Capacidad de resolver problemas mediante una evaluación cuidadosa y sistemática de la información, de posibles alternativas y contecuencias.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:00', '2024-05-21 05:35:00'),
+	(7, 1, 'Trabajo en equipo', 'Capacidad de interactuar de manera efectiva con el equipo de trabajo, generando sinergias,  para lograr una meta común.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:00', '2024-05-21 05:35:00'),
+	(8, 1, 'Responsabilidad', 'Capacidad de cumplir con compromisos laborales asumidos con dedicación y esfuerzo.', 'COMPETENCIAS PERSONALES / GESTIÓN', 20, '2024-05-21 05:35:01', '2024-05-21 05:35:01'),
+	(9, 1, 'Atención al detalle', 'Capacidad de prestar atención a las particularidades de un tema, para obtener un resultado lógico y preciso.', 'COMPETENCIAS PERSONALES / GESTIÓN', 10, '2024-05-21 05:35:01', '2024-05-21 05:35:01'),
+	(10, 1, 'Destreza laboral', 'Capacidad de aplicar destrezas, habilidades y conocimientos que sean necesarios para ser efectivo en el contenido funcional específico del puesto', 'COMPETENCIAS TÉCNICAS', 30, '2024-05-21 05:35:01', '2024-05-21 05:35:01'),
+	(11, 1, 'Calidad de Trabajo', 'Capacidad de presentar los trabajos, proyectos o servicios con orden, prolijidad y precisión en los productos y resultados de su trabajo, conforme a las exigencias del puesto.', 'COMPETENCIAS TÉCNICAS', 30, '2024-05-21 05:35:01', '2024-05-21 05:35:01'),
+	(12, 1, 'Adaptabilidad', 'Capacidad de adaptarse a diferentes contextos, situaciones, medios, personas y tecnologías de forma oportuna y efectiva.', 'COMPETENCIAS TÉCNICAS', 40, '2024-05-21 05:35:01', '2024-05-21 05:35:01');
 
 -- Volcando estructura para tabla ucb.tipos
 CREATE TABLE IF NOT EXISTS `tipos` (
@@ -1827,7 +1766,7 @@ CREATE TABLE IF NOT EXISTS `unidads` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.unidads: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla ucb.unidads: ~0 rows (aproximadamente)
 INSERT INTO `unidads` (`id`, `unidad`, `created_at`, `updated_at`) VALUES
 	(1, 'Reclutamiento', '2023-11-18 23:00:26', '2023-11-18 23:00:26');
 
@@ -1852,6 +1791,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `fecha_nacimiento` date DEFAULT NULL,
   `doc_identidad` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tipocontrato_id` bigint unsigned DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -1872,201 +1812,201 @@ CREATE TABLE IF NOT EXISTS `users` (
   CONSTRAINT `users_unidades_id_foreign` FOREIGN KEY (`unidad_id`) REFERENCES `unidades` (`id`) ON DELETE SET NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=216 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla ucb.users: ~193 rows (aproximadamente)
-INSERT INTO `users` (`id`, `codigo`, `name`, `apellido`, `email`, `email_verified_at`, `password`, `remember_token`, `role`, `cargo_id`, `id_cargo`, `depto_id`, `area_id`, `unidad_id`, `seccion_id`, `fecha_ingreso`, `fecha_nacimiento`, `doc_identidad`, `tipocontrato_id`, `created_at`, `updated_at`) VALUES
-	(1, NULL, 'MIGUEL ANGEL', 'LARA NISTTAHUZ', 'starmiguelara@gmail.com', NULL, '$2y$12$ETsHvgkrDFI6Y9EvNIeGe.oK0Ogs7qfT3yZTWP8Z5AwbIMWFgGM5e', NULL, 'admin', 23, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-11-10 05:59:41', '2023-11-10 05:59:41'),
-	(11, 'ALR-02', 'MARIO PORFIRIO', 'QUISPE JIMENEZ', 'mquispe@ucb.edu.bo', NULL, '$2y$12$tiSaaW1HOBDrY9GHyIgqNubRfop1nOeyLIlwYG9QaSiwkSGIu/rw6', NULL, 'user', 1, 2, 1, 8, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 08:09:12', '2024-01-04 07:21:46'),
-	(12, 'ALR-03', 'JAIME LUIS', 'CARVAJAL JALDIN', 'jcarvajal@ucb.edu.bo', NULL, '$2y$12$p8lYZ5dLc/tOrr7MG/8SWOW11.PBdieV8p2dhrzWlRhSb1XG0TiQm', NULL, 'user', 166, 3, 1, 8, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 08:16:10', '2024-01-04 07:22:37'),
-	(13, 'BC-01', 'ANDREA', 'BALLIVIAN BLANCO', 'aballivian@ucb.edu.bo', NULL, '$2y$12$2Xbzb07nG1o3Njc204G8b.3FFPPck1LEZmNPfGZbRPdOkBxauIa.i', NULL, 'user', 159, 5, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 08:17:57', '2024-01-04 07:23:59'),
-	(14, 'BC-03', 'MIRIAM MARLENI', 'TANCARA MAMANI', 'mtancara@ucb.edu.bo', NULL, '$2y$12$cxHxyrPF5GyKNarisy8DgOy/V/WuN030K85U6AnNCzZSoCoQUSueC', NULL, 'user', 4, 7, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, '2023-12-16 08:19:26', '2024-01-04 07:25:09'),
-	(16, 'BC-04', 'CRISSEL YBANKA', 'GUTIERREZ TICONA', 'cgutierrez@ucb.edu.bo', NULL, '$2y$12$2mtWqfB4wpJQeT56s2LnFe7WXMV8XA5Shu9dCXVGN0m.Zkj7IEDL2', NULL, 'user', 5, 8, NULL, 3, NULL, 3, NULL, NULL, NULL, NULL, '2023-12-16 08:24:33', '2024-01-04 07:25:38'),
-	(17, 'BC-05', 'CELIA', 'CONDORI SIÑANI', 'ccondori@ucb.edu.bo', NULL, '$2y$12$Gfml7RvG2V7ojXVxoUdMTu7O4aumXwmW0oDNNYRzg25BmGPCptqQi', NULL, 'user', 7, 9, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, '2023-12-16 08:25:38', '2024-01-04 07:26:08'),
-	(18, 'BC-05', 'JAIME', 'ESPINAR GONZALES', 'jespinar@ucb.edu.bo', NULL, '$2y$12$17xIA4c2lrgoxL6bfLLZku0HPwRCjx.ASBDrxCY9Sirr1uvZVwYLG', NULL, 'user', 7, 9, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, '2023-12-16 08:27:55', '2024-01-04 07:26:50'),
-	(19, 'BC-05', 'GUIDO ADALBERTO', 'VILLENA VALLE', 'gvillena@ucb.edu.bo', NULL, '$2y$12$bD/ftV2grzt.wqTgW9ytZOb36RFdShm1ahuzKOXvK.iwbiFYGLNr6', NULL, 'user', 7, 9, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, '2023-12-16 08:29:15', '2024-01-04 07:27:23'),
-	(20, 'BC-06', 'JORGE', 'DAZA MENDOZA', 'jdaza@ucb.edu.bo', NULL, '$2y$12$v7ongr3pSfkFvbKy.BCzSOXcpOPZMCJPAfMNsZTMCpC1l5bfVtUXG', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, '2023-12-16 08:30:28', '2024-01-04 07:28:17'),
-	(21, 'BC-06', 'AGAR ROSARIO', 'FERNANDEZ MENDOZA', 'afernandez@ucb.edu.bo', NULL, '$2y$12$88vKgVHnOWZH9Ls.xwcLxueiXyxP0tJQD9cKSKmYXnl5ZsJ4onEZ6', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, '2023-12-16 08:31:50', '2024-01-04 07:28:54'),
-	(22, 'BC-06', 'JAVIER GERMAN', 'GUZMAN MOLINA', 'jguzman@ucb.edu.bo', NULL, '$2y$12$l1hO4Sdc6mnE2otCq2Qvhe8/3Iv.lpVEhwOX/nHr76wA9I2vybGbO', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, '2023-12-16 08:33:00', '2024-01-04 07:29:23'),
-	(23, 'BC-06', 'ATILIO GAUDIO', 'INCH MIRANDA', 'ainch@ucb.edu.bo', NULL, '$2y$12$l7iqK/SPKQcGLs8zUKf3c.Eihsj75vr2hq5/.oxVogm.ngqnevFu.', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, '2023-12-16 08:34:10', '2024-01-04 07:29:57'),
-	(24, 'BC-06', 'JUAN JAIME', 'LOPEZ ARRAYA', 'jlopez@ucb.edu.bo', NULL, '$2y$12$VbmocLSDJR7UC8UzCcsUgunRXcV3UMmxiqer.T4qVuGaEUU/A5QPi', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, '2023-12-16 08:35:17', '2024-01-04 07:30:35'),
-	(25, 'BC-06', 'NORMA GABRIELA', 'VASQUEZ CRUZ', 'nvasquez@ucb.edu.bo', NULL, '$2y$12$vxKB7ly6hHGgLYKf2D2.AOjeqAgZLdJgmzTLWhhTRbEXlqPwE8TKW', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, '2023-12-16 08:36:19', '2024-01-04 07:31:01'),
-	(26, 'BC-06', 'JOSÉ MANUEL', 'VELÁSQUEZ CESPEDES', 'jvelasquez@ucb.edu.bo', NULL, '$2y$12$Ffmie4sGhidXbRzg4taedeXkN31wS5M9qWLS6FjUbREr2bJdZY68e', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, '2023-12-16 08:37:34', '2024-01-04 07:31:29'),
-	(27, 'BC-07', 'ROGELIO VICTOR', 'CALLIZAYA NINA', 'rcallizaya@ucb.edu.bo', NULL, '$2y$12$HNTPc/qCJFIi/5GcsfDZ9OrrOtJ61QzBDIyzqmQe/nHeI022JNaH2', NULL, 'user', 9, 11, NULL, 3, NULL, 3, NULL, NULL, NULL, NULL, '2023-12-16 08:38:48', '2024-01-04 07:32:23'),
-	(28, 'CA-01', 'ALEJANDRA MARIA', 'ECHAZU CONITZER', 'aechazu@ucb.edu.bo', NULL, '$2y$12$/Oy9VTZSc.fOv1Q7hMtwBOy1u.nLY7pCImUKtP4zOg94EKEQ7Gh6C', NULL, 'user', 97, 12, 3, 10, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 08:40:19', '2024-01-04 07:33:04'),
-	(29, 'ALR-01', 'MARIA ERIKA', 'HELGUERO MEJIA', 'mhelguero@ucb.edu.bo', NULL, '$2y$12$yHeY4RM6FcGAjcTrno9CK.82Zyk0KadnxCOlJQkWyqVu9Ry1SU8nG', NULL, 'user', 165, 1, 1, 8, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 19:44:07', '2024-01-04 07:20:47'),
-	(30, 'CA-04', 'FABRICIO OSCAR', 'FERRUFINO DURAN', 'fferrufino@ucb.edu.bo', NULL, '$2y$12$vGQ42Kj72fyMnqkaqXyw0.hhAJ07GDGVeh7N.qE6LpRFbp27Zk80K', NULL, 'user', 11, 14, 3, 10, NULL, 4, NULL, NULL, NULL, NULL, '2023-12-16 19:52:46', '2024-01-04 07:33:51'),
-	(31, 'CA-06', 'NORAH BEATRIZ', 'VALVERDE TAPIA', 'nvalverde@ucb.edu.bo', NULL, '$2y$12$gOJRC7xTSceBEZXMJ7UO.eFWcn2Y.h8v3ptC.E4uEb./Oza1zVCoe', NULL, 'user', 12, 15, 3, 10, NULL, 4, NULL, NULL, NULL, NULL, '2023-12-16 19:54:29', '2024-01-04 07:34:29'),
-	(32, 'CA-07', 'RAMIRO FERNANDO', 'SORIANO ARCE', 'rsoriano@ucb.edu.bo', NULL, '$2y$12$t75ZPxlj4UmHZbH95ITJ4u80P33xjfofSiQn1GxLnR9VL7Br/R2S2', NULL, 'user', 13, 16, 3, 10, NULL, 4, NULL, NULL, NULL, NULL, '2023-12-16 19:56:03', '2024-01-04 07:35:02'),
-	(33, 'CA-08', 'JUAN CARLOS DAVID', 'MONDACCA ARAUZ', 'jmondacca@ucb.edu.bo', NULL, '$2y$12$BclsGpNbyF0Dijy9DFNDWeGID0lv2VzKOyuqP14SEVAvElXi4dCgy', NULL, 'user', 14, 17, 3, 10, NULL, 4, NULL, NULL, NULL, NULL, '2023-12-16 20:17:40', '2024-01-04 07:35:30'),
-	(34, 'CA-09', 'FRANZ', 'BALLESTEROS SARAVIA', 'fballesteros@ucb.edu.bo', NULL, '$2y$12$dVTa8BsgNmVw.TEyqg/dv.I0DAOzbZzwp0o.te6yxNj6J4sH0NyUK', NULL, 'user', 16, 18, 3, 10, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 20:18:55', '2024-01-04 07:35:57'),
-	(35, 'CSB- 01', 'LENNY ALEJANDRA', 'CABRERA AGUILAR', 'lcabrera@ucb.edu.bo', NULL, '$2y$12$6HSLQZHON1.f3vAKD5qObOmZoXyO8cE/VLngJokY89C1RzPmXN5lG', NULL, 'user', 149, 19, 4, 12, NULL, 5, NULL, NULL, NULL, NULL, '2023-12-16 20:27:46', '2024-01-04 07:36:27'),
-	(36, 'CSB- 01', 'TANIA', 'BALDERRAMA CANEDO', 'tbalderrama@ucb.edu.bo', NULL, '$2y$12$lhgm2Cz3avFjSCsAcf40d.2phdKpvqIA8/97J5K2rcKXHWyODRaT2', NULL, 'user', 17, 20, 4, 12, NULL, 5, NULL, NULL, NULL, NULL, '2023-12-16 20:29:03', '2024-01-04 07:37:01'),
-	(37, 'CSB- 03', 'RAMIRO EDWIN', 'MANZANEDA VEIZAGA', 'rmanzaneda@ucb.edu.bo', NULL, '$2y$12$qshZQMN2Y.4/CH.2hN61ouQRnvCZi2xjcncDjpwLbFTCD3RcffqOW', NULL, 'user', 148, 22, 4, 12, NULL, 6, NULL, NULL, NULL, NULL, '2023-12-16 20:30:44', '2024-01-04 07:37:39'),
-	(38, 'SECR-03', 'NICOLE KARMEM', 'ULLOA ARTEAGA', 'nulloa@ucb.edu.bo', NULL, '$2y$12$cM0OjRmX0colOBAAiZikj.7ALwO44naIY1yJBdUzbyqn8LQ6dK70S', NULL, 'user', 18, 24, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 20:41:33', '2024-01-06 01:58:37'),
-	(39, 'DAF-02-TS-04', 'LUIS FELIPE', 'SALINAS CONTRERAS', 'lsalinas@ucb.edu.bo', NULL, '$2y$12$gboS5Xe/MkkDJsnOwQ9zgea3FSfxHJMWWFvrdt2mhIICfzkUGQIOe', NULL, 'user', 29, 26, 5, 6, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 20:45:24', '2024-01-04 07:39:55'),
-	(40, 'DAF-02-TS-05', 'EDGAR', 'CALLISAYA QUISPE', 'ecallisaya@ucb.edu.bo', NULL, '$2y$12$ta9YkhfvTIAl7eR8Pp0lU.DIT9wFh8fig7KWCcbsk.2qhfIo0Q1ee', NULL, 'user', 30, 27, 5, 6, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 20:47:34', '2024-01-04 07:40:31'),
-	(41, 'DAF-03-RH-01', 'ERIKA NATIVIDAD', 'RAKELA SCHWENNINGER', 'erakela@ucb.edu.bo', NULL, '$2y$12$V4z9.bThYXF2qQQpCQZNe.HLQKl7WhB6UxYiZ58vjwlJk.PA4U/VK', NULL, 'user', 21, 28, 27, 6, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 20:58:12', '2024-01-04 07:41:31'),
-	(42, 'DAF-03-RH-02', 'LIZ JUDITH', 'VEGA CRUZ', 'lvega@ucb.edu.bo', NULL, '$2y$12$ZQyCnzIvmBchpJ/vmNrvZOb18nMMhPTkr2Pkf8pKvhNdcEFhcmfhi', NULL, 'user', 167, 29, 27, 6, 2, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:05:22', '2024-01-04 07:42:10'),
-	(43, 'DAF-03-RH-03', 'MARTHA LOURDES', 'SALAS LANDEAU', 'msalas@ucb.edu.bo', NULL, '$2y$12$ZY0D7qijSSnxYCOIhUqwSe8e80V5CJ2VB/kGQR4rHVFV2xUjrLs/S', NULL, 'admin', 34, 30, 27, 6, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:06:42', '2024-01-04 07:43:51'),
-	(44, 'DAF-03-RH-04', 'VALERIA GLORIA', 'RABAZA VALVERDE', 'vrabaza@ucb.edu.bo', NULL, '$2y$12$69sv7VAS6V5NOuj1x2ge..F.JRzyO4pclbAtvCp4mSf8zI18oOHB.', NULL, 'user', 34, 30, 27, 6, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:07:58', '2024-01-04 07:44:26'),
-	(45, 'DAF-03-RH-05', 'MARIA EUGENIA', 'ROCHA DE GUTIERREZ', 'mrocha@ucb.edu.bo', NULL, '$2y$12$7NvNtofUTgs3nSltuu4UH.EjT4H0oYQrTReGTeaOTMd.yJ9F6LYQK', NULL, 'user', 18, 31, 27, 6, 2, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:09:46', '2024-01-04 07:45:27'),
-	(46, 'DAF-03-RH-06', 'JUAN CARLOS', 'ROMERO GONZALES', 'jromero@ucb.edu.bo', NULL, '$2y$12$X7Mq6Fzb/iOr1rqIjl2Kpef1I0zqVNEE9Jy9uX2NlmYitD4z9PoSO', NULL, 'user', 168, 32, 27, 6, 2, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:13:38', '2024-01-04 07:46:08'),
-	(47, 'DAF-04-CF-01', 'NANCY JAEL', 'ALDUNATE MORALES', 'naldunate@ucb.edu.bo', NULL, '$2y$12$WiEbqaHe8SrRUEjxfKXUKO9/YamixNCGk4jgIT8Fp2zwLXn8lgfQ2', NULL, 'user', 22, 33, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:15:23', '2024-01-04 07:46:50'),
-	(48, 'DAF-04-CF-02', 'DANIEL DAVID', 'CUTILE ARUQUIPA', 'dcutile@ucb.edu.bo', NULL, '$2y$12$nHuHf68LEleCuwjjJguNf.B4doLHy6P585ihapoNKQEaMCVeJ5ufa', NULL, 'user', 35, 34, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:16:30', '2024-01-04 07:47:31'),
-	(49, 'DAF-04-CF-03', 'CARLOS ALBERTO', 'BERTOFT PEREZ', 'cbertoft@ucb.edu.bo', NULL, '$2y$12$WmFLTPn7tbFxcE7rLFj85elUS6WLcZVNM1IcCycKAV/4RYMOCFRNK', NULL, 'user', 36, 35, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:17:47', '2024-01-04 07:48:06'),
-	(50, 'DAF-04-CF-04', 'CARMEN ROSA', 'ARCE LAGOS', 'carce@ucb.edu.bo', NULL, '$2y$12$QORWjuHFRJ/VIHzuSJsWr.pTc/M9gZQG7qJAOJOHx5GieTmXhXXX2', NULL, 'user', 37, 36, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:19:04', '2024-01-04 07:48:47'),
-	(51, 'DAF-04-CF-05', 'PILAR DELIA', 'MACHACA MAMANI', 'pmachaca@ucb.edu.bo', NULL, '$2y$12$IgrFLypxykiwWVhcYw7qVOla.fHwKbftkvdM9vjy/0qYNAAEnER3.', NULL, 'user', 38, 37, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:20:47', '2024-01-04 07:49:19'),
-	(52, 'DAF-04-CF-06', 'MARGA MONICA', 'CANAZA CASTRO', 'mcanaza@ucb.edu.bo', NULL, '$2y$12$5W4WDHpG/sFIJpnGaZnILuTe9cgYxfJAcX9Dg1Au9Z9PVI7FcfMyu', NULL, 'user', 39, 38, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:22:01', '2024-01-04 07:49:52'),
-	(53, 'DAF-04-CF-07', 'ERIKA HERMINIA', 'LOZA RIO', 'eloza@ucb.edu.bo', NULL, '$2y$12$vmJnudRQZ.dF2FGVKMZl.uKMdOWBIlIXXf/7OAVyyXi5aU0Nay3A6', NULL, 'user', 40, 39, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:23:25', '2024-01-04 07:50:28'),
-	(54, 'DAF-05-SAE-01', 'MARÍA INÉS', 'CAMACHO FERNANDEZ', 'mcamacho@ucb.edu.bo', NULL, '$2y$12$mG.97YMNUIFcF1erNmA5EuWSebVdwsY3W.zTbXaeWn1o4c/5c6Xiq', NULL, 'user', 27, 40, NULL, 6, NULL, 7, NULL, NULL, NULL, NULL, '2023-12-16 21:24:57', '2024-01-04 07:51:06'),
-	(55, 'DAF-05-SAE-03', 'TATIANA', 'ANGELO ARROYO', 'tangelo@ucb.edu.bo', NULL, '$2y$12$hDKmU/dYpZqmcJDAC.HGbOPBDtoZrPTsr./b2HkpOyXPHuh3oi.ju', NULL, 'user', 169, 41, NULL, 6, NULL, 7, NULL, NULL, NULL, NULL, '2023-12-16 21:32:09', '2024-01-04 07:51:58'),
-	(56, 'DAF-06-CJ-01', 'DAVID', 'GUZMAN TORDOYA', 'dguzman@ucb.edu.bo', NULL, '$2y$12$E/ubC.cfJnicnWpEul/NReTL5ruvwEyvMMUpeahbSF4g6vzcDHzP6', NULL, 'user', 170, 42, NULL, 6, NULL, 8, NULL, NULL, NULL, NULL, '2023-12-16 21:35:01', '2024-01-04 07:52:38'),
-	(57, 'DAF-07-AC-01', 'ANA MARIA', 'GALINDO URQUIDI', 'agalindo@ucb.edu.bo', NULL, '$2y$12$qcPlXRkYYfGYnZhxLO9lMOitKlNl6fxCVOq7glimysT.XUHJ1mEyu', NULL, 'user', 23, 43, NULL, 6, 4, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:36:19', '2024-01-04 07:53:14'),
-	(58, 'DAF-07-AC-02', 'SUSAN PATRICIA', 'LARREA VERA', 'slarrea@ucb.edu.bo', NULL, '$2y$12$U1kBEF.KnY/ix6uQZugDW.Ubjcn6ZPSeKhbmZ8ziJyZ1ZeUKcalWS', NULL, 'user', 41, 44, NULL, 6, 4, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:37:33', '2024-01-04 07:53:52'),
-	(59, 'DAF-07-AC-02', 'ALVARO LIZANDRO', 'GARCIA LOPEZ', 'agarcia@ucb.edu.bo', NULL, '$2y$12$bUB7t3/n6MRG3ybtAan6gusQt5Q016YJu2R9cWcatwn9UKEmbnK6i', NULL, 'user', 41, 44, NULL, 6, 4, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:38:36', '2024-01-04 07:54:22'),
-	(60, 'DAF-07-AC-02', 'MIGUEL MARIO', 'RUEDA GARCIA', 'mrueda@ucb.edu.bo', NULL, '$2y$12$qFUAFa9Gf8I5sI/DjU9YMOz7hd.F9K1/M4k6P79nBrjepYzgbMVfC', NULL, 'user', 41, 44, NULL, 6, 4, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:39:53', '2024-01-04 07:54:50'),
-	(61, 'DAF-07-AC-03', 'ROGELIA', 'CONDORI', 'rcondori@ucb.edu.bo', NULL, '$2y$12$gl4W9v4F2chYlgH1xBWroe3VvAx8odPU/nSEXVhVNixW5MZ5IBH1.', NULL, 'user', 18, 45, NULL, 6, 5, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:41:57', '2024-01-04 07:55:43'),
-	(62, 'DAF-08-CG-01', 'MARCIA LILIANA', 'LEVY LOZA', 'mlevy@ucb.edu.bo', NULL, '$2y$12$gGMcpewpzqE76OCslewunOvb3pjjIK4ZZnzo9hMNlPosUNqxXCLYG', NULL, 'user', 24, 46, NULL, 6, 6, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:43:14', '2024-01-04 07:56:18'),
-	(63, 'DAF-08-CG-02', 'RAISA ROXANA', 'CUSI ALVAREZ', 'rcusi@ucb.edu.bo', NULL, '$2y$12$/gB.ua9TV.Q4cXITf3xNS.TBG9yxlqQOacgjQSKuQ0DQzl1hWCYBu', NULL, 'user', 42, 47, NULL, 6, 6, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:44:53', '2024-01-04 07:56:54'),
-	(64, 'DAF-08-CG-02', 'IRIS RAYZA', 'ZUÑIGA MOLINA', 'izuñiga@ucb.edu.bo', NULL, '$2y$12$bDJR3uGT0EqNzsxxk4kh8etJVKBs1bZlaOL/A5kcOH33A.OXojCIG', NULL, 'user', 42, 47, NULL, 6, 6, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:54:45', '2024-01-04 07:57:32'),
-	(65, 'DAF-08-CG-03', 'JORGE DANIEL', 'PORTUGAL HUACOTA', 'jportugal@ucb.edu.bo', NULL, '$2y$12$Ue/uboyHfZjfH.askPNX9uer1JLHLpCoTLOT1Tx6mqUB4iWrr0CUG', NULL, 'user', 43, 48, NULL, 6, 6, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:56:06', '2024-01-04 07:58:26'),
-	(66, 'DAF-09-INF-01', 'IVAN MARIO', 'BOLIVAR PARRAGA', 'ibolivar@ucb.edu.bo', NULL, '$2y$12$zp9cKVcz7yINjMvNT6PZ8.e/lgQp1pG6A44XTV0lJhdCsCCy5Uyo2', NULL, 'user', 25, 49, NULL, 6, 7, NULL, NULL, NULL, NULL, NULL, '2023-12-16 21:57:27', '2024-01-04 07:59:01'),
-	(67, 'DAF-09-INF-02', 'NICOLAS MIGUEL', 'VERASTEGUI', 'nverastegui@ucb.edu.bo', NULL, '$2y$12$wCPKOPdX/E/0kc48Q2a8PejNlIaohLD1IEX5GpNOmm7QNHCpb8O6m', NULL, 'user', 44, 50, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 21:59:13', '2024-01-04 07:59:33'),
-	(68, 'DAF-09-INF-03', 'ALVARO ERICK', 'UREY BUTRON', 'aurey@ucb.edu.bo', NULL, '$2y$12$4eMAbx8kXqNhNPxeptuzguC1.DN2BcYIDVEZo8bO5wXGGGxkHknq2', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 22:00:38', '2024-01-04 08:00:06'),
-	(69, 'DAF-09-INF-04', 'ALVARO', 'LUNA MAMANI', 'aluna@ucb.edu.bo', NULL, '$2y$12$PFSTdXqbI0Y4142M.O3b8ezDyFkJvQOFPr.N3avC7VYK3ij3six.G', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 22:02:30', '2024-01-04 08:00:34'),
-	(70, 'DAF-09-INF-04', 'CARLOS', 'CAYZA CANAZA', 'ccayza@ucb.edu.bo', NULL, '$2y$12$eeVS0giHvwuXYfrNVbtENe26gfGFLV5SQew1wtAaoMPmvwf6Ulmf2', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 22:03:31', '2024-01-04 08:01:02'),
-	(71, 'DAF-09-INF-04', 'BENITO', 'APAZA CONDORI', 'bapaza@ucb.edu.bo', NULL, '$2y$12$CViExP3OWNJXeWZratIhkulSWIRGaFZNrfN8Z6ds80DDWyk.AE6ni', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 22:04:50', '2024-01-04 08:01:32'),
-	(72, 'DAF-09-INF-04', 'FELIX', 'APAZA TARQUI', 'fapaza@ucb.edu.bo', NULL, '$2y$12$kyOP3USXjFbuQVXaKdegAejYHW/Gtv2jXW7VbZbSWhgRk45ZOBb0i', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 22:06:08', '2024-01-04 08:01:59'),
-	(73, 'DAF-09-INF-04', 'CIRILO', 'CALLE ARUQUIPA', 'ccalle@ucb.edu.bo', NULL, '$2y$12$.Fp6PtR4osPY0MJtXwazyu6qNmzJuz4ydfoasqCdmduss53EzFo/W', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 22:07:13', '2024-01-04 08:02:30'),
-	(74, 'DAF-09-INF-04', 'CALIXTO', 'CHOQUE QUISPE', 'cchoque@ucb.edu.bo', NULL, '$2y$12$nBzcbO9xe4sVRorBDofVEusBHwCsPEm6NE8KJ0WYAqhzfquEldXXe', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 22:08:19', '2024-01-04 08:02:54'),
-	(75, 'DAF-09-INF-04', 'LUIS ALBERTO', 'CONDORI QUISPE', 'lcondori@ucb.edu.bo', NULL, '$2y$12$W/WPDt3MuRogxmhybYzqB.qkJ9sUXnXDjhoY8H3AmjQKD05zLwbKa', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 22:09:25', '2024-01-04 08:03:20'),
-	(76, 'DAF-09-INF-04', 'FLORENCIO VICENTE', 'GAMPASI QUINTANA', 'fgampasi@ucb.edu.bo', NULL, '$2y$12$kQdd.8jom4cRaFmeMqvQZeKZy9RWRkcIwSHIqlz.JDsr4BAolx.0G', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:10:06', '2024-01-04 08:03:43'),
-	(77, 'DAF-09-INF-04', 'RENE LEONARDO', 'HUANCA MAMANI', 'rhuanca@ucb.edu.bo', NULL, '$2y$12$peugmVyl2asOEE25v1DVmOpif/5q3MgGGXjDUOywHNAQ0ekZrrAlK', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:12:09', '2024-01-04 08:04:13'),
-	(78, 'DAF-09-INF-04', 'JUAN TEOFILO', 'LAURA QUISPE', 'jlaura@ucb.edu.bo', NULL, '$2y$12$X5rgde.DuJXSYIXKtgDHg.PCsuekFK1m8kuTCbi5uFoDM.f4JGuWu', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:14:04', '2024-01-04 08:04:42'),
-	(79, 'DAF-09-INF-04', 'MARIO', 'LUCANA CRUZ', 'mlucana@ucb.edu.bo', NULL, '$2y$12$Xhc7Tsi4fdCgGjkSlTsR5enrZU6/ne/BkZwuEdl7fU/E4j6/jWHLO', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:15:37', '2024-01-04 08:05:11'),
-	(80, 'DAF-09-INF-04', 'MARIO', 'MAMANI JIMENEZ', 'mmamani@ucb.edu.bo', NULL, '$2y$12$uxx1IdQRi4ZBXgkgX1WC8.c/wjyxGbgaQrEckaIGRWyYDNs8ptwPS', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:16:56', '2024-01-04 08:05:36'),
-	(81, 'DAF-09-INF-04', 'MARTIRIAN', 'PINTO COLQUE', 'mpinto@ucb.edu.bo', NULL, '$2y$12$tosCSQUaG7MFC6WHT.0vK.ZrveZsliS.289QkyTatJlsoGLkxh4la', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:18:24', '2024-01-04 08:06:04'),
-	(82, 'DAF-09-INF-04', 'DANIEL', 'QUISPE LIMACHI', 'dquispe@ucb.edu.bo', NULL, '$2y$12$MkMGd46l9g5ySkyBzzZvz.xcxYXBq..CdclcQvTx4GFPiy2xS2Pya', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:19:26', '2024-01-04 08:06:30'),
-	(83, 'DAF-09-INF-04', 'JESUS EFRAIN', 'QUISPE MONASTERIOS', 'jquispe@ucb.edu.bo', NULL, '$2y$12$/dMPcbwFlXrz4RZyrT8g8.j/eR5gwc5whkabs5jGHUhgt3DSuJUIi', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:20:41', '2024-01-04 08:06:58'),
-	(84, 'DAF-09-INF-04', 'MARCELO', 'QUISPE CANAZA', 'maquispe@ucb.edu.bo', NULL, '$2y$12$zDPbG4dU65sCkOMXqQCL0ODPAcNQBf9FJANBc0k87e5gDGjK.Ci/G', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:23:37', '2024-01-04 08:07:24'),
-	(85, 'DAF-09-INF-04', 'FERNANDO ARIEL', 'QUISBERT CUBA', 'fquisbert@ucb.edu.bo', NULL, '$2y$12$9R0DdzfmEUokUMSvaXegaeFy708RSbGCn0kHRqCJKdjLxL2l6bV/a', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:24:52', '2024-01-04 08:07:51'),
-	(86, 'DAF-09-INF-04', 'FIDEL', 'TORDOYA VELASQUEZ', 'ftordoya@ucb.edu.bo', NULL, '$2y$12$sF6XkgUnP1FIjDNcYX/hsewZFlmBkcaz8hTu.7gYbZZWHy5MWIUDK', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:26:35', '2024-01-04 08:08:16'),
-	(87, 'DAF-09-INF-04', 'GABRIEL', 'VELASQUEZ MAMANI', 'gvelasquez@ucb.edu.bo', NULL, '$2y$12$AVnthV9M7hdzeL8dtr9o2OP8nYHVSgd8A3qi9oka7LFN6KFsCg0Vi', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:28:13', '2024-01-04 08:08:46'),
-	(88, 'DAF-09-INF-04', 'GERARDO', 'VILLA PATTY', 'gvilla@ucb.edu.bo', NULL, '$2y$12$RDTsen8z6n/DyEi1i7L44.a8nzMzM.M9b3KVHWksQjHFKP/J37JdC', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:29:41', '2024-01-04 08:09:10'),
-	(89, 'DAF-09-INF-04', 'DAVID', 'YUJRA PAUCARA', 'dyujra@ucb.edu.bo', NULL, '$2y$12$uDFVSIuqOJ9y0evUhMcwn.rvc62yumKo40Fu1idduvodEXSV6Hy6e', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:37:13', '2024-01-04 08:09:36'),
-	(90, 'DAF-09-INF-04', 'SERGIO CRISTIAN', 'RAMOS QUISPE', 'sramos@ucb.edu.bo', NULL, '$2y$12$n3DkTiP/E5JFtOdQceW8ouG3xC9hBRm7Sca4rkTCvELNvcwHNrCCm', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, '2023-12-16 23:38:10', '2024-01-04 08:10:03'),
-	(91, 'DAF-10-DEP-01', 'JOSE FERNANDO', 'SEJAS PRADO', 'jsejas@ucb.edu.bo', NULL, '$2y$12$iLBcq/DUUT2vbpNBLCOyNObZKlIvIsFGrSODuOuIzyNM.cIv3lt2q', NULL, 'user', 26, 52, NULL, 6, 8, NULL, NULL, NULL, NULL, NULL, '2023-12-16 23:39:22', '2024-01-04 08:10:43'),
-	(92, 'DAF-10-DEP-02', 'VICTOR HUGO', 'NINA FLORES', 'vnina@ucb.edu.bo', NULL, '$2y$12$Ci0KHMoQSeFqmGgc43dcW.gmkRXgahgJz3jOMjTjAJJPrsnhVKJSG', NULL, 'user', 46, 53, NULL, 6, 8, NULL, NULL, NULL, NULL, NULL, '2023-12-16 23:40:48', '2024-01-04 08:11:19'),
-	(93, 'DAF-11-CM-01', 'LUIS ALBERTO', 'CASTRILLO BAREA', 'lcastrillo@ucb.edu.bo', NULL, '$2y$12$H0kgDGBmqMfc10n3Rwqaxe3EklQyJ.wgRQCChFm26OwGOXaCKw5mO', NULL, 'user', 28, 54, NULL, 6, NULL, 11, NULL, NULL, NULL, NULL, '2023-12-16 23:42:20', '2024-01-04 08:11:51'),
-	(94, 'DAS-01', 'YOLANDA SUSANA', 'FERREIRA ARZA', 'yferreira@ucb.edu.bo', NULL, '$2y$12$s2jxASXBeknjjaQrFgsqMOOel3OEvwLgroQQm2aJ8QWXCtgdMTchW', NULL, 'user', 157, 55, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-16 23:43:42', '2024-01-04 08:12:24'),
-	(95, 'DAS-02- PG-02', 'CRISTINA CANDELARIA', 'COLQUE MUÑOZ', 'ccolque@ucb.edu.bo', NULL, '$2y$12$iGmB/JrBAhg42V7mRUq9he5ijXFTW8u/5qtU7hEssOKpldED1cAai', NULL, 'user', 49, 56, NULL, 7, NULL, 40, NULL, NULL, NULL, NULL, '2023-12-16 23:46:03', '2024-01-04 08:12:59'),
-	(96, 'PG-01', 'MARCELA SOPHIA', 'AGRAMONT PARADA', 'magramont@ucb.edu.bo', NULL, '$2y$12$NqsooP0XlLcRZEeD2c/PZOV83WoOzf/jlqr96TceyL6NnZQzdE5U6', NULL, 'user', 134, 57, NULL, 12, NULL, 13, NULL, NULL, NULL, NULL, '2023-12-17 00:15:05', '2024-01-05 20:58:46'),
-	(106, 'PG-01', 'MELANY FRANCIS', 'CESPEDES MAGARIÑOS', 'mcespedes@ucb.edu.bo', NULL, '$2y$12$1mY5wYjGUZF4ZR0rWvGe1uOiyIwYfn9js3MQWuaUQAsoQjfsonp0q', NULL, 'user', 151, 58, NULL, 13, NULL, 14, NULL, NULL, NULL, NULL, '2023-12-17 01:39:04', '2024-01-05 20:59:27'),
-	(107, 'PG-01', 'LORNA NORMA', 'ARAUZ RODRIGUEZ', 'larauz@ucb.edu.bo', NULL, '$2y$12$MrEOYJTyyKHJQFReQmjZM.97N6CeuW09sAz4TWoarAFonXJtNfdvq', NULL, 'user', 133, 159, NULL, 12, NULL, 13, NULL, NULL, NULL, NULL, '2023-12-17 01:40:47', '2024-01-05 20:59:56'),
-	(108, 'PG-01', 'CLAUDIA ALEJANDRA', 'PEREIRA VELASQUEZ', 'cpereira@ucb.edu.bo', NULL, '$2y$12$HwGfO73ehbq0W98.7k/8VOWp1bfBiIJPPmtKhXE8LfguNY.rHm/dS', NULL, 'user', 93, 84, NULL, 10, NULL, 15, NULL, NULL, NULL, NULL, '2023-12-17 01:42:10', '2024-01-05 21:00:31'),
-	(109, 'PG-01', 'GABRIELA BELEN', 'VELASQUEZ VELASQUEZ', 'gavelasquez@ucb.edu.bo', NULL, '$2y$12$orTxaYCRVWyLPnLjI1XP0eHxf3Dr7YPzT4qsbVR5VjkRzxrTsQII6', NULL, 'user', 118, 149, NULL, 11, NULL, 16, NULL, NULL, NULL, NULL, '2023-12-17 05:14:41', '2024-01-05 21:01:01'),
-	(110, 'MC-04', 'KAREN NIEVES ILSEN', 'CORONEL BOZO', 'kcoronel@ucb.edu.bo', NULL, '$2y$12$m.mR92CuAUzuIcyph2DJjOpwjUwOgcaDKcjjW38Pjh6Krb8hB0Mcu', NULL, 'user', 80, 59, NULL, 15, NULL, 17, NULL, NULL, NULL, NULL, '2023-12-17 05:21:47', '2024-01-05 20:57:09'),
-	(111, 'DAS-03', 'GEORGINA AURELIA', 'CHAVEZ LIZARRAGA', 'gchavez@ucb.edu.bo', NULL, '$2y$12$QZgyrGNQ/exN0xWB6pOs9.BRCsWFLhjCGuZ4W62eVQeY9ka/yz5oy', NULL, 'user', 51, 60, NULL, 8, NULL, 18, NULL, NULL, NULL, NULL, '2023-12-17 05:23:18', '2024-01-04 08:14:10'),
-	(112, 'DAS-04-RG-01', 'PRISCILA RAQUEL', 'TORO REYES', 'ptoro@ucb.edu.bo', NULL, '$2y$12$T9ufFfIuXc4sgRhVPzUOOejmxgqKaBWKINix2slmS94/JZqonMOhC', NULL, 'user', 52, 61, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:25:06', '2024-01-04 08:15:12'),
-	(113, 'DAS-04-RG-02-A', 'AURELIA', 'TORREZ GUTIERREZ', 'atorrez@ucb.edu.bo', NULL, '$2y$12$/OcDuluPrFkyHpmmGAwPG.CO8DaLb8HUZiG9kZo8KzqfdxcZlEhvi', NULL, 'user', 61, 62, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:26:20', '2024-01-04 08:15:51'),
-	(114, 'DAS-04-RG-02-B', 'CINTHYA MARLENE', 'LOBO OZUNA', 'clobo@ucb.edu.bo', NULL, '$2y$12$FV8vgo5VMkwCTF4tATyV9OKrSDRSOFOFeh.xNZYi3yoV2TPysjb1i', NULL, 'user', 62, 63, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:27:46', '2024-01-04 08:16:37'),
-	(115, 'DAS-04-RG-02-C', 'ERICK MOISES', 'MORALES TORREZ', 'emorales@ucb.edu.bo', NULL, '$2y$12$2sPfD78lO3vlhBgX56EspOiusZqAWIRNqk9BMeWjge19XqcKUUoca', NULL, 'user', 63, 64, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:28:56', '2024-01-04 08:17:19'),
-	(116, 'DAS-04-RG-02-D', 'CINTYA CARMEN', 'TORREZ TORREZ', 'ctorrez@ucb.edu.bo', NULL, '$2y$12$FY/LC5X3ISP8nwHSFwk0BudPOBxhy2l3zXIMw9YU6utPAE7vGnWOW', NULL, 'user', 64, 65, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:30:20', '2024-01-04 19:40:06'),
-	(117, 'DAS-04-RG-02-E', 'MARIBEL', 'ESPINOZA VERASTEGUI', 'mespinoza@ucb.edu.bo', NULL, '$2y$12$U6mef7HfgWHJZhAt0/ENfe0Coi4/oCyTYrDn99bb03ilzi1k5V/A6', NULL, 'user', 65, 66, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:31:33', '2024-01-04 19:41:01'),
-	(118, 'DAS-04-RG-03', 'CLEMENTE', 'CHOQUE QUISPE', 'clchoque@ucb.edu.bo', NULL, '$2y$12$bKCBSgLnT3F3TMQwBOQyzOehUvaHmm0SlXTJG3WpZGE3I0YPOzFV2', NULL, 'user', 66, 67, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:34:17', '2024-01-04 19:41:52'),
-	(119, 'DAS-04-RG-03', 'DILIAM HEMILZE', 'LARREA CHAVEZ', 'dlarrea@ucb.edu.bo', NULL, '$2y$12$g9tjcLxlf5bovl1RumDkhuA6.95D8RCaxkchDKzbQ8w29Yf.smu/O', NULL, 'user', 66, 67, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:35:37', '2024-01-04 19:43:00'),
-	(120, 'DAS-04-RG-03', 'JOSE GONZALO', 'MEALLA GUTIERREZ', 'jmealla@ucb.edu.bo', NULL, '$2y$12$N1sqkvNOrMPitRtamC.tOeDlG/BMbjM3bJtAohDA.Joe04jI8BbOS', NULL, 'user', 66, 67, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:36:31', '2024-01-04 19:44:20'),
-	(121, 'DAS-05-DC-01', 'GEOVANA', 'CERRUTO ALVAREZ', 'gcerruto@ucb.edu.bo', NULL, '$2y$12$3VoTUW40ugugBagc4qxbNee3vt4vNUR5oHUQubH/m1B1uKe8uak/2', NULL, 'user', 53, 68, NULL, 7, 15, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:37:42', '2024-01-04 19:45:15'),
-	(122, 'DAS-05-DC-02', 'ANA GABRIELA', 'ALIAGA JIMENEZ', 'aaliaga@ucb.edu.bo', NULL, '$2y$12$8Z0yK9RMoOqQCSyoS.4qKuescfQigTLSDmldfztKPipNNYiYHtX8i', NULL, 'user', 67, 69, NULL, 7, 15, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:38:53', '2024-01-04 19:46:06'),
-	(123, 'DAS-06-AO-01', 'MADEL IVONNE', 'CEVALLOS BALLESTEROS', 'mcevallos@ucb.edu.bo', NULL, '$2y$12$Sgez52x5R1is0v.OrsVCsu/kZEcrYlG3w4Ad4NikyrsZyuG0ry7y6', NULL, 'user', 54, 70, NULL, 7, 16, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:40:17', '2024-01-04 19:47:09'),
-	(124, 'DAS-06-AO-02', 'REYNALDO RICHARD', 'RIOS MENA', 'rrios@ucb.edu.bo', NULL, '$2y$12$8KClcYo14Nz9fhds6LlBDuvm6QxdT8JiFRP1pp99USIqw.mRuKfH6', NULL, 'user', 68, 71, NULL, 7, 16, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:41:34', '2024-01-04 19:47:49'),
-	(125, 'DAS-06-AO-03', 'MARIA AGUEDA SILVIA', 'UGARTE DE STEVERLYNCK', 'mugarte@ucb.edu.bo', NULL, '$2y$12$t.TOmz0VCXxIOEKsywQif.wBrnnXDTDgbS99VETHBuw5aU37zR9Pq', NULL, 'user', 69, 72, NULL, 7, 16, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:43:02', '2024-01-04 19:48:54'),
-	(126, 'DAS-07-CA-01', 'MARCIO ALEJANDRO', 'PAREDES RIVERA', 'mparedes@ucb.edu.bo', NULL, '$2y$12$Ou0X/TT2VHKdmIcrKmrhxOy7/OpfduG4uOMps4.lW3VfMYYNJz3d6', NULL, 'user', 55, 73, NULL, 7, NULL, 19, NULL, NULL, NULL, NULL, '2023-12-17 05:44:10', '2024-01-04 19:49:46'),
-	(127, 'DAS-07-CA-02', 'DIEGO ADAMS', 'ARTEAGA SANJINÉS', 'darteaga@ucb.edu.bo', NULL, '$2y$12$mPCFYNbq1/8yvhzCj97I8eHlw4tHXJ0lTFPF8H4CC4.WbEHfCziIe', NULL, 'user', 70, 74, NULL, 7, NULL, 19, NULL, NULL, NULL, NULL, '2023-12-17 05:45:35', '2024-01-04 19:50:44'),
-	(128, 'DAS-08-SEI-01', 'PAOLA CONSUELO', 'ZAPANA CASTILLO', 'pzapana@ucb.edu.bo', NULL, '$2y$12$yuJbPSl.dTvaToUQfDXTreNX1.eZTVdmPcr7b3c5unVdiTzJ2POui', NULL, 'user', 56, 75, NULL, 7, NULL, 20, NULL, NULL, NULL, NULL, '2023-12-17 05:46:50', '2024-01-04 19:51:53'),
-	(129, 'DAS-09', 'ADRIANA NICOOL', 'SANJINES DEL VILLAR', 'asanjines@ucb.edu.bo', NULL, '$2y$12$QN672GnNbh.0nGhsOVDKruWy5INU0fYyZt67dtF7MhbrTxBsxx366', NULL, 'user', 57, 76, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:48:01', '2024-01-04 19:52:36'),
-	(130, 'DAS-10', 'MARCELO EDGAR', 'TARQUINO PORTILLO', 'mtarquino@ucb.edu.bo', NULL, '$2y$12$T5HQIYi3UsMYApLMuL6k/ueyCdf.WJxiwMTGyABrms8O4vAd8QWEq', NULL, 'user', 58, 77, NULL, 7, NULL, 21, NULL, NULL, NULL, NULL, '2023-12-17 05:49:57', '2024-01-04 19:53:11'),
-	(131, 'DAS-11', 'MICHEL ANGELO', 'AGUILAR TINCO', 'maguilar@ucb.edu.bo', NULL, '$2y$12$NjelbVsGJcIZPfu06J4kMOgcYbIxy9OYgjvjm2S0ZbWkESE4HuRQa', NULL, 'user', 59, 78, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:51:37', '2024-01-04 19:53:46'),
-	(132, 'DGR-03', 'FEDRA JASMIN', 'DURAN TARIFA', 'fduran@ucb.edu.bo', NULL, '$2y$12$uhH6PLOjD3jkPKnEFtmGiu3j.f3qswF/527OKUydPlVDJc..sIJQ6', NULL, 'user', 50, 79, 8, 7, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:53:06', '2024-01-04 20:45:31'),
-	(133, 'EDU-01', 'MARIA ALEJANDRA', 'MARTINEZ BARRIENTOS', 'mmartinez@ucb.edu.bo', NULL, '$2y$12$hwGFgATKNTlEoMAKAoqZDuuq9s727nm/HIBrWbCn9/bSayPkoJWz2', NULL, 'user', 98, 80, 9, 10, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 05:56:27', '2024-01-04 20:52:15'),
-	(134, 'EDU-02', 'MARIO RAUL', 'BAPTISTA GONZALES', 'mbaptista@ucb.edu.bo', NULL, '$2y$12$l5.XshV3Qwltt9hLDAMCCuv86nkWqAcnE9nI4.HLs.vuJ3GPSscfu', NULL, 'user', 114, 81, 9, 10, NULL, 22, NULL, NULL, NULL, NULL, '2023-12-17 05:57:44', '2024-01-04 20:52:51'),
-	(135, 'EDU-03', 'MONICA MIRIAM', 'FLORES ROJAS', 'mflores@ucb.edu.bo', NULL, '$2y$12$5o.szmpKI9DTH6pjUgxZ2.dr1/pCrX1SCBIHiJgHlkprHYJn09k2C', NULL, 'user', 115, 82, 9, 10, NULL, 23, NULL, NULL, NULL, NULL, '2023-12-17 05:59:09', '2024-01-04 20:53:24'),
-	(136, 'EDU-04', 'MELFA', 'CESPEDES HERNANI', 'mecespedes@ucb.edu.bo', NULL, '$2y$12$UpjTAow8AGcAC8xDSgpqKuuSpUpNa7oa6fqk9PtS24VARlrOvAhcy', NULL, 'user', 117, 83, 9, 10, NULL, 23, NULL, NULL, NULL, NULL, '2023-12-17 06:02:02', '2024-01-05 20:39:07'),
-	(137, 'PG-01', 'LEONOR ALANA', 'VALDIVIA DZGOEVA', 'lvaldivia@ucb.edu.bo', NULL, '$2y$12$.SQImCoqQ53oitB4DZvv1e1huQwMnmVQ7VYF1qh3lkk4QBZ3ySHKC', NULL, 'user', 93, 84, 9, 10, NULL, 15, NULL, NULL, NULL, NULL, '2023-12-17 06:03:56', '2024-01-05 21:02:21'),
-	(138, 'SECR-01', 'MARIA CANDELARIA', 'PERALES SANCHEZ', 'mperales@ucb.edu.bo', NULL, '$2y$12$olIkrT0v0TUT4SGB6XjjR.NpdZQuz.zmoJFKjgw3vKWjvBBzIyjKe', NULL, 'user', 116, 135, 28, 7, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 06:31:44', '2024-01-05 22:21:14'),
-	(139, 'ICO-02', 'YOSELINNE LETICIA', 'VERA ASTURIZAGA', 'yvera@ucb.edu.bo', NULL, '$2y$12$hXcbPUIA2sBJwtDHFPK9oOhTwYrZMkzsnGoiI6Ovgtt/7p53i2yQG', NULL, 'user', 130, 86, 10, 7, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 06:35:53', '2024-01-05 20:43:07'),
-	(140, 'ID-01', 'GERMAN RAMIRO', 'MOLINA BARRIOS', 'gmolina@ucb.edu.bo', NULL, '$2y$12$LeksrfvN8jcTjWyaBlDLf.2/bogrXU2PzjlA1BdqCi1wOal6J/lhW', NULL, 'user', 154, 87, 11, 13, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 06:37:12', '2024-01-05 20:43:54'),
-	(141, 'IICC-01', 'EDITH MARCELA', 'LOSANTOS VELASCO', 'elosantos@ucb.edu.bo', NULL, '$2y$12$XosBkonvG/ZAhBewA4E28OG0.MINfqZpEOgZbu8BFvVwHHSodpRcW', NULL, 'user', 99, 88, 12, 10, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 06:38:47', '2024-01-05 20:44:53'),
-	(142, 'IICC-02', 'NATALIE', 'GUILLEN AGUIRRE', 'nguillen@ucb.edu.bo', NULL, '$2y$12$sL.Qrgfc534L2h5O4OlvD.fNHmjkfGjCvftmrQP0/yf55/AOFluUq', NULL, 'user', 100, 89, 12, 10, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 06:40:45', '2024-01-05 20:45:41'),
-	(143, 'IICC-02', 'ANA MARIA FERNANDA', 'ARIAS URIONA', 'aarias@ucb.edu.bo', NULL, '$2y$12$h/0IbbjGFWtq7mtdkY0XduiS4pdphr.P.30V.UzR81elrAL4SQEgG', NULL, 'user', 100, 89, 12, 10, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 06:41:52', '2024-01-05 20:47:19'),
-	(144, 'IICC-03', 'CLAUDIA JAZMÍN', 'MAZÓ TORRICO', 'cmazo@ucb.edu.bo', NULL, '$2y$12$wIsq4Qx9c67iYq9zhqCu3.stRRskIMBwOtI2mWgdm./1RDGv8PHX6', NULL, 'user', 101, 90, 12, 10, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 06:43:02', '2024-01-05 20:48:01'),
-	(145, 'IISEC-01', 'FERNANDA', 'WANDERLEY DE CHAVEZ', 'fwanderley@ucb.edu.bo', NULL, '$2y$12$nqIDd2BZGN7nzPJEbQVliO/S1t.a/pGraAG.wCIgddffQAsmDB8Zi', NULL, 'user', 124, 91, 13, 11, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 06:44:32', '2024-01-05 20:49:15'),
-	(146, 'IISEC-02', 'JEAN PAUL', 'BENAVIDES LOPEZ', 'jbenavides@ucb.edu.bo', NULL, '$2y$12$VYgNH0gBfc1qcKV3aP12U.OkSHaWRKlPL0C6g02QBE6bg2kcT0CW2', NULL, 'user', 125, 92, 13, 11, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 06:45:46', '2024-01-05 20:50:25'),
-	(147, 'IISEC-03', 'CARLOS EDUARDO', 'QUEZADA LAMBERTIN', 'cquezada@ucb.edu.bo', NULL, '$2y$12$pVjL5UN7hkeDZbheay5dSen0ldtKk2noO1RcZk.B9JELXENvPVDLy', NULL, 'user', 126, 93, 13, 11, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 06:47:03', '2024-01-05 20:50:56'),
-	(148, 'ING-CIV-02', 'ALVARO', 'QUISBERT HUAYLLANI', 'aquisbert@ucb.edu.bo', NULL, '$2y$12$DdnM2mxyQihIco98PdNBNOwh6TASaCEDxdin3.CnvBfHqcujJS1L6', NULL, 'user', 145, 94, 14, 12, NULL, 24, NULL, NULL, NULL, NULL, '2023-12-17 07:05:29', '2024-01-05 20:51:41'),
-	(149, 'ING-CIV-03', 'EDWIN FERNANDO', 'QUISPE MAMANI', 'equispe@ucb.edu.bo', NULL, '$2y$12$SsjNXB6SdfzWUa6.l1d.huXMd4ugt25B3Z2qWo0XdTd2WOj9VCO9y', NULL, 'user', 146, 95, 14, 12, NULL, 24, NULL, NULL, NULL, NULL, '2023-12-17 07:06:42', '2024-01-05 20:52:15'),
-	(150, 'MC-01', 'MARIEL', 'ÁLVAREZ ZAMORA', 'malvarez@ucb.edu.bo', NULL, '$2y$12$TxLHwrK09DKJrqaxs0GNF.a0VN2FZt1NG1NSPEXO3p8E/5dx8Yy46', NULL, 'user', 77, 96, NULL, 8, 17, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:08:03', '2024-01-05 20:53:00'),
-	(151, 'MC-02', 'YOLANDA MARTHA', 'BARRIENTOS CORTEZ', 'ybarrientos@ucb.edu.bo', NULL, '$2y$12$qvP8c986TpFHoO8zj/VBW.rK5wV6ZAbm/MtEaisv0L6odTmeN9MwK', NULL, 'user', 78, 97, NULL, 8, 17, 25, NULL, NULL, NULL, NULL, '2023-12-17 07:09:36', '2024-01-05 20:53:51'),
-	(152, 'MC-03', 'FABIOLA', 'BELMONTE RODRIGUEZ', 'fbelmonte@ucb.edu.bo', NULL, '$2y$12$wUBJDYssxFt0Ui7F/dk2kOYZynor1LtLvIn/NTiOr09jHrjc0f.Je', NULL, 'user', 79, 98, NULL, 8, 17, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:11:00', '2024-01-05 20:54:25'),
-	(153, 'MC-04', 'SABINA', 'ZURITA LUCIA', 'szurita@ucb.edu.bo', NULL, '$2y$12$XDUzCyJcw/L5JebmZbU3lOCNWpOQ2qfATFhWslXWjyD4E7Y/VHkaG', NULL, 'user', 81, 99, NULL, 8, 17, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:12:13', '2024-01-05 20:57:58'),
-	(154, 'PUR-01', 'ARMANDO ROBERTO', 'SEJAS ESCALERA', 'asejas@ucb.edu.bo', NULL, '$2y$12$6OJOpXb8R3qn8XUiIqV1kOTtjlmrOn4s2qRklNBqcOk0xdzNuho9a', NULL, 'user', 158, 100, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:13:33', '2024-01-05 21:03:09'),
-	(155, 'PUR-02', 'FERNANDO', 'BUSTILLOS LOAYZA', 'fbustillos@ucb.edu.bo', NULL, '$2y$12$vo7Tp1DuRuaZ7JpmA6yCEeOKdpN2jYBWSFmYavq2whDN7X368upza', NULL, 'user', 87, 101, NULL, 9, NULL, 26, NULL, NULL, NULL, NULL, '2023-12-17 07:14:47', '2024-01-05 21:03:41'),
-	(156, 'PUR-03', 'ANDREA MARIANA', 'MOSCOSO RIVEROS', 'amoscoso@ucb.edu.bo', NULL, '$2y$12$PuHIXHDfdJvd1r1SFb6cWOwYjC9KK/QhuA/6o.gGv.NEj5z.tVp2C', NULL, 'user', 88, 102, NULL, 9, NULL, 27, NULL, NULL, NULL, NULL, '2023-12-17 07:15:50', '2024-01-05 21:04:11'),
-	(157, 'PUR-04', 'DOLLY', 'ALURRALDE SANDOVAL', 'dlurralde@ucb.edu.bo', NULL, '$2y$12$iG.W41/JBsd7JDJ1dSMow.a/oZ9skrRzuH2jUHmZKSGNOuKSQId4a', NULL, 'user', 89, 103, NULL, 9, NULL, 28, NULL, NULL, NULL, NULL, '2023-12-17 07:17:24', '2024-01-05 21:04:52'),
-	(158, 'PUR-05', 'LUIS FERNANDO', 'ARTEAGA', 'larteaga@ucb.edu.bo', NULL, '$2y$12$xYbI9XAU1nYs8.DE49LVV.jk3hNid9il42x.Vau8UIqZ14G35LO3u', NULL, 'user', 90, 104, NULL, 9, NULL, 29, NULL, NULL, NULL, NULL, '2023-12-17 07:18:59', '2024-01-05 21:05:34'),
-	(159, 'PUR-06', 'MARIA ANDREA', 'RUIZ ASTURIZAGA', 'mruiz@ucb.edu.bo', NULL, '$2y$12$0LR7v3qG10Dw3KF7MGu44.A1AwlajGqCyygTVsMLPZYU1EKzhG8nW', NULL, 'user', 91, 105, NULL, 9, NULL, 30, NULL, NULL, NULL, NULL, '2023-12-17 07:20:12', '2024-01-05 21:06:02'),
-	(160, 'RPI-01', 'CLAUDETTE SYLVIA', 'GALINDO SUAREZ', 'cgalindo@ucb.edu.bo', NULL, '$2y$12$rcpPUDb4OM4nojZd3q3UM..l4f6vNDZ2Aqj001RCvGlj.sUKQME0G', NULL, 'user', 76, 107, NULL, 8, 18, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:22:56', '2024-01-05 21:07:21'),
-	(161, 'RPI-02', 'CARLA ANDREA', 'OROZCO CARVAJAL', 'corozco@ucb.edu.bo', NULL, '$2y$12$ZxrFltAOBgqrtAPYHh8nD.CUzWNZN.2iRFzNPqO5kkGhrohliaQt.', NULL, 'user', 82, 108, NULL, 8, 18, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:24:27', '2024-01-05 22:01:06'),
-	(162, 'RPI-03', 'INGRID ARACELY', 'FLORES MORALES DE ALCOCER', 'iflores@ucb.edu.bo', NULL, '$2y$12$wS0cIN56U/zMcWQ/Xs9b7ezrtvb3Zg9ioQjPEn4ccHdb4hZH4mi9q', NULL, 'user', 83, 109, NULL, 8, 18, 31, NULL, NULL, NULL, NULL, '2023-12-17 07:25:42', '2024-01-05 22:01:45'),
-	(163, 'RPI-04', 'EDWIN', 'VARGAS MACHICADO', 'evargas@ucb.edu.bo', NULL, '$2y$12$mJXudPN0izLit/X5hoDeOelaBmgbdFTs2D.RvodbmkUSNyemfsue6', NULL, 'user', 84, 110, NULL, 8, NULL, 31, NULL, NULL, NULL, NULL, '2023-12-17 07:26:46', '2024-01-05 22:03:32'),
-	(164, 'RPI-05', 'SELMA IVONE', 'REINTSCH CASTELLON', 'sreintsch@ucb.edu.bo', NULL, '$2y$12$c92wihtQIk5Gp9KhYDp7YegQ6G/8fsJooXGxeEAoBk2ASaxs/Qtfm', NULL, 'user', 86, 112, NULL, 8, NULL, 32, NULL, NULL, NULL, NULL, '2023-12-17 07:28:53', '2024-01-05 22:04:16'),
-	(165, 'RR-01', 'XIMENA MACLOVIA', 'PERES ARENAS', 'xperes@ucb.edu.bo', NULL, '$2y$12$u22Fg0tXwxHBiJY08wh2LOIGLYYpBv94kaTLvRsYILnMHIvDsYWnW', NULL, 'user', 71, 113, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:30:02', '2024-01-05 22:04:44'),
-	(166, 'RR-02', 'IVANA MARUJA', 'TARIFA CABO', 'itarifa@ucb.edu.bo', NULL, '$2y$12$6w0fbE439dQnN.0rL1N0u.TCpeeyVNvh9kzeYQ.jE0wECm5QmdC6G', NULL, 'user', 72, 114, NULL, 8, NULL, 33, NULL, NULL, NULL, NULL, '2023-12-17 07:31:50', '2024-01-05 22:06:58'),
-	(167, 'RR-03', 'MARIA ESTHER', 'GOMEZ LLANO', 'mgomez@ucb.edu.bo', NULL, '$2y$12$ajOYAltqqpLZOlYofdmkmeFKdJca0zSgpU4apWSEtkXpSam8543Jm', NULL, 'user', 73, 115, NULL, 8, NULL, 34, NULL, NULL, NULL, NULL, '2023-12-17 07:33:08', '2024-01-05 22:07:38'),
-	(168, 'RR-04', 'FAVIOLA PAOLA', 'ZEBALLOS CADENA', 'fzeballos@ucb.edu.bo', NULL, '$2y$12$IUyGwDs.phAo8Nne.e/d9.R6h9WdxpkeCiHXRabNXXAirDmnsmqf.', NULL, 'user', 74, 116, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:34:34', '2024-01-05 22:08:07'),
-	(169, 'RR-05', 'NICOLE DANIELA', 'STOHMANN MERCADO', 'nstohmann@ucb.edu.bo', NULL, '$2y$12$K6VPsPeyjVLhTJxyac6sSuH0Exa/cvb9bd2BmKIdW2he4Alst2GZG', NULL, 'user', 75, 117, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:35:38', '2024-01-05 22:08:53'),
-	(170, 'RR-05', 'FRANCISCO JAVIER', 'CONDORI ZAPANA', 'fcondori@ucb.edu.bo', NULL, '$2y$12$lJ8z6h7UwB6owyY7QgmPyORDMncgW0m8pUW5k5qiGOQiH2GetyIkC', NULL, 'user', 47, 118, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:37:17', '2024-01-05 22:09:25'),
-	(171, 'SEC-01', 'JOSE LUIS', 'AGUIRRE ALVIS', 'jaguirre@ucb.edu.bo', NULL, '$2y$12$n.No3FEEvhr0NvE6peHotuIsW6WjTgKf5P2gAxXtXryefz1CbJlf6', NULL, 'user', 102, 119, 15, 10, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:39:11', '2024-01-05 22:10:06'),
-	(172, 'SEC-02', 'JÜRGEN MARCELO', 'BUSTILLOS APARICIO', 'jbustillos@ucb.edu.bo', NULL, '$2y$12$E6HmWjdEeRpIqB1tbzf0get.bDkP0it24bTiazi6pcm/4LJU6yw9y', NULL, 'user', 103, 120, 15, 10, NULL, 35, NULL, NULL, NULL, NULL, '2023-12-17 07:40:39', '2024-01-05 22:14:03'),
-	(173, 'SEC-04', 'ROXANA ROSS MERY', 'ROCA TERAN', 'rroca@ucb.edu.bo', NULL, '$2y$12$irH1Lat7uUgMzBjHtFUSuuhmZk3rZM8E06W3GlyU/6aJeqqBCvkx6', NULL, 'user', 105, 122, 15, 10, NULL, 37, NULL, NULL, NULL, NULL, '2023-12-17 07:43:34', '2024-01-05 22:15:30'),
-	(174, 'SEC-05', 'KARLA YUMEI', 'LIJERON DEL CARPIO', 'klijeron@ucb.edu.bo', NULL, '$2y$12$QuZgNe9ZWcvn4XWydXTyNuxFVfBzZkFl1b1VHlh8XYFkH84Y1fatO', NULL, 'user', 106, 123, 15, 10, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:45:28', '2024-01-05 22:16:10'),
-	(175, 'SECR-03', 'JOSE DANIEL', 'PEREZ STRELLI', 'jperez@ucb.edu.bo', NULL, '$2y$12$ob3.OvPh99V/wd5lheNmPuRR7wJ7QitB5smgxDxf3xjnVhlpoyTVq', NULL, 'user', 50, 125, NULL, 16, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:48:52', '2024-01-06 02:02:42'),
-	(176, 'SECR-03', 'SHIRLEY GINA', 'VEGA CAMACHO', 'svega@ucb.edu.bo', NULL, '$2y$12$2XzfjpDWjOHd5sYZuQFyJOqHfP3PVKet8nNDN65xPtnaDvFaRPgY.', NULL, 'user', 50, 79, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:49:57', '2024-01-06 02:03:32'),
-	(177, 'SECR-03', 'MAYARI VERONICA', 'NOYA BERAMENDI', 'mnoya@ucb.edu.bo', NULL, '$2y$12$3SNLs/KIw6fciSRXM8j.qOKwtXKTZoi4cA4qYraHlylXlXgEYYF5.', NULL, 'user', 6, 127, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:50:59', '2024-01-06 02:04:05'),
-	(178, 'SECR-01', 'ROSARIO', 'BARRERA BELLIDO', 'rbarrera@ucb.edu.bo', NULL, '$2y$12$tA8Hftd19j8l21EPz/QaXeYdtLB2I.WLBJ.lFrFqn2Jdu/HamiGEG', NULL, 'user', 116, 148, 17, 10, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 07:55:59', '2024-01-06 01:56:44'),
-	(179, 'DAF-01', 'RAÚL', 'BOADA OPORTO', 'rboada@ucb.edu.bo', NULL, '$2y$12$iH8D8iC8wXJL/e4sKNlyD.4IozYE27toLrRqD4JHOyo.W/bSVShgG', NULL, 'user', 48, 23, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 21:22:08', '2024-01-04 07:38:17'),
-	(180, 'SEC-03', 'LUIS CESAR', 'LLANOS LLANOS', 'lllanos@ucb.edu.bo', NULL, '$2y$12$DddplKaisyqY4/4Zx5bsR.gzSU35T39IUaFcnNjdnk1PZ1K118ilS', NULL, 'user', 121, 121, 15, 10, NULL, 36, NULL, NULL, NULL, NULL, '2024-01-04 07:01:07', '2024-01-04 07:13:45'),
-	(181, 'SECR-02', 'ROXANA', 'IRIGOYEN TABABARY', 'ririgoyen@ucb.edu.bo', NULL, '$2y$12$3iq1tHBgRfRSTbn08./lKOe2b.ASY78M6J0hC1Bpqjt.y0qagq1ju', NULL, 'user', NULL, 106, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-06 02:06:07', '2024-01-06 02:06:07'),
-	(182, 'UEA-01', 'FRANCO DANIEL', 'SANABRIA ABASTO', 'fsanabria@ucb.edu.bo', NULL, '$2y$12$CcH332J2JkJVSUI9RiY.LepapJGvE.IgzR7HuoMxrlAPFuXe1g6S.', NULL, 'user', NULL, 124, 29, 16, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-06 02:07:41', '2024-01-06 02:10:47'),
-	(183, 'SECR-01', 'ANA ELIZABETH', 'ALCAZAR DE BARRIENTOS', 'aalcazar@ucb.edu.bo', NULL, '$2y$12$PvuBuMcQjOv.Y85WPQOejeTzlnHhSQXMhtMx3r6gNtbrcks/45.f2', NULL, 'user', NULL, 158, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-06 02:12:21', '2024-01-06 02:12:21'),
-	(184, 'SECR-02', 'FLORA CARMEN', 'BUEZO CAMACHO', 'fbuezo@ucb.edu.bo', NULL, '$2y$12$3byYLEWCrJHDnOlbW4kqsOs.sn3PxPfixURaX6QiS4WbexMzWFMTy', NULL, 'user', NULL, 155, NULL, 11, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-06 02:15:46', '2024-01-06 02:15:46'),
-	(185, 'SECR-02', 'CECILIA CRISTINA', 'CAREAGA ARIAS', 'ccareaga@ucb.edu.bo', NULL, '$2y$12$PKYBqBZjPLUxElZ3wK8ADOsuKpE/k4tiMntpDP3zDpmGDhjUK9wqe', NULL, 'user', NULL, 171, NULL, 13, NULL, 39, NULL, NULL, NULL, NULL, '2024-01-06 02:18:04', '2024-01-06 02:18:04'),
-	(186, 'SECR-01', 'SANDRA LILIANA', 'CORTEZ ROJAS', 'scortez@ucb.edu.bo', NULL, '$2y$12$1fHZwqfSYT7IHv6EwEhzMO5UPlyZ8NrtNry53Ps0iAGk.W9wv9DPi', NULL, 'user', NULL, 157, 30, 11, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-06 02:20:13', '2024-01-06 02:21:58'),
-	(187, 'SECR-01', 'CARMEN GLADYS DIMPNA', 'MANZANO CAZAS', 'cmanzano@ucb.edu.bo', NULL, '$2y$12$7WPCxx58nWn4PWYCAEr/VupO0M7rwUHem9I0k7RvreyIQA6KuvTRm', NULL, 'user', NULL, 171, 31, 13, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-06 02:24:21', '2024-01-06 02:25:52'),
-	(188, 'SECR-01', 'GIONDALINA', 'RUA VALDEZ', 'grua@ucb.edu.bo', NULL, '$2y$12$yeAfhrK/d8ASKD6Wj6UsEe7HGBuI/aW6u1f1ven.pjNWRz1pLatDi', NULL, 'user', NULL, 173, 32, 11, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-06 02:30:22', '2024-01-15 06:32:57'),
-	(189, 'SECR-01', 'AMPARO', 'SALVATIERRA DE PAZ', 'asalvatierra@ucb.edu.bo', NULL, '$2y$12$5v1EPRWlT1nKSn6vv4yHW.6mmv/2SDpdYKi/MkXS/Kj.iVQZSAKU2', NULL, 'user', NULL, 158, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-06 02:32:57', '2024-01-06 02:32:57'),
-	(190, 'SECR-03', 'CARLA DIANA', 'ANDRADE NAVARRO', 'candrade@ucb.edu.bo', NULL, '$2y$12$9zjJCiT8mRTzKxvMmYijDudvl5L.PMRpkhCdCSRJcS2PL8cMjuqFq', NULL, 'user', NULL, 171, NULL, 13, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-06 02:34:46', '2024-01-06 02:34:46'),
-	(191, 'SECR-01', 'DOMINGA', 'TORREZ CALLIZAYA', 'dtorrez@ucb.edu.bo', NULL, '$2y$12$R.3.kEJe2NDRpqnUZyxIsOdfImn1frmL6/PLpuDEnvCNsRA12ve/m', NULL, 'user', NULL, 135, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-06 02:41:28', '2024-01-06 02:41:28'),
-	(192, 'SECR-01', 'JAHEL', 'VALENCIA APARICIO', 'jvalencia@ucb.edu.bo', NULL, '$2y$12$hw67OfA6TmGwvzkQ3cxZwe2NBbcmqvuRp65HiMA9.oQ.A/bWE7y0y', NULL, 'user', NULL, 158, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-06 02:42:49', '2024-01-06 02:42:49'),
-	(193, 'SECR-01', 'MARIA DEL CARMEN', 'VELASCO MONRROY', 'mvelasco@ucb.edu.bo', NULL, '$2y$12$mdRDtTueVnC2BZWtroLF3uuUQN8DN./la75BME9iYCD7IH79WT0IS', NULL, 'user', NULL, 156, 33, 11, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-06 02:45:17', '2024-01-15 06:20:34'),
-	(194, 'ACAD-01', 'JAVIER MARCELO', 'GUTIERREZ BALLIVIAN', 'jgutierrez@ucb.edu.bo', NULL, '$2y$12$i9zrg52zYkAP3K10LeZm.ukZar/QMvPh12JkTh5fxNvkO6bw.r29y', NULL, 'user', NULL, 142, NULL, 11, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 05:28:12', '2024-01-15 05:28:12'),
-	(195, 'ACAD-01', 'RENAN ALBERTO', 'LAGUNA VARGAS', 'rlaguna@ucb.edu.bo', NULL, '$2y$12$ySjN9oWEMM8C2gx3VyC5heo5Mhz7eRBud4lDe521UvCtBcet4tuAK', NULL, 'user', NULL, 143, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 05:30:42', '2024-01-15 05:30:42'),
-	(196, 'ACAD-01', 'CARLOS HUGO', 'CORDERO CARRAFA', 'ccordero@ucb.edu.bo', NULL, '$2y$12$6I4iNNhC11.OlyW/ZDTrg.ejN5nnrsAMhDISQssm7LFVY3kuxAluG', NULL, 'user', NULL, 144, NULL, 13, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 05:46:11', '2024-01-15 05:46:11'),
-	(197, 'ACAD-01', 'MARIA ELENA', 'LORA FUENTES', 'mlora@ucb.edu.bo', NULL, '$2y$12$Dmm/hqNJ25F0M1nKXij3Vu57mXn/fA7SDRd.fUe6UbLG2yIC5SvjG', NULL, 'user', NULL, 141, NULL, 10, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 05:53:05', '2024-01-15 05:53:05'),
-	(198, 'ACAD-02', 'JESSICA DORIS', 'LANZA BUTRON', 'jlanza@ucb.edu.bo', NULL, '$2y$12$xQxRkf6Ti6D8S3SoEsZiXOlYlsyrnyG2hmSejT6/nZ18zGotnMd9q', NULL, 'user', NULL, 151, NULL, 11, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 05:56:19', '2024-01-15 05:56:19'),
-	(199, 'ACAD-03', 'MARCO ANTONIO', 'ABASTOFLOR PORTUGAL', 'mabastoflor@ucb.edu.bo', NULL, '$2y$12$0YAgG5T9dSTeJ0cThAMWbOcN0iihQ0HGjiKPtxrrdzjMgHZEUgns2', NULL, 'user', NULL, 154, NULL, 11, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 05:58:51', '2024-01-15 05:58:51'),
-	(200, 'ACAD-02', 'CARLOS GUSTAVO', 'MACHICADO SALAS', 'cmachicado@ucb.edu.bo', NULL, '$2y$12$Zkt0HCxlbj0svxgw1K.QKOY8OWnBoielX8CBXGYBzAwF68369KvbG', NULL, 'user', NULL, 150, NULL, 11, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 06:03:00', '2024-01-15 06:03:00'),
-	(201, 'ACAD-02', 'JAVIER ANGEL', 'MENDOZA ELIAS', 'jmendoza@ucb.edu.bo', NULL, '$2y$12$mHV5j9EUv..5zYPj7PtACuF2bWu.dIv9aQmLs6EVtaNZlzmK/d.rC', NULL, 'user', NULL, 152, NULL, 11, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 06:24:30', '2024-01-15 06:24:30'),
-	(202, 'ACAD-02', 'IVETTE BRENDA', 'MIRANDA PARRA', 'imiranda@ucb.edu.bo', NULL, '$2y$12$W0SXAeGVYO.6cwRgFHuIPOEMfHL9oA3HOudhkb8mTLJ3PLhZVJnxW', NULL, 'user', NULL, 170, NULL, 13, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 06:40:40', '2024-01-15 06:40:40'),
-	(203, 'ACAD-02', 'JUAN CARLOS', 'SALAZAR DEL BARRIO', 'jsalazar@ucb.edu.bo', NULL, '$2y$12$xdryVy6OE.E0.d/pd/lmSeirDleXH9rkjq9HwKnXklgOYu1zwzP7W', NULL, 'user', NULL, 146, NULL, 10, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 06:42:59', '2024-01-15 06:42:59'),
-	(204, NULL, 'PAOLA ALEJANDRA', 'CARRANZA BRAVO', 'pcarranza@ucb.edu.bo', NULL, '$2y$12$G6fUc05qkEJkiSky7.giDeQ4Vh9pXMip8oaix50KI9BGBzigtJkIi', NULL, 'user', NULL, 136, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 06:45:06', '2024-01-15 06:45:06'),
-	(205, 'ACAD-02', 'ANDREA GABRIELA', 'ESPINAR SAAVEDRA', 'aespinar@ucb.edu.bo', NULL, '$2y$12$kLV496H2nxm/9Nei7aBWmO5SoOYZczrr7SkCUgPdOoILI1ZH92Y9i', NULL, 'user', NULL, 165, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 07:01:21', '2024-01-15 07:01:21'),
-	(206, 'ACAD-02', 'OMAR ROBERTO', 'SALINAS VILLAFAÑE', 'osalinas@ucb.edu.bo', NULL, '$2y$12$VlzPMaf4a2DVL330Lxrj5uEBe7b1s..St7xayUDOXKDQzh1GL2OP.', NULL, 'user', NULL, 162, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 07:02:15', '2024-01-15 07:02:15'),
-	(207, 'ACAD-02', 'BORIS VLADIMIR', 'HERRERA CESPEDES', 'bherrera@ucb.edu.bo', NULL, '$2y$12$YWAjqNF6zjOOe5J.UcqheuBdFUuc0Werj6moHKHS6MgPsdoI/MGSq', NULL, 'user', NULL, 163, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 07:03:13', '2024-01-15 07:03:13'),
-	(208, 'ACAD-02', 'ORLANDO', 'RIVERA JURADO', 'orivera@ucb.edu.bo', NULL, '$2y$12$v4w2B15c/E.rLXdy32zgIe9WmMh3YtMr3pskkEsgkvBOUXigqQtjC', NULL, 'user', NULL, 161, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 07:04:25', '2024-01-15 07:04:25'),
-	(209, 'ACAD-02', 'FABIO RICHARD', 'DIAZ PALACIOS', 'fdiaz@ucb.edu.bo', NULL, '$2y$12$R3Rk.n2/Qj7eYn29m14By.7EkU4.AoLGORuJNUIT/VQH.xQvu23cC', NULL, 'user', NULL, 164, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 07:05:21', '2024-01-15 07:05:21'),
-	(210, 'ACAD-03', 'RUDY ARIEL', 'GUARAZ VILLEGAS', 'rguaraz@ucb.edu.bo', NULL, '$2y$12$.Vp2UWq90u7wszwbNEmWCunwVtkQKyvma7Tkp9c2i5pB4pUxQG5gO', NULL, 'user', NULL, 168, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 07:06:36', '2024-01-15 07:06:36'),
-	(211, 'ACAD-03', 'ELIAS RUBEN', 'CALIZAYA MAMANI', 'ecalizaya@ucb.edu.bo', NULL, '$2y$12$MUakPjjE5J5CD8.YVof6leHK3eKC2xfS5sOufALykRSgs2tHb5lRi', NULL, 'user', NULL, 167, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-15 07:07:34', '2024-01-15 07:07:34'),
-	(213, NULL, 'JAVIER', 'GRIFFITHS', 'javier@correo.com', NULL, '$2y$12$Fyb6E6t/VziGdm20yZrn2e1Q2zwCTYtfYCzTyw0dlNo67jp4cqDsu', NULL, 'admin', NULL, 159, 4, 12, NULL, 13, NULL, NULL, NULL, NULL, '2024-05-07 07:08:45', '2024-05-07 07:08:45');
+-- Volcando datos para la tabla ucb.users: ~194 rows (aproximadamente)
+INSERT INTO `users` (`id`, `codigo`, `name`, `apellido`, `email`, `email_verified_at`, `password`, `remember_token`, `role`, `cargo_id`, `id_cargo`, `depto_id`, `area_id`, `unidad_id`, `seccion_id`, `fecha_ingreso`, `fecha_nacimiento`, `doc_identidad`, `tipocontrato_id`, `estado`, `created_at`, `updated_at`) VALUES
+	(1, NULL, 'MIGUEL ANGEL', 'LARA NISTTAHUZ', 'starmiguelara@gmail.com', NULL, '$2y$12$ETsHvgkrDFI6Y9EvNIeGe.oK0Ogs7qfT3yZTWP8Z5AwbIMWFgGM5e', NULL, 'admin', 23, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2023-11-10 05:59:41', '2024-06-18 08:12:54'),
+	(11, 'ALR-02', 'MARIO PORFIRIO', 'QUISPE JIMENEZ', 'mquispe@ucb.edu.bo', NULL, '$2y$12$tiSaaW1HOBDrY9GHyIgqNubRfop1nOeyLIlwYG9QaSiwkSGIu/rw6', NULL, 'user', 1, 2, 1, 8, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:09:12', '2024-01-04 07:21:46'),
+	(12, 'ALR-03', 'JAIME LUIS', 'CARVAJAL JALDIN', 'jcarvajal@ucb.edu.bo', NULL, '$2y$12$p8lYZ5dLc/tOrr7MG/8SWOW11.PBdieV8p2dhrzWlRhSb1XG0TiQm', NULL, 'user', 166, 3, 1, 8, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:16:10', '2024-01-04 07:22:37'),
+	(13, 'BC-01', 'ANDREA', 'BALLIVIAN BLANCO', 'aballivian@ucb.edu.bo', NULL, '$2y$12$2Xbzb07nG1o3Njc204G8b.3FFPPck1LEZmNPfGZbRPdOkBxauIa.i', NULL, 'user', 159, 5, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:17:57', '2024-01-04 07:23:59'),
+	(14, 'BC-03', 'MIRIAM MARLENI', 'TANCARA MAMANI', 'mtancara@ucb.edu.bo', NULL, '$2y$12$cxHxyrPF5GyKNarisy8DgOy/V/WuN030K85U6AnNCzZSoCoQUSueC', NULL, 'user', 4, 7, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:19:26', '2024-01-04 07:25:09'),
+	(16, 'BC-04', 'CRISSEL YBANKA', 'GUTIERREZ TICONA', 'cgutierrez@ucb.edu.bo', NULL, '$2y$12$2mtWqfB4wpJQeT56s2LnFe7WXMV8XA5Shu9dCXVGN0m.Zkj7IEDL2', NULL, 'user', 5, 8, NULL, 3, NULL, 3, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:24:33', '2024-01-04 07:25:38'),
+	(17, 'BC-05', 'CELIA', 'CONDORI SIÑANI', 'ccondori@ucb.edu.bo', NULL, '$2y$12$Gfml7RvG2V7ojXVxoUdMTu7O4aumXwmW0oDNNYRzg25BmGPCptqQi', NULL, 'user', 7, 9, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:25:38', '2024-01-04 07:26:08'),
+	(18, 'BC-05', 'JAIME', 'ESPINAR GONZALES', 'jespinar@ucb.edu.bo', NULL, '$2y$12$17xIA4c2lrgoxL6bfLLZku0HPwRCjx.ASBDrxCY9Sirr1uvZVwYLG', NULL, 'user', 7, 9, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:27:55', '2024-01-04 07:26:50'),
+	(19, 'BC-05', 'GUIDO ADALBERTO', 'VILLENA VALLE', 'gvillena@ucb.edu.bo', NULL, '$2y$12$bD/ftV2grzt.wqTgW9ytZOb36RFdShm1ahuzKOXvK.iwbiFYGLNr6', NULL, 'user', 7, 9, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:29:15', '2024-01-04 07:27:23'),
+	(20, 'BC-06', 'JORGE', 'DAZA MENDOZA', 'jdaza@ucb.edu.bo', NULL, '$2y$12$v7ongr3pSfkFvbKy.BCzSOXcpOPZMCJPAfMNsZTMCpC1l5bfVtUXG', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:30:28', '2024-01-04 07:28:17'),
+	(21, 'BC-06', 'AGAR ROSARIO', 'FERNANDEZ MENDOZA', 'afernandez@ucb.edu.bo', NULL, '$2y$12$88vKgVHnOWZH9Ls.xwcLxueiXyxP0tJQD9cKSKmYXnl5ZsJ4onEZ6', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:31:50', '2024-01-04 07:28:54'),
+	(22, 'BC-06', 'JAVIER GERMAN', 'GUZMAN MOLINA', 'jguzman@ucb.edu.bo', NULL, '$2y$12$l1hO4Sdc6mnE2otCq2Qvhe8/3Iv.lpVEhwOX/nHr76wA9I2vybGbO', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:33:00', '2024-01-04 07:29:23'),
+	(23, 'BC-06', 'ATILIO GAUDIO', 'INCH MIRANDA', 'ainch@ucb.edu.bo', NULL, '$2y$12$l7iqK/SPKQcGLs8zUKf3c.Eihsj75vr2hq5/.oxVogm.ngqnevFu.', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:34:10', '2024-01-04 07:29:57'),
+	(24, 'BC-06', 'JUAN JAIME', 'LOPEZ ARRAYA', 'jlopez@ucb.edu.bo', NULL, '$2y$12$VbmocLSDJR7UC8UzCcsUgunRXcV3UMmxiqer.T4qVuGaEUU/A5QPi', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:35:17', '2024-01-04 07:30:35'),
+	(25, 'BC-06', 'NORMA GABRIELA', 'VASQUEZ CRUZ', 'nvasquez@ucb.edu.bo', NULL, '$2y$12$vxKB7ly6hHGgLYKf2D2.AOjeqAgZLdJgmzTLWhhTRbEXlqPwE8TKW', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:36:19', '2024-01-04 07:31:01'),
+	(26, 'BC-06', 'JOSÉ MANUEL', 'VELÁSQUEZ CESPEDES', 'jvelasquez@ucb.edu.bo', NULL, '$2y$12$Ffmie4sGhidXbRzg4taedeXkN31wS5M9qWLS6FjUbREr2bJdZY68e', NULL, 'user', 8, 10, NULL, 3, NULL, 2, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:37:34', '2024-01-04 07:31:29'),
+	(27, 'BC-07', 'ROGELIO VICTOR', 'CALLIZAYA NINA', 'rcallizaya@ucb.edu.bo', NULL, '$2y$12$HNTPc/qCJFIi/5GcsfDZ9OrrOtJ61QzBDIyzqmQe/nHeI022JNaH2', NULL, 'user', 9, 11, NULL, 3, NULL, 3, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:38:48', '2024-01-04 07:32:23'),
+	(28, 'CA-01', 'ALEJANDRA MARIA', 'ECHAZU CONITZER', 'aechazu@ucb.edu.bo', NULL, '$2y$12$/Oy9VTZSc.fOv1Q7hMtwBOy1u.nLY7pCImUKtP4zOg94EKEQ7Gh6C', NULL, 'user', 97, 12, 3, 10, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 08:40:19', '2024-01-04 07:33:04'),
+	(29, 'ALR-01', 'MARIA ERIKA', 'HELGUERO MEJIA', 'mhelguero@ucb.edu.bo', NULL, '$2y$12$yHeY4RM6FcGAjcTrno9CK.82Zyk0KadnxCOlJQkWyqVu9Ry1SU8nG', NULL, 'user', 165, 1, 1, 8, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 19:44:07', '2024-01-04 07:20:47'),
+	(30, 'CA-04', 'FABRICIO OSCAR', 'FERRUFINO DURAN', 'fferrufino@ucb.edu.bo', NULL, '$2y$12$vGQ42Kj72fyMnqkaqXyw0.hhAJ07GDGVeh7N.qE6LpRFbp27Zk80K', NULL, 'user', 11, 14, 3, 10, NULL, 4, NULL, NULL, NULL, NULL, 1, '2023-12-16 19:52:46', '2024-01-04 07:33:51'),
+	(31, 'CA-06', 'NORAH BEATRIZ', 'VALVERDE TAPIA', 'nvalverde@ucb.edu.bo', NULL, '$2y$12$gOJRC7xTSceBEZXMJ7UO.eFWcn2Y.h8v3ptC.E4uEb./Oza1zVCoe', NULL, 'user', 12, 15, 3, 10, NULL, 4, NULL, NULL, NULL, NULL, 1, '2023-12-16 19:54:29', '2024-01-04 07:34:29'),
+	(32, 'CA-07', 'RAMIRO FERNANDO', 'SORIANO ARCE', 'rsoriano@ucb.edu.bo', NULL, '$2y$12$t75ZPxlj4UmHZbH95ITJ4u80P33xjfofSiQn1GxLnR9VL7Br/R2S2', NULL, 'user', 13, 16, 3, 10, NULL, 4, NULL, NULL, NULL, NULL, 1, '2023-12-16 19:56:03', '2024-01-04 07:35:02'),
+	(33, 'CA-08', 'JUAN CARLOS DAVID', 'MONDACCA ARAUZ', 'jmondacca@ucb.edu.bo', NULL, '$2y$12$BclsGpNbyF0Dijy9DFNDWeGID0lv2VzKOyuqP14SEVAvElXi4dCgy', NULL, 'user', 14, 17, 3, 10, NULL, 4, NULL, NULL, NULL, NULL, 1, '2023-12-16 20:17:40', '2024-01-04 07:35:30'),
+	(34, 'CA-09', 'FRANZ', 'BALLESTEROS SARAVIA', 'fballesteros@ucb.edu.bo', NULL, '$2y$12$dVTa8BsgNmVw.TEyqg/dv.I0DAOzbZzwp0o.te6yxNj6J4sH0NyUK', NULL, 'user', 16, 18, 3, 10, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 20:18:55', '2024-01-04 07:35:57'),
+	(35, 'CSB- 01', 'LENNY ALEJANDRA', 'CABRERA AGUILAR', 'lcabrera@ucb.edu.bo', NULL, '$2y$12$6HSLQZHON1.f3vAKD5qObOmZoXyO8cE/VLngJokY89C1RzPmXN5lG', NULL, 'user', 149, 19, 4, 12, NULL, 5, NULL, NULL, NULL, NULL, 1, '2023-12-16 20:27:46', '2024-01-04 07:36:27'),
+	(36, 'CSB- 01', 'TANIA', 'BALDERRAMA CANEDO', 'tbalderrama@ucb.edu.bo', NULL, '$2y$12$lhgm2Cz3avFjSCsAcf40d.2phdKpvqIA8/97J5K2rcKXHWyODRaT2', NULL, 'user', 17, 20, 4, 12, NULL, 5, NULL, NULL, NULL, NULL, 1, '2023-12-16 20:29:03', '2024-01-04 07:37:01'),
+	(37, 'CSB- 03', 'RAMIRO EDWIN', 'MANZANEDA VEIZAGA', 'rmanzaneda@ucb.edu.bo', NULL, '$2y$12$qshZQMN2Y.4/CH.2hN61ouQRnvCZi2xjcncDjpwLbFTCD3RcffqOW', NULL, 'user', 148, 22, 4, 12, NULL, 6, NULL, NULL, NULL, NULL, 1, '2023-12-16 20:30:44', '2024-01-04 07:37:39'),
+	(38, 'SECR-03', 'NICOLE KARMEM', 'ULLOA ARTEAGA', 'nulloa@ucb.edu.bo', NULL, '$2y$12$cM0OjRmX0colOBAAiZikj.7ALwO44naIY1yJBdUzbyqn8LQ6dK70S', NULL, 'user', 18, 24, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 20:41:33', '2024-01-06 01:58:37'),
+	(39, 'DAF-02-TS-04', 'LUIS FELIPE', 'SALINAS CONTRERAS', 'lsalinas@ucb.edu.bo', NULL, '$2y$12$gboS5Xe/MkkDJsnOwQ9zgea3FSfxHJMWWFvrdt2mhIICfzkUGQIOe', NULL, 'user', 29, 26, 5, 6, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 20:45:24', '2024-01-04 07:39:55'),
+	(40, 'DAF-02-TS-05', 'EDGAR', 'CALLISAYA QUISPE', 'ecallisaya@ucb.edu.bo', NULL, '$2y$12$ta9YkhfvTIAl7eR8Pp0lU.DIT9wFh8fig7KWCcbsk.2qhfIo0Q1ee', NULL, 'user', 30, 27, 5, 6, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 20:47:34', '2024-01-04 07:40:31'),
+	(41, 'DAF-03-RH-01', 'ERIKA NATIVIDAD', 'RAKELA SCHWENNINGER', 'erakela@ucb.edu.bo', NULL, '$2y$12$V4z9.bThYXF2qQQpCQZNe.HLQKl7WhB6UxYiZ58vjwlJk.PA4U/VK', NULL, 'user', 21, 28, 27, 6, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 20:58:12', '2024-01-04 07:41:31'),
+	(42, 'DAF-03-RH-02', 'LIZ JUDITH', 'VEGA CRUZ', 'lvega@ucb.edu.bo', NULL, '$2y$12$ZQyCnzIvmBchpJ/vmNrvZOb18nMMhPTkr2Pkf8pKvhNdcEFhcmfhi', NULL, 'user', 167, 29, 27, 6, 2, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:05:22', '2024-01-04 07:42:10'),
+	(43, 'DAF-03-RH-03', 'MARTHA LOURDES', 'SALAS LANDEAU', 'msalas@ucb.edu.bo', NULL, '$2y$12$ZY0D7qijSSnxYCOIhUqwSe8e80V5CJ2VB/kGQR4rHVFV2xUjrLs/S', NULL, 'admin', 34, 30, 27, 6, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:06:42', '2024-01-04 07:43:51'),
+	(44, 'DAF-03-RH-04', 'VALERIA GLORIA', 'RABAZA VALVERDE', 'vrabaza@ucb.edu.bo', NULL, '$2y$12$69sv7VAS6V5NOuj1x2ge..F.JRzyO4pclbAtvCp4mSf8zI18oOHB.', NULL, 'user', 34, 30, 27, 6, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:07:58', '2024-01-04 07:44:26'),
+	(45, 'DAF-03-RH-05', 'MARIA EUGENIA', 'ROCHA DE GUTIERREZ', 'mrocha@ucb.edu.bo', NULL, '$2y$12$7NvNtofUTgs3nSltuu4UH.EjT4H0oYQrTReGTeaOTMd.yJ9F6LYQK', NULL, 'user', 18, 31, 27, 6, 2, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:09:46', '2024-01-04 07:45:27'),
+	(46, 'DAF-03-RH-06', 'JUAN CARLOS', 'ROMERO GONZALES', 'jromero@ucb.edu.bo', NULL, '$2y$12$X7Mq6Fzb/iOr1rqIjl2Kpef1I0zqVNEE9Jy9uX2NlmYitD4z9PoSO', NULL, 'user', 168, 32, 27, 6, 2, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:13:38', '2024-01-04 07:46:08'),
+	(47, 'DAF-04-CF-01', 'NANCY JAEL', 'ALDUNATE MORALES', 'naldunate@ucb.edu.bo', NULL, '$2y$12$WiEbqaHe8SrRUEjxfKXUKO9/YamixNCGk4jgIT8Fp2zwLXn8lgfQ2', NULL, 'user', 22, 33, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:15:23', '2024-01-04 07:46:50'),
+	(48, 'DAF-04-CF-02', 'DANIEL DAVID', 'CUTILE ARUQUIPA', 'dcutile@ucb.edu.bo', NULL, '$2y$12$nHuHf68LEleCuwjjJguNf.B4doLHy6P585ihapoNKQEaMCVeJ5ufa', NULL, 'user', 35, 34, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:16:30', '2024-01-04 07:47:31'),
+	(49, 'DAF-04-CF-03', 'CARLOS ALBERTO', 'BERTOFT PEREZ', 'cbertoft@ucb.edu.bo', NULL, '$2y$12$WmFLTPn7tbFxcE7rLFj85elUS6WLcZVNM1IcCycKAV/4RYMOCFRNK', NULL, 'user', 36, 35, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:17:47', '2024-01-04 07:48:06'),
+	(50, 'DAF-04-CF-04', 'CARMEN ROSA', 'ARCE LAGOS', 'carce@ucb.edu.bo', NULL, '$2y$12$QORWjuHFRJ/VIHzuSJsWr.pTc/M9gZQG7qJAOJOHx5GieTmXhXXX2', NULL, 'user', 37, 36, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:19:04', '2024-01-04 07:48:47'),
+	(51, 'DAF-04-CF-05', 'PILAR DELIA', 'MACHACA MAMANI', 'pmachaca@ucb.edu.bo', NULL, '$2y$12$IgrFLypxykiwWVhcYw7qVOla.fHwKbftkvdM9vjy/0qYNAAEnER3.', NULL, 'user', 38, 37, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:20:47', '2024-01-04 07:49:19'),
+	(52, 'DAF-04-CF-06', 'MARGA MONICA', 'CANAZA CASTRO', 'mcanaza@ucb.edu.bo', NULL, '$2y$12$5W4WDHpG/sFIJpnGaZnILuTe9cgYxfJAcX9Dg1Au9Z9PVI7FcfMyu', NULL, 'user', 39, 38, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:22:01', '2024-01-04 07:49:52'),
+	(53, 'DAF-04-CF-07', 'ERIKA HERMINIA', 'LOZA RIO', 'eloza@ucb.edu.bo', NULL, '$2y$12$vmJnudRQZ.dF2FGVKMZl.uKMdOWBIlIXXf/7OAVyyXi5aU0Nay3A6', NULL, 'user', 40, 39, NULL, 6, 3, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:23:25', '2024-01-04 07:50:28'),
+	(54, 'DAF-05-SAE-01', 'MARÍA INÉS', 'CAMACHO FERNANDEZ', 'mcamacho@ucb.edu.bo', NULL, '$2y$12$mG.97YMNUIFcF1erNmA5EuWSebVdwsY3W.zTbXaeWn1o4c/5c6Xiq', NULL, 'user', 27, 40, NULL, 6, NULL, 7, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:24:57', '2024-01-04 07:51:06'),
+	(55, 'DAF-05-SAE-03', 'TATIANA', 'ANGELO ARROYO', 'tangelo@ucb.edu.bo', NULL, '$2y$12$hDKmU/dYpZqmcJDAC.HGbOPBDtoZrPTsr./b2HkpOyXPHuh3oi.ju', NULL, 'user', 169, 41, NULL, 6, NULL, 7, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:32:09', '2024-01-04 07:51:58'),
+	(56, 'DAF-06-CJ-01', 'DAVID', 'GUZMAN TORDOYA', 'dguzman@ucb.edu.bo', NULL, '$2y$12$E/ubC.cfJnicnWpEul/NReTL5ruvwEyvMMUpeahbSF4g6vzcDHzP6', NULL, 'user', 170, 42, NULL, 6, NULL, 8, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:35:01', '2024-01-04 07:52:38'),
+	(57, 'DAF-07-AC-01', 'ANA MARIA', 'GALINDO URQUIDI', 'agalindo@ucb.edu.bo', NULL, '$2y$12$qcPlXRkYYfGYnZhxLO9lMOitKlNl6fxCVOq7glimysT.XUHJ1mEyu', NULL, 'user', 23, 43, NULL, 6, 4, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:36:19', '2024-01-04 07:53:14'),
+	(58, 'DAF-07-AC-02', 'SUSAN PATRICIA', 'LARREA VERA', 'slarrea@ucb.edu.bo', NULL, '$2y$12$U1kBEF.KnY/ix6uQZugDW.Ubjcn6ZPSeKhbmZ8ziJyZ1ZeUKcalWS', NULL, 'user', 41, 44, NULL, 6, 4, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:37:33', '2024-01-04 07:53:52'),
+	(59, 'DAF-07-AC-02', 'ALVARO LIZANDRO', 'GARCIA LOPEZ', 'agarcia@ucb.edu.bo', NULL, '$2y$12$bUB7t3/n6MRG3ybtAan6gusQt5Q016YJu2R9cWcatwn9UKEmbnK6i', NULL, 'user', 41, 44, NULL, 6, 4, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:38:36', '2024-01-04 07:54:22'),
+	(60, 'DAF-07-AC-02', 'MIGUEL MARIO', 'RUEDA GARCIA', 'mrueda@ucb.edu.bo', NULL, '$2y$12$qFUAFa9Gf8I5sI/DjU9YMOz7hd.F9K1/M4k6P79nBrjepYzgbMVfC', NULL, 'user', 41, 44, NULL, 6, 4, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:39:53', '2024-01-04 07:54:50'),
+	(61, 'DAF-07-AC-03', 'ROGELIA', 'CONDORI', 'rcondori@ucb.edu.bo', NULL, '$2y$12$gl4W9v4F2chYlgH1xBWroe3VvAx8odPU/nSEXVhVNixW5MZ5IBH1.', NULL, 'user', 18, 45, NULL, 6, 5, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:41:57', '2024-01-04 07:55:43'),
+	(62, 'DAF-08-CG-01', 'MARCIA LILIANA', 'LEVY LOZA', 'mlevy@ucb.edu.bo', NULL, '$2y$12$gGMcpewpzqE76OCslewunOvb3pjjIK4ZZnzo9hMNlPosUNqxXCLYG', NULL, 'user', 24, 46, NULL, 6, 6, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:43:14', '2024-01-04 07:56:18'),
+	(63, 'DAF-08-CG-02', 'RAISA ROXANA', 'CUSI ALVAREZ', 'rcusi@ucb.edu.bo', NULL, '$2y$12$/gB.ua9TV.Q4cXITf3xNS.TBG9yxlqQOacgjQSKuQ0DQzl1hWCYBu', NULL, 'user', 42, 47, NULL, 6, 6, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:44:53', '2024-01-04 07:56:54'),
+	(64, 'DAF-08-CG-02', 'IRIS RAYZA', 'ZUÑIGA MOLINA', 'izuñiga@ucb.edu.bo', NULL, '$2y$12$bDJR3uGT0EqNzsxxk4kh8etJVKBs1bZlaOL/A5kcOH33A.OXojCIG', NULL, 'user', 42, 47, NULL, 6, 6, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:54:45', '2024-01-04 07:57:32'),
+	(65, 'DAF-08-CG-03', 'JORGE DANIEL', 'PORTUGAL HUACOTA', 'jportugal@ucb.edu.bo', NULL, '$2y$12$Ue/uboyHfZjfH.askPNX9uer1JLHLpCoTLOT1Tx6mqUB4iWrr0CUG', NULL, 'user', 43, 48, NULL, 6, 6, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:56:06', '2024-01-04 07:58:26'),
+	(66, 'DAF-09-INF-01', 'IVAN MARIO', 'BOLIVAR PARRAGA', 'ibolivar@ucb.edu.bo', NULL, '$2y$12$zp9cKVcz7yINjMvNT6PZ8.e/lgQp1pG6A44XTV0lJhdCsCCy5Uyo2', NULL, 'user', 25, 49, NULL, 6, 7, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:57:27', '2024-01-04 07:59:01'),
+	(67, 'DAF-09-INF-02', 'NICOLAS MIGUEL', 'VERASTEGUI', 'nverastegui@ucb.edu.bo', NULL, '$2y$12$wCPKOPdX/E/0kc48Q2a8PejNlIaohLD1IEX5GpNOmm7QNHCpb8O6m', NULL, 'user', 44, 50, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 21:59:13', '2024-01-04 07:59:33'),
+	(68, 'DAF-09-INF-03', 'ALVARO ERICK', 'UREY BUTRON', 'aurey@ucb.edu.bo', NULL, '$2y$12$4eMAbx8kXqNhNPxeptuzguC1.DN2BcYIDVEZo8bO5wXGGGxkHknq2', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 22:00:38', '2024-01-04 08:00:06'),
+	(69, 'DAF-09-INF-04', 'ALVARO', 'LUNA MAMANI', 'aluna@ucb.edu.bo', NULL, '$2y$12$PFSTdXqbI0Y4142M.O3b8ezDyFkJvQOFPr.N3avC7VYK3ij3six.G', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 22:02:30', '2024-01-04 08:00:34'),
+	(70, 'DAF-09-INF-04', 'CARLOS', 'CAYZA CANAZA', 'ccayza@ucb.edu.bo', NULL, '$2y$12$eeVS0giHvwuXYfrNVbtENe26gfGFLV5SQew1wtAaoMPmvwf6Ulmf2', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 22:03:31', '2024-01-04 08:01:02'),
+	(71, 'DAF-09-INF-04', 'BENITO', 'APAZA CONDORI', 'bapaza@ucb.edu.bo', NULL, '$2y$12$CViExP3OWNJXeWZratIhkulSWIRGaFZNrfN8Z6ds80DDWyk.AE6ni', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 22:04:50', '2024-01-04 08:01:32'),
+	(72, 'DAF-09-INF-04', 'FELIX', 'APAZA TARQUI', 'fapaza@ucb.edu.bo', NULL, '$2y$12$kyOP3USXjFbuQVXaKdegAejYHW/Gtv2jXW7VbZbSWhgRk45ZOBb0i', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 22:06:08', '2024-01-04 08:01:59'),
+	(73, 'DAF-09-INF-04', 'CIRILO', 'CALLE ARUQUIPA', 'ccalle@ucb.edu.bo', NULL, '$2y$12$.Fp6PtR4osPY0MJtXwazyu6qNmzJuz4ydfoasqCdmduss53EzFo/W', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 22:07:13', '2024-01-04 08:02:30'),
+	(74, 'DAF-09-INF-04', 'CALIXTO', 'CHOQUE QUISPE', 'cchoque@ucb.edu.bo', NULL, '$2y$12$nBzcbO9xe4sVRorBDofVEusBHwCsPEm6NE8KJ0WYAqhzfquEldXXe', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 22:08:19', '2024-01-04 08:02:54'),
+	(75, 'DAF-09-INF-04', 'LUIS ALBERTO', 'CONDORI QUISPE', 'lcondori@ucb.edu.bo', NULL, '$2y$12$W/WPDt3MuRogxmhybYzqB.qkJ9sUXnXDjhoY8H3AmjQKD05zLwbKa', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 22:09:25', '2024-01-04 08:03:20'),
+	(76, 'DAF-09-INF-04', 'FLORENCIO VICENTE', 'GAMPASI QUINTANA', 'fgampasi@ucb.edu.bo', NULL, '$2y$12$kQdd.8jom4cRaFmeMqvQZeKZy9RWRkcIwSHIqlz.JDsr4BAolx.0G', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:10:06', '2024-01-04 08:03:43'),
+	(77, 'DAF-09-INF-04', 'RENE LEONARDO', 'HUANCA MAMANI', 'rhuanca@ucb.edu.bo', NULL, '$2y$12$peugmVyl2asOEE25v1DVmOpif/5q3MgGGXjDUOywHNAQ0ekZrrAlK', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:12:09', '2024-01-04 08:04:13'),
+	(78, 'DAF-09-INF-04', 'JUAN TEOFILO', 'LAURA QUISPE', 'jlaura@ucb.edu.bo', NULL, '$2y$12$X5rgde.DuJXSYIXKtgDHg.PCsuekFK1m8kuTCbi5uFoDM.f4JGuWu', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:14:04', '2024-01-04 08:04:42'),
+	(79, 'DAF-09-INF-04', 'MARIO', 'LUCANA CRUZ', 'mlucana@ucb.edu.bo', NULL, '$2y$12$Xhc7Tsi4fdCgGjkSlTsR5enrZU6/ne/BkZwuEdl7fU/E4j6/jWHLO', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:15:37', '2024-01-04 08:05:11'),
+	(80, 'DAF-09-INF-04', 'MARIO', 'MAMANI JIMENEZ', 'mmamani@ucb.edu.bo', NULL, '$2y$12$uxx1IdQRi4ZBXgkgX1WC8.c/wjyxGbgaQrEckaIGRWyYDNs8ptwPS', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:16:56', '2024-01-04 08:05:36'),
+	(81, 'DAF-09-INF-04', 'MARTIRIAN', 'PINTO COLQUE', 'mpinto@ucb.edu.bo', NULL, '$2y$12$tosCSQUaG7MFC6WHT.0vK.ZrveZsliS.289QkyTatJlsoGLkxh4la', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:18:24', '2024-01-04 08:06:04'),
+	(82, 'DAF-09-INF-04', 'DANIEL', 'QUISPE LIMACHI', 'dquispe@ucb.edu.bo', NULL, '$2y$12$MkMGd46l9g5ySkyBzzZvz.xcxYXBq..CdclcQvTx4GFPiy2xS2Pya', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:19:26', '2024-01-04 08:06:30'),
+	(83, 'DAF-09-INF-04', 'JESUS EFRAIN', 'QUISPE MONASTERIOS', 'jquispe@ucb.edu.bo', NULL, '$2y$12$/dMPcbwFlXrz4RZyrT8g8.j/eR5gwc5whkabs5jGHUhgt3DSuJUIi', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:20:41', '2024-01-04 08:06:58'),
+	(84, 'DAF-09-INF-04', 'MARCELO', 'QUISPE CANAZA', 'maquispe@ucb.edu.bo', NULL, '$2y$12$zDPbG4dU65sCkOMXqQCL0ODPAcNQBf9FJANBc0k87e5gDGjK.Ci/G', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:23:37', '2024-01-04 08:07:24'),
+	(85, 'DAF-09-INF-04', 'FERNANDO ARIEL', 'QUISBERT CUBA', 'fquisbert@ucb.edu.bo', NULL, '$2y$12$9R0DdzfmEUokUMSvaXegaeFy708RSbGCn0kHRqCJKdjLxL2l6bV/a', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:24:52', '2024-01-04 08:07:51'),
+	(86, 'DAF-09-INF-04', 'FIDEL', 'TORDOYA VELASQUEZ', 'ftordoya@ucb.edu.bo', NULL, '$2y$12$sF6XkgUnP1FIjDNcYX/hsewZFlmBkcaz8hTu.7gYbZZWHy5MWIUDK', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:26:35', '2024-01-04 08:08:16'),
+	(87, 'DAF-09-INF-04', 'GABRIEL', 'VELASQUEZ MAMANI', 'gvelasquez@ucb.edu.bo', NULL, '$2y$12$AVnthV9M7hdzeL8dtr9o2OP8nYHVSgd8A3qi9oka7LFN6KFsCg0Vi', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:28:13', '2024-01-04 08:08:46'),
+	(88, 'DAF-09-INF-04', 'GERARDO', 'VILLA PATTY', 'gvilla@ucb.edu.bo', NULL, '$2y$12$RDTsen8z6n/DyEi1i7L44.a8nzMzM.M9b3KVHWksQjHFKP/J37JdC', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:29:41', '2024-01-04 08:09:10'),
+	(89, 'DAF-09-INF-04', 'DAVID', 'YUJRA PAUCARA', 'dyujra@ucb.edu.bo', NULL, '$2y$12$uDFVSIuqOJ9y0evUhMcwn.rvc62yumKo40Fu1idduvodEXSV6Hy6e', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:37:13', '2024-01-04 08:09:36'),
+	(90, 'DAF-09-INF-04', 'SERGIO CRISTIAN', 'RAMOS QUISPE', 'sramos@ucb.edu.bo', NULL, '$2y$12$n3DkTiP/E5JFtOdQceW8ouG3xC9hBRm7Sca4rkTCvELNvcwHNrCCm', NULL, 'user', 45, 51, NULL, 6, 7, 9, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:38:10', '2024-01-04 08:10:03'),
+	(91, 'DAF-10-DEP-01', 'JOSE FERNANDO', 'SEJAS PRADO', 'jsejas@ucb.edu.bo', NULL, '$2y$12$iLBcq/DUUT2vbpNBLCOyNObZKlIvIsFGrSODuOuIzyNM.cIv3lt2q', NULL, 'user', 26, 52, NULL, 6, 8, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:39:22', '2024-01-04 08:10:43'),
+	(92, 'DAF-10-DEP-02', 'VICTOR HUGO', 'NINA FLORES', 'vnina@ucb.edu.bo', NULL, '$2y$12$Ci0KHMoQSeFqmGgc43dcW.gmkRXgahgJz3jOMjTjAJJPrsnhVKJSG', NULL, 'user', 46, 53, NULL, 6, 8, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:40:48', '2024-01-04 08:11:19'),
+	(93, 'DAF-11-CM-01', 'LUIS ALBERTO', 'CASTRILLO BAREA', 'lcastrillo@ucb.edu.bo', NULL, '$2y$12$H0kgDGBmqMfc10n3Rwqaxe3EklQyJ.wgRQCChFm26OwGOXaCKw5mO', NULL, 'user', 28, 54, NULL, 6, NULL, 11, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:42:20', '2024-01-04 08:11:51'),
+	(94, 'DAS-01', 'YOLANDA SUSANA', 'FERREIRA ARZA', 'yferreira@ucb.edu.bo', NULL, '$2y$12$s2jxASXBeknjjaQrFgsqMOOel3OEvwLgroQQm2aJ8QWXCtgdMTchW', NULL, 'user', 157, 55, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:43:42', '2024-01-04 08:12:24'),
+	(95, 'DAS-02- PG-02', 'CRISTINA CANDELARIA', 'COLQUE MUÑOZ', 'ccolque@ucb.edu.bo', NULL, '$2y$12$iGmB/JrBAhg42V7mRUq9he5ijXFTW8u/5qtU7hEssOKpldED1cAai', NULL, 'user', 49, 56, NULL, 7, NULL, 40, NULL, NULL, NULL, NULL, 1, '2023-12-16 23:46:03', '2024-01-04 08:12:59'),
+	(96, 'PG-01', 'MARCELA SOPHIA', 'AGRAMONT PARADA', 'magramont@ucb.edu.bo', NULL, '$2y$12$NqsooP0XlLcRZEeD2c/PZOV83WoOzf/jlqr96TceyL6NnZQzdE5U6', NULL, 'user', 134, 57, NULL, 12, NULL, 13, NULL, NULL, NULL, NULL, 1, '2023-12-17 00:15:05', '2024-01-05 20:58:46'),
+	(106, 'PG-01', 'MELANY FRANCIS', 'CESPEDES MAGARIÑOS', 'mcespedes@ucb.edu.bo', NULL, '$2y$12$1mY5wYjGUZF4ZR0rWvGe1uOiyIwYfn9js3MQWuaUQAsoQjfsonp0q', NULL, 'user', 151, 58, NULL, 13, NULL, 14, NULL, NULL, NULL, NULL, 1, '2023-12-17 01:39:04', '2024-01-05 20:59:27'),
+	(107, 'PG-01', 'LORNA NORMA', 'ARAUZ RODRIGUEZ', 'larauz@ucb.edu.bo', NULL, '$2y$12$MrEOYJTyyKHJQFReQmjZM.97N6CeuW09sAz4TWoarAFonXJtNfdvq', NULL, 'user', 133, 159, NULL, 12, NULL, 13, NULL, NULL, NULL, NULL, 1, '2023-12-17 01:40:47', '2024-01-05 20:59:56'),
+	(108, 'PG-01', 'CLAUDIA ALEJANDRA', 'PEREIRA VELASQUEZ', 'cpereira@ucb.edu.bo', NULL, '$2y$12$HwGfO73ehbq0W98.7k/8VOWp1bfBiIJPPmtKhXE8LfguNY.rHm/dS', NULL, 'user', 93, 84, NULL, 10, NULL, 15, NULL, NULL, NULL, NULL, 1, '2023-12-17 01:42:10', '2024-01-05 21:00:31'),
+	(109, 'PG-01', 'GABRIELA BELEN', 'VELASQUEZ VELASQUEZ', 'gavelasquez@ucb.edu.bo', NULL, '$2y$12$orTxaYCRVWyLPnLjI1XP0eHxf3Dr7YPzT4qsbVR5VjkRzxrTsQII6', NULL, 'user', 118, 149, NULL, 11, NULL, 16, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:14:41', '2024-01-05 21:01:01'),
+	(110, 'MC-04', 'KAREN NIEVES ILSEN', 'CORONEL BOZO', 'kcoronel@ucb.edu.bo', NULL, '$2y$12$m.mR92CuAUzuIcyph2DJjOpwjUwOgcaDKcjjW38Pjh6Krb8hB0Mcu', NULL, 'user', 80, 59, NULL, 15, NULL, 17, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:21:47', '2024-01-05 20:57:09'),
+	(111, 'DAS-03', 'GEORGINA AURELIA', 'CHAVEZ LIZARRAGA', 'gchavez@ucb.edu.bo', NULL, '$2y$12$QZgyrGNQ/exN0xWB6pOs9.BRCsWFLhjCGuZ4W62eVQeY9ka/yz5oy', NULL, 'user', 51, 60, NULL, 8, NULL, 18, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:23:18', '2024-01-04 08:14:10'),
+	(112, 'DAS-04-RG-01', 'PRISCILA RAQUEL', 'TORO REYES', 'ptoro@ucb.edu.bo', NULL, '$2y$12$T9ufFfIuXc4sgRhVPzUOOejmxgqKaBWKINix2slmS94/JZqonMOhC', NULL, 'user', 52, 61, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:25:06', '2024-01-04 08:15:12'),
+	(113, 'DAS-04-RG-02-A', 'AURELIA', 'TORREZ GUTIERREZ', 'atorrez@ucb.edu.bo', NULL, '$2y$12$/OcDuluPrFkyHpmmGAwPG.CO8DaLb8HUZiG9kZo8KzqfdxcZlEhvi', NULL, 'user', 61, 62, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:26:20', '2024-01-04 08:15:51'),
+	(114, 'DAS-04-RG-02-B', 'CINTHYA MARLENE', 'LOBO OZUNA', 'clobo@ucb.edu.bo', NULL, '$2y$12$FV8vgo5VMkwCTF4tATyV9OKrSDRSOFOFeh.xNZYi3yoV2TPysjb1i', NULL, 'user', 62, 63, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:27:46', '2024-01-04 08:16:37'),
+	(115, 'DAS-04-RG-02-C', 'ERICK MOISES', 'MORALES TORREZ', 'emorales@ucb.edu.bo', NULL, '$2y$12$2sPfD78lO3vlhBgX56EspOiusZqAWIRNqk9BMeWjge19XqcKUUoca', NULL, 'user', 63, 64, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:28:56', '2024-01-04 08:17:19'),
+	(116, 'DAS-04-RG-02-D', 'CINTYA CARMEN', 'TORREZ TORREZ', 'ctorrez@ucb.edu.bo', NULL, '$2y$12$FY/LC5X3ISP8nwHSFwk0BudPOBxhy2l3zXIMw9YU6utPAE7vGnWOW', NULL, 'user', 64, 65, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:30:20', '2024-01-04 19:40:06'),
+	(117, 'DAS-04-RG-02-E', 'MARIBEL', 'ESPINOZA VERASTEGUI', 'mespinoza@ucb.edu.bo', NULL, '$2y$12$U6mef7HfgWHJZhAt0/ENfe0Coi4/oCyTYrDn99bb03ilzi1k5V/A6', NULL, 'user', 65, 66, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:31:33', '2024-01-04 19:41:01'),
+	(118, 'DAS-04-RG-03', 'CLEMENTE', 'CHOQUE QUISPE', 'clchoque@ucb.edu.bo', NULL, '$2y$12$bKCBSgLnT3F3TMQwBOQyzOehUvaHmm0SlXTJG3WpZGE3I0YPOzFV2', NULL, 'user', 66, 67, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:34:17', '2024-01-04 19:41:52'),
+	(119, 'DAS-04-RG-03', 'DILIAM HEMILZE', 'LARREA CHAVEZ', 'dlarrea@ucb.edu.bo', NULL, '$2y$12$g9tjcLxlf5bovl1RumDkhuA6.95D8RCaxkchDKzbQ8w29Yf.smu/O', NULL, 'user', 66, 67, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:35:37', '2024-01-04 19:43:00'),
+	(120, 'DAS-04-RG-03', 'JOSE GONZALO', 'MEALLA GUTIERREZ', 'jmealla@ucb.edu.bo', NULL, '$2y$12$N1sqkvNOrMPitRtamC.tOeDlG/BMbjM3bJtAohDA.Joe04jI8BbOS', NULL, 'user', 66, 67, NULL, 7, 9, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:36:31', '2024-01-04 19:44:20'),
+	(121, 'DAS-05-DC-01', 'GEOVANA', 'CERRUTO ALVAREZ', 'gcerruto@ucb.edu.bo', NULL, '$2y$12$3VoTUW40ugugBagc4qxbNee3vt4vNUR5oHUQubH/m1B1uKe8uak/2', NULL, 'user', 53, 68, NULL, 7, 15, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:37:42', '2024-01-04 19:45:15'),
+	(122, 'DAS-05-DC-02', 'ANA GABRIELA', 'ALIAGA JIMENEZ', 'aaliaga@ucb.edu.bo', NULL, '$2y$12$8Z0yK9RMoOqQCSyoS.4qKuescfQigTLSDmldfztKPipNNYiYHtX8i', NULL, 'user', 67, 69, NULL, 7, 15, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:38:53', '2024-01-04 19:46:06'),
+	(123, 'DAS-06-AO-01', 'MADEL IVONNE', 'CEVALLOS BALLESTEROS', 'mcevallos@ucb.edu.bo', NULL, '$2y$12$Sgez52x5R1is0v.OrsVCsu/kZEcrYlG3w4Ad4NikyrsZyuG0ry7y6', NULL, 'user', 54, 70, NULL, 7, 16, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:40:17', '2024-01-04 19:47:09'),
+	(124, 'DAS-06-AO-02', 'REYNALDO RICHARD', 'RIOS MENA', 'rrios@ucb.edu.bo', NULL, '$2y$12$8KClcYo14Nz9fhds6LlBDuvm6QxdT8JiFRP1pp99USIqw.mRuKfH6', NULL, 'user', 68, 71, NULL, 7, 16, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:41:34', '2024-01-04 19:47:49'),
+	(125, 'DAS-06-AO-03', 'MARIA AGUEDA SILVIA', 'UGARTE DE STEVERLYNCK', 'mugarte@ucb.edu.bo', NULL, '$2y$12$t.TOmz0VCXxIOEKsywQif.wBrnnXDTDgbS99VETHBuw5aU37zR9Pq', NULL, 'user', 69, 72, NULL, 7, 16, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:43:02', '2024-01-04 19:48:54'),
+	(126, 'DAS-07-CA-01', 'MARCIO ALEJANDRO', 'PAREDES RIVERA', 'mparedes@ucb.edu.bo', NULL, '$2y$12$Ou0X/TT2VHKdmIcrKmrhxOy7/OpfduG4uOMps4.lW3VfMYYNJz3d6', NULL, 'user', 55, 73, NULL, 7, NULL, 19, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:44:10', '2024-01-04 19:49:46'),
+	(127, 'DAS-07-CA-02', 'DIEGO ADAMS', 'ARTEAGA SANJINÉS', 'darteaga@ucb.edu.bo', NULL, '$2y$12$mPCFYNbq1/8yvhzCj97I8eHlw4tHXJ0lTFPF8H4CC4.WbEHfCziIe', NULL, 'user', 70, 74, NULL, 7, NULL, 19, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:45:35', '2024-01-04 19:50:44'),
+	(128, 'DAS-08-SEI-01', 'PAOLA CONSUELO', 'ZAPANA CASTILLO', 'pzapana@ucb.edu.bo', NULL, '$2y$12$yuJbPSl.dTvaToUQfDXTreNX1.eZTVdmPcr7b3c5unVdiTzJ2POui', NULL, 'user', 56, 75, NULL, 7, NULL, 20, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:46:50', '2024-01-04 19:51:53'),
+	(129, 'DAS-09', 'ADRIANA NICOOL', 'SANJINES DEL VILLAR', 'asanjines@ucb.edu.bo', NULL, '$2y$12$QN672GnNbh.0nGhsOVDKruWy5INU0fYyZt67dtF7MhbrTxBsxx366', NULL, 'user', 57, 76, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:48:01', '2024-01-04 19:52:36'),
+	(130, 'DAS-10', 'MARCELO EDGAR', 'TARQUINO PORTILLO', 'mtarquino@ucb.edu.bo', NULL, '$2y$12$T5HQIYi3UsMYApLMuL6k/ueyCdf.WJxiwMTGyABrms8O4vAd8QWEq', NULL, 'user', 58, 77, NULL, 7, NULL, 21, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:49:57', '2024-01-04 19:53:11'),
+	(131, 'DAS-11', 'MICHEL ANGELO', 'AGUILAR TINCO', 'maguilar@ucb.edu.bo', NULL, '$2y$12$NjelbVsGJcIZPfu06J4kMOgcYbIxy9OYgjvjm2S0ZbWkESE4HuRQa', NULL, 'user', 59, 78, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:51:37', '2024-01-04 19:53:46'),
+	(132, 'DGR-03', 'FEDRA JASMIN', 'DURAN TARIFA', 'fduran@ucb.edu.bo', NULL, '$2y$12$uhH6PLOjD3jkPKnEFtmGiu3j.f3qswF/527OKUydPlVDJc..sIJQ6', NULL, 'user', 50, 79, 8, 7, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:53:06', '2024-01-04 20:45:31'),
+	(133, 'EDU-01', 'MARIA ALEJANDRA', 'MARTINEZ BARRIENTOS', 'mmartinez@ucb.edu.bo', NULL, '$2y$12$hwGFgATKNTlEoMAKAoqZDuuq9s727nm/HIBrWbCn9/bSayPkoJWz2', NULL, 'user', 98, 80, 9, 10, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:56:27', '2024-01-04 20:52:15'),
+	(134, 'EDU-02', 'MARIO RAUL', 'BAPTISTA GONZALES', 'mbaptista@ucb.edu.bo', NULL, '$2y$12$l5.XshV3Qwltt9hLDAMCCuv86nkWqAcnE9nI4.HLs.vuJ3GPSscfu', NULL, 'user', 114, 81, 9, 10, NULL, 22, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:57:44', '2024-01-04 20:52:51'),
+	(135, 'EDU-03', 'MONICA MIRIAM', 'FLORES ROJAS', 'mflores@ucb.edu.bo', NULL, '$2y$12$5o.szmpKI9DTH6pjUgxZ2.dr1/pCrX1SCBIHiJgHlkprHYJn09k2C', NULL, 'user', 115, 82, 9, 10, NULL, 23, NULL, NULL, NULL, NULL, 1, '2023-12-17 05:59:09', '2024-01-04 20:53:24'),
+	(136, 'EDU-04', 'MELFA', 'CESPEDES HERNANI', 'mecespedes@ucb.edu.bo', NULL, '$2y$12$UpjTAow8AGcAC8xDSgpqKuuSpUpNa7oa6fqk9PtS24VARlrOvAhcy', NULL, 'user', 117, 83, 9, 10, NULL, 23, NULL, NULL, NULL, NULL, 1, '2023-12-17 06:02:02', '2024-01-05 20:39:07'),
+	(137, 'PG-01', 'LEONOR ALANA', 'VALDIVIA DZGOEVA', 'lvaldivia@ucb.edu.bo', NULL, '$2y$12$.SQImCoqQ53oitB4DZvv1e1huQwMnmVQ7VYF1qh3lkk4QBZ3ySHKC', NULL, 'user', 93, 84, 9, 10, NULL, 15, NULL, NULL, NULL, NULL, 1, '2023-12-17 06:03:56', '2024-01-05 21:02:21'),
+	(138, 'SECR-01', 'MARIA CANDELARIA', 'PERALES SANCHEZ', 'mperales@ucb.edu.bo', NULL, '$2y$12$olIkrT0v0TUT4SGB6XjjR.NpdZQuz.zmoJFKjgw3vKWjvBBzIyjKe', NULL, 'user', 116, 135, 28, 7, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 06:31:44', '2024-01-05 22:21:14'),
+	(139, 'ICO-02', 'YOSELINNE LETICIA', 'VERA ASTURIZAGA', 'yvera@ucb.edu.bo', NULL, '$2y$12$hXcbPUIA2sBJwtDHFPK9oOhTwYrZMkzsnGoiI6Ovgtt/7p53i2yQG', NULL, 'user', 130, 86, 10, 7, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 06:35:53', '2024-01-05 20:43:07'),
+	(140, 'ID-01', 'GERMAN RAMIRO', 'MOLINA BARRIOS', 'gmolina@ucb.edu.bo', NULL, '$2y$12$LeksrfvN8jcTjWyaBlDLf.2/bogrXU2PzjlA1BdqCi1wOal6J/lhW', NULL, 'user', 154, 87, 11, 13, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 06:37:12', '2024-01-05 20:43:54'),
+	(141, 'IICC-01', 'EDITH MARCELA', 'LOSANTOS VELASCO', 'elosantos@ucb.edu.bo', NULL, '$2y$12$XosBkonvG/ZAhBewA4E28OG0.MINfqZpEOgZbu8BFvVwHHSodpRcW', NULL, 'user', 99, 88, 12, 10, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 06:38:47', '2024-01-05 20:44:53'),
+	(142, 'IICC-02', 'NATALIE', 'GUILLEN AGUIRRE', 'nguillen@ucb.edu.bo', NULL, '$2y$12$sL.Qrgfc534L2h5O4OlvD.fNHmjkfGjCvftmrQP0/yf55/AOFluUq', NULL, 'user', 100, 89, 12, 10, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 06:40:45', '2024-01-05 20:45:41'),
+	(143, 'IICC-02', 'ANA MARIA FERNANDA', 'ARIAS URIONA', 'aarias@ucb.edu.bo', NULL, '$2y$12$h/0IbbjGFWtq7mtdkY0XduiS4pdphr.P.30V.UzR81elrAL4SQEgG', NULL, 'user', 100, 89, 12, 10, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 06:41:52', '2024-01-05 20:47:19'),
+	(144, 'IICC-03', 'CLAUDIA JAZMÍN', 'MAZÓ TORRICO', 'cmazo@ucb.edu.bo', NULL, '$2y$12$wIsq4Qx9c67iYq9zhqCu3.stRRskIMBwOtI2mWgdm./1RDGv8PHX6', NULL, 'user', 101, 90, 12, 10, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 06:43:02', '2024-01-05 20:48:01'),
+	(145, 'IISEC-01', 'FERNANDA', 'WANDERLEY DE CHAVEZ', 'fwanderley@ucb.edu.bo', NULL, '$2y$12$nqIDd2BZGN7nzPJEbQVliO/S1t.a/pGraAG.wCIgddffQAsmDB8Zi', NULL, 'user', 124, 91, 13, 11, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 06:44:32', '2024-01-05 20:49:15'),
+	(146, 'IISEC-02', 'JEAN PAUL', 'BENAVIDES LOPEZ', 'jbenavides@ucb.edu.bo', NULL, '$2y$12$VYgNH0gBfc1qcKV3aP12U.OkSHaWRKlPL0C6g02QBE6bg2kcT0CW2', NULL, 'user', 125, 92, 13, 11, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 06:45:46', '2024-01-05 20:50:25'),
+	(147, 'IISEC-03', 'CARLOS EDUARDO', 'QUEZADA LAMBERTIN', 'cquezada@ucb.edu.bo', NULL, '$2y$12$pVjL5UN7hkeDZbheay5dSen0ldtKk2noO1RcZk.B9JELXENvPVDLy', NULL, 'user', 126, 93, 13, 11, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 06:47:03', '2024-01-05 20:50:56'),
+	(148, 'ING-CIV-02', 'ALVARO', 'QUISBERT HUAYLLANI', 'aquisbert@ucb.edu.bo', NULL, '$2y$12$DdnM2mxyQihIco98PdNBNOwh6TASaCEDxdin3.CnvBfHqcujJS1L6', NULL, 'user', 145, 94, 14, 12, NULL, 24, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:05:29', '2024-01-05 20:51:41'),
+	(149, 'ING-CIV-03', 'EDWIN FERNANDO', 'QUISPE MAMANI', 'equispe@ucb.edu.bo', NULL, '$2y$12$SsjNXB6SdfzWUa6.l1d.huXMd4ugt25B3Z2qWo0XdTd2WOj9VCO9y', NULL, 'user', 146, 95, 14, 12, NULL, 24, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:06:42', '2024-01-05 20:52:15'),
+	(150, 'MC-01', 'MARIEL', 'ÁLVAREZ ZAMORA', 'malvarez@ucb.edu.bo', NULL, '$2y$12$TxLHwrK09DKJrqaxs0GNF.a0VN2FZt1NG1NSPEXO3p8E/5dx8Yy46', NULL, 'user', 77, 96, NULL, 8, 17, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:08:03', '2024-01-05 20:53:00'),
+	(151, 'MC-02', 'YOLANDA MARTHA', 'BARRIENTOS CORTEZ', 'ybarrientos@ucb.edu.bo', NULL, '$2y$12$qvP8c986TpFHoO8zj/VBW.rK5wV6ZAbm/MtEaisv0L6odTmeN9MwK', NULL, 'user', 78, 97, NULL, 8, 17, 25, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:09:36', '2024-01-05 20:53:51'),
+	(152, 'MC-03', 'FABIOLA', 'BELMONTE RODRIGUEZ', 'fbelmonte@ucb.edu.bo', NULL, '$2y$12$wUBJDYssxFt0Ui7F/dk2kOYZynor1LtLvIn/NTiOr09jHrjc0f.Je', NULL, 'user', 79, 98, NULL, 8, 17, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:11:00', '2024-01-05 20:54:25'),
+	(153, 'MC-04', 'SABINA', 'ZURITA LUCIA', 'szurita@ucb.edu.bo', NULL, '$2y$12$XDUzCyJcw/L5JebmZbU3lOCNWpOQ2qfATFhWslXWjyD4E7Y/VHkaG', NULL, 'user', 81, 99, NULL, 8, 17, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:12:13', '2024-01-05 20:57:58'),
+	(154, 'PUR-01', 'ARMANDO ROBERTO', 'SEJAS ESCALERA', 'asejas@ucb.edu.bo', NULL, '$2y$12$6OJOpXb8R3qn8XUiIqV1kOTtjlmrOn4s2qRklNBqcOk0xdzNuho9a', NULL, 'user', 158, 100, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:13:33', '2024-01-05 21:03:09'),
+	(155, 'PUR-02', 'FERNANDO', 'BUSTILLOS LOAYZA', 'fbustillos@ucb.edu.bo', NULL, '$2y$12$vo7Tp1DuRuaZ7JpmA6yCEeOKdpN2jYBWSFmYavq2whDN7X368upza', NULL, 'user', 87, 101, NULL, 9, NULL, 26, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:14:47', '2024-01-05 21:03:41'),
+	(156, 'PUR-03', 'ANDREA MARIANA', 'MOSCOSO RIVEROS', 'amoscoso@ucb.edu.bo', NULL, '$2y$12$PuHIXHDfdJvd1r1SFb6cWOwYjC9KK/QhuA/6o.gGv.NEj5z.tVp2C', NULL, 'user', 88, 102, NULL, 9, NULL, 27, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:15:50', '2024-01-05 21:04:11'),
+	(157, 'PUR-04', 'DOLLY', 'ALURRALDE SANDOVAL', 'dlurralde@ucb.edu.bo', NULL, '$2y$12$iG.W41/JBsd7JDJ1dSMow.a/oZ9skrRzuH2jUHmZKSGNOuKSQId4a', NULL, 'user', 89, 103, NULL, 9, NULL, 28, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:17:24', '2024-01-05 21:04:52'),
+	(158, 'PUR-05', 'LUIS FERNANDO', 'ARTEAGA', 'larteaga@ucb.edu.bo', NULL, '$2y$12$xYbI9XAU1nYs8.DE49LVV.jk3hNid9il42x.Vau8UIqZ14G35LO3u', NULL, 'user', 90, 104, NULL, 9, NULL, 29, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:18:59', '2024-01-05 21:05:34'),
+	(159, 'PUR-06', 'MARIA ANDREA', 'RUIZ ASTURIZAGA', 'mruiz@ucb.edu.bo', NULL, '$2y$12$0LR7v3qG10Dw3KF7MGu44.A1AwlajGqCyygTVsMLPZYU1EKzhG8nW', NULL, 'user', 91, 105, NULL, 9, NULL, 30, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:20:12', '2024-01-05 21:06:02'),
+	(160, 'RPI-01', 'CLAUDETTE SYLVIA', 'GALINDO SUAREZ', 'cgalindo@ucb.edu.bo', NULL, '$2y$12$rcpPUDb4OM4nojZd3q3UM..l4f6vNDZ2Aqj001RCvGlj.sUKQME0G', NULL, 'user', 76, 107, NULL, 8, 18, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:22:56', '2024-01-05 21:07:21'),
+	(161, 'RPI-02', 'CARLA ANDREA', 'OROZCO CARVAJAL', 'corozco@ucb.edu.bo', NULL, '$2y$12$ZxrFltAOBgqrtAPYHh8nD.CUzWNZN.2iRFzNPqO5kkGhrohliaQt.', NULL, 'user', 82, 108, NULL, 8, 18, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:24:27', '2024-01-05 22:01:06'),
+	(162, 'RPI-03', 'INGRID ARACELY', 'FLORES MORALES DE ALCOCER', 'iflores@ucb.edu.bo', NULL, '$2y$12$wS0cIN56U/zMcWQ/Xs9b7ezrtvb3Zg9ioQjPEn4ccHdb4hZH4mi9q', NULL, 'user', 83, 109, NULL, 8, 18, 31, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:25:42', '2024-01-05 22:01:45'),
+	(163, 'RPI-04', 'EDWIN', 'VARGAS MACHICADO', 'evargas@ucb.edu.bo', NULL, '$2y$12$mJXudPN0izLit/X5hoDeOelaBmgbdFTs2D.RvodbmkUSNyemfsue6', NULL, 'user', 84, 110, NULL, 8, NULL, 31, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:26:46', '2024-01-05 22:03:32'),
+	(164, 'RPI-05', 'SELMA IVONE', 'REINTSCH CASTELLON', 'sreintsch@ucb.edu.bo', NULL, '$2y$12$c92wihtQIk5Gp9KhYDp7YegQ6G/8fsJooXGxeEAoBk2ASaxs/Qtfm', NULL, 'user', 86, 112, NULL, 8, NULL, 32, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:28:53', '2024-01-05 22:04:16'),
+	(165, 'RR-01', 'XIMENA MACLOVIA', 'PERES ARENAS', 'xperes@ucb.edu.bo', NULL, '$2y$12$u22Fg0tXwxHBiJY08wh2LOIGLYYpBv94kaTLvRsYILnMHIvDsYWnW', NULL, 'user', 71, 113, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:30:02', '2024-01-05 22:04:44'),
+	(166, 'RR-02', 'IVANA MARUJA', 'TARIFA CABO', 'itarifa@ucb.edu.bo', NULL, '$2y$12$6w0fbE439dQnN.0rL1N0u.TCpeeyVNvh9kzeYQ.jE0wECm5QmdC6G', NULL, 'user', 72, 114, NULL, 8, NULL, 33, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:31:50', '2024-01-05 22:06:58'),
+	(167, 'RR-03', 'MARIA ESTHER', 'GOMEZ LLANO', 'mgomez@ucb.edu.bo', NULL, '$2y$12$ajOYAltqqpLZOlYofdmkmeFKdJca0zSgpU4apWSEtkXpSam8543Jm', NULL, 'user', 73, 115, NULL, 8, NULL, 34, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:33:08', '2024-01-05 22:07:38'),
+	(168, 'RR-04', 'FAVIOLA PAOLA', 'ZEBALLOS CADENA', 'fzeballos@ucb.edu.bo', NULL, '$2y$12$IUyGwDs.phAo8Nne.e/d9.R6h9WdxpkeCiHXRabNXXAirDmnsmqf.', NULL, 'user', 74, 116, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:34:34', '2024-01-05 22:08:07'),
+	(169, 'RR-05', 'NICOLE DANIELA', 'STOHMANN MERCADO', 'nstohmann@ucb.edu.bo', NULL, '$2y$12$K6VPsPeyjVLhTJxyac6sSuH0Exa/cvb9bd2BmKIdW2he4Alst2GZG', NULL, 'user', 75, 117, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:35:38', '2024-01-05 22:08:53'),
+	(170, 'RR-05', 'FRANCISCO JAVIER', 'CONDORI ZAPANA', 'fcondori@ucb.edu.bo', NULL, '$2y$12$lJ8z6h7UwB6owyY7QgmPyORDMncgW0m8pUW5k5qiGOQiH2GetyIkC', NULL, 'user', 47, 118, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:37:17', '2024-01-05 22:09:25'),
+	(171, 'SEC-01', 'JOSE LUIS', 'AGUIRRE ALVIS', 'jaguirre@ucb.edu.bo', NULL, '$2y$12$n.No3FEEvhr0NvE6peHotuIsW6WjTgKf5P2gAxXtXryefz1CbJlf6', NULL, 'user', 102, 119, 15, 10, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:39:11', '2024-01-05 22:10:06'),
+	(172, 'SEC-02', 'JÜRGEN MARCELO', 'BUSTILLOS APARICIO', 'jbustillos@ucb.edu.bo', NULL, '$2y$12$E6HmWjdEeRpIqB1tbzf0get.bDkP0it24bTiazi6pcm/4LJU6yw9y', NULL, 'user', 103, 120, 15, 10, NULL, 35, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:40:39', '2024-01-05 22:14:03'),
+	(173, 'SEC-04', 'ROXANA ROSS MERY', 'ROCA TERAN', 'rroca@ucb.edu.bo', NULL, '$2y$12$irH1Lat7uUgMzBjHtFUSuuhmZk3rZM8E06W3GlyU/6aJeqqBCvkx6', NULL, 'user', 105, 122, 15, 10, NULL, 37, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:43:34', '2024-01-05 22:15:30'),
+	(174, 'SEC-05', 'KARLA YUMEI', 'LIJERON DEL CARPIO', 'klijeron@ucb.edu.bo', NULL, '$2y$12$QuZgNe9ZWcvn4XWydXTyNuxFVfBzZkFl1b1VHlh8XYFkH84Y1fatO', NULL, 'user', 106, 123, 15, 10, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:45:28', '2024-01-05 22:16:10'),
+	(175, 'SECR-03', 'JOSE DANIEL', 'PEREZ STRELLI', 'jperez@ucb.edu.bo', NULL, '$2y$12$ob3.OvPh99V/wd5lheNmPuRR7wJ7QitB5smgxDxf3xjnVhlpoyTVq', NULL, 'user', 50, 125, NULL, 16, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:48:52', '2024-01-06 02:02:42'),
+	(176, 'SECR-03', 'SHIRLEY GINA', 'VEGA CAMACHO', 'svega@ucb.edu.bo', NULL, '$2y$12$2XzfjpDWjOHd5sYZuQFyJOqHfP3PVKet8nNDN65xPtnaDvFaRPgY.', NULL, 'user', 50, 79, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:49:57', '2024-01-06 02:03:32'),
+	(177, 'SECR-03', 'MAYARI VERONICA', 'NOYA BERAMENDI', 'mnoya@ucb.edu.bo', NULL, '$2y$12$3SNLs/KIw6fciSRXM8j.qOKwtXKTZoi4cA4qYraHlylXlXgEYYF5.', NULL, 'user', 6, 127, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:50:59', '2024-01-06 02:04:05'),
+	(178, 'SECR-01', 'ROSARIO', 'BARRERA BELLIDO', 'rbarrera@ucb.edu.bo', NULL, '$2y$12$tA8Hftd19j8l21EPz/QaXeYdtLB2I.WLBJ.lFrFqn2Jdu/HamiGEG', NULL, 'user', 116, 148, 17, 10, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 07:55:59', '2024-01-06 01:56:44'),
+	(179, 'DAF-01', 'RAÚL', 'BOADA OPORTO', 'rboada@ucb.edu.bo', NULL, '$2y$12$iH8D8iC8wXJL/e4sKNlyD.4IozYE27toLrRqD4JHOyo.W/bSVShgG', NULL, 'user', 48, 23, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-12-17 21:22:08', '2024-01-04 07:38:17'),
+	(180, 'SEC-03', 'LUIS CESAR', 'LLANOS LLANOS', 'lllanos@ucb.edu.bo', NULL, '$2y$12$DddplKaisyqY4/4Zx5bsR.gzSU35T39IUaFcnNjdnk1PZ1K118ilS', NULL, 'user', 121, 121, 15, 10, NULL, 36, NULL, NULL, NULL, NULL, 1, '2024-01-04 07:01:07', '2024-01-04 07:13:45'),
+	(181, 'SECR-02', 'ROXANA', 'IRIGOYEN TABABARY', 'ririgoyen@ucb.edu.bo', NULL, '$2y$12$3iq1tHBgRfRSTbn08./lKOe2b.ASY78M6J0hC1Bpqjt.y0qagq1ju', NULL, 'user', NULL, 106, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-06 02:06:07', '2024-01-06 02:06:07'),
+	(182, 'UEA-01', 'FRANCO DANIEL', 'SANABRIA ABASTO', 'fsanabria@ucb.edu.bo', NULL, '$2y$12$CcH332J2JkJVSUI9RiY.LepapJGvE.IgzR7HuoMxrlAPFuXe1g6S.', NULL, 'user', NULL, 124, 29, 16, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-06 02:07:41', '2024-01-06 02:10:47'),
+	(183, 'SECR-01', 'ANA ELIZABETH', 'ALCAZAR DE BARRIENTOS', 'aalcazar@ucb.edu.bo', NULL, '$2y$12$PvuBuMcQjOv.Y85WPQOejeTzlnHhSQXMhtMx3r6gNtbrcks/45.f2', NULL, 'user', NULL, 158, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-06 02:12:21', '2024-01-06 02:12:21'),
+	(184, 'SECR-02', 'FLORA CARMEN', 'BUEZO CAMACHO', 'fbuezo@ucb.edu.bo', NULL, '$2y$12$3byYLEWCrJHDnOlbW4kqsOs.sn3PxPfixURaX6QiS4WbexMzWFMTy', NULL, 'user', NULL, 155, NULL, 11, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-06 02:15:46', '2024-01-06 02:15:46'),
+	(185, 'SECR-02', 'CECILIA CRISTINA', 'CAREAGA ARIAS', 'ccareaga@ucb.edu.bo', NULL, '$2y$12$PKYBqBZjPLUxElZ3wK8ADOsuKpE/k4tiMntpDP3zDpmGDhjUK9wqe', NULL, 'user', NULL, 171, NULL, 13, NULL, 39, NULL, NULL, NULL, NULL, 1, '2024-01-06 02:18:04', '2024-01-06 02:18:04'),
+	(186, 'SECR-01', 'SANDRA LILIANA', 'CORTEZ ROJAS', 'scortez@ucb.edu.bo', NULL, '$2y$12$1fHZwqfSYT7IHv6EwEhzMO5UPlyZ8NrtNry53Ps0iAGk.W9wv9DPi', NULL, 'user', NULL, 157, 30, 11, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-06 02:20:13', '2024-01-06 02:21:58'),
+	(187, 'SECR-01', 'CARMEN GLADYS DIMPNA', 'MANZANO CAZAS', 'cmanzano@ucb.edu.bo', NULL, '$2y$12$7WPCxx58nWn4PWYCAEr/VupO0M7rwUHem9I0k7RvreyIQA6KuvTRm', NULL, 'user', NULL, 171, 31, 13, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-06 02:24:21', '2024-01-06 02:25:52'),
+	(188, 'SECR-01', 'GIONDALINA', 'RUA VALDEZ', 'grua@ucb.edu.bo', NULL, '$2y$12$yeAfhrK/d8ASKD6Wj6UsEe7HGBuI/aW6u1f1ven.pjNWRz1pLatDi', NULL, 'user', NULL, 173, 32, 11, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-06 02:30:22', '2024-01-15 06:32:57'),
+	(189, 'SECR-01', 'AMPARO', 'SALVATIERRA DE PAZ', 'asalvatierra@ucb.edu.bo', NULL, '$2y$12$5v1EPRWlT1nKSn6vv4yHW.6mmv/2SDpdYKi/MkXS/Kj.iVQZSAKU2', NULL, 'user', NULL, 158, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-06 02:32:57', '2024-01-06 02:32:57'),
+	(190, 'SECR-03', 'CARLA DIANA', 'ANDRADE NAVARRO', 'candrade@ucb.edu.bo', NULL, '$2y$12$9zjJCiT8mRTzKxvMmYijDudvl5L.PMRpkhCdCSRJcS2PL8cMjuqFq', NULL, 'user', NULL, 171, NULL, 13, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-06 02:34:46', '2024-01-06 02:34:46'),
+	(191, 'SECR-01', 'DOMINGA', 'TORREZ CALLIZAYA', 'dtorrez@ucb.edu.bo', NULL, '$2y$12$R.3.kEJe2NDRpqnUZyxIsOdfImn1frmL6/PLpuDEnvCNsRA12ve/m', NULL, 'user', NULL, 135, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-06 02:41:28', '2024-01-06 02:41:28'),
+	(192, 'SECR-01', 'JAHEL', 'VALENCIA APARICIO', 'jvalencia@ucb.edu.bo', NULL, '$2y$12$hw67OfA6TmGwvzkQ3cxZwe2NBbcmqvuRp65HiMA9.oQ.A/bWE7y0y', NULL, 'user', NULL, 158, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-06 02:42:49', '2024-01-06 02:42:49'),
+	(193, 'SECR-01', 'MARIA DEL CARMEN', 'VELASCO MONRROY', 'mvelasco@ucb.edu.bo', NULL, '$2y$12$mdRDtTueVnC2BZWtroLF3uuUQN8DN./la75BME9iYCD7IH79WT0IS', NULL, 'user', NULL, 156, 33, 11, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-06 02:45:17', '2024-01-15 06:20:34'),
+	(194, 'ACAD-01', 'JAVIER MARCELO', 'GUTIERREZ BALLIVIAN', 'jgutierrez@ucb.edu.bo', NULL, '$2y$12$i9zrg52zYkAP3K10LeZm.ukZar/QMvPh12JkTh5fxNvkO6bw.r29y', NULL, 'user', NULL, 142, NULL, 11, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 05:28:12', '2024-01-15 05:28:12'),
+	(195, 'ACAD-01', 'RENAN ALBERTO', 'LAGUNA VARGAS', 'rlaguna@ucb.edu.bo', NULL, '$2y$12$ySjN9oWEMM8C2gx3VyC5heo5Mhz7eRBud4lDe521UvCtBcet4tuAK', NULL, 'user', NULL, 143, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 05:30:42', '2024-01-15 05:30:42'),
+	(196, 'ACAD-01', 'CARLOS HUGO', 'CORDERO CARRAFA', 'ccordero@ucb.edu.bo', NULL, '$2y$12$6I4iNNhC11.OlyW/ZDTrg.ejN5nnrsAMhDISQssm7LFVY3kuxAluG', NULL, 'user', NULL, 144, NULL, 13, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 05:46:11', '2024-01-15 05:46:11'),
+	(197, 'ACAD-01', 'MARIA ELENA', 'LORA FUENTES', 'mlora@ucb.edu.bo', NULL, '$2y$12$Dmm/hqNJ25F0M1nKXij3Vu57mXn/fA7SDRd.fUe6UbLG2yIC5SvjG', NULL, 'user', NULL, 141, NULL, 10, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 05:53:05', '2024-01-15 05:53:05'),
+	(198, 'ACAD-02', 'JESSICA DORIS', 'LANZA BUTRON', 'jlanza@ucb.edu.bo', NULL, '$2y$12$xQxRkf6Ti6D8S3SoEsZiXOlYlsyrnyG2hmSejT6/nZ18zGotnMd9q', NULL, 'user', NULL, 151, NULL, 11, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 05:56:19', '2024-01-15 05:56:19'),
+	(199, 'ACAD-03', 'MARCO ANTONIO', 'ABASTOFLOR PORTUGAL', 'mabastoflor@ucb.edu.bo', NULL, '$2y$12$0YAgG5T9dSTeJ0cThAMWbOcN0iihQ0HGjiKPtxrrdzjMgHZEUgns2', NULL, 'user', NULL, 154, NULL, 11, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 05:58:51', '2024-01-15 05:58:51'),
+	(200, 'ACAD-02', 'CARLOS GUSTAVO', 'MACHICADO SALAS', 'cmachicado@ucb.edu.bo', NULL, '$2y$12$Zkt0HCxlbj0svxgw1K.QKOY8OWnBoielX8CBXGYBzAwF68369KvbG', NULL, 'user', NULL, 150, NULL, 11, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 06:03:00', '2024-01-15 06:03:00'),
+	(201, 'ACAD-02', 'JAVIER ANGEL', 'MENDOZA ELIAS', 'jmendoza@ucb.edu.bo', NULL, '$2y$12$mHV5j9EUv..5zYPj7PtACuF2bWu.dIv9aQmLs6EVtaNZlzmK/d.rC', NULL, 'user', NULL, 152, NULL, 11, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 06:24:30', '2024-01-15 06:24:30'),
+	(202, 'ACAD-02', 'IVETTE BRENDA', 'MIRANDA PARRA', 'imiranda@ucb.edu.bo', NULL, '$2y$12$W0SXAeGVYO.6cwRgFHuIPOEMfHL9oA3HOudhkb8mTLJ3PLhZVJnxW', NULL, 'user', NULL, 170, NULL, 13, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 06:40:40', '2024-01-15 06:40:40'),
+	(203, 'ACAD-02', 'JUAN CARLOS', 'SALAZAR DEL BARRIO', 'jsalazar@ucb.edu.bo', NULL, '$2y$12$xdryVy6OE.E0.d/pd/lmSeirDleXH9rkjq9HwKnXklgOYu1zwzP7W', NULL, 'user', NULL, 146, NULL, 10, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 06:42:59', '2024-01-15 06:42:59'),
+	(204, NULL, 'PAOLA ALEJANDRA', 'CARRANZA BRAVO', 'pcarranza@ucb.edu.bo', NULL, '$2y$12$G6fUc05qkEJkiSky7.giDeQ4Vh9pXMip8oaix50KI9BGBzigtJkIi', NULL, 'user', NULL, 136, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 06:45:06', '2024-01-15 06:45:06'),
+	(205, 'ACAD-02', 'ANDREA GABRIELA', 'ESPINAR SAAVEDRA', 'aespinar@ucb.edu.bo', NULL, '$2y$12$kLV496H2nxm/9Nei7aBWmO5SoOYZczrr7SkCUgPdOoILI1ZH92Y9i', NULL, 'user', NULL, 165, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 07:01:21', '2024-01-15 07:01:21'),
+	(206, 'ACAD-02', 'OMAR ROBERTO', 'SALINAS VILLAFAÑE', 'osalinas@ucb.edu.bo', NULL, '$2y$12$VlzPMaf4a2DVL330Lxrj5uEBe7b1s..St7xayUDOXKDQzh1GL2OP.', NULL, 'user', NULL, 162, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 07:02:15', '2024-01-15 07:02:15'),
+	(207, 'ACAD-02', 'BORIS VLADIMIR', 'HERRERA CESPEDES', 'bherrera@ucb.edu.bo', NULL, '$2y$12$YWAjqNF6zjOOe5J.UcqheuBdFUuc0Werj6moHKHS6MgPsdoI/MGSq', NULL, 'user', NULL, 163, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 07:03:13', '2024-01-15 07:03:13'),
+	(208, 'ACAD-02', 'ORLANDO', 'RIVERA JURADO', 'orivera@ucb.edu.bo', NULL, '$2y$12$v4w2B15c/E.rLXdy32zgIe9WmMh3YtMr3pskkEsgkvBOUXigqQtjC', NULL, 'user', NULL, 161, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 07:04:25', '2024-01-15 07:04:25'),
+	(209, 'ACAD-02', 'FABIO RICHARD', 'DIAZ PALACIOS', 'fdiaz@ucb.edu.bo', NULL, '$2y$12$R3Rk.n2/Qj7eYn29m14By.7EkU4.AoLGORuJNUIT/VQH.xQvu23cC', NULL, 'user', NULL, 164, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 07:05:21', '2024-01-15 07:05:21'),
+	(210, 'ACAD-03', 'RUDY ARIEL', 'GUARAZ VILLEGAS', 'rguaraz@ucb.edu.bo', NULL, '$2y$12$.Vp2UWq90u7wszwbNEmWCunwVtkQKyvma7Tkp9c2i5pB4pUxQG5gO', NULL, 'user', NULL, 168, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 07:06:36', '2024-01-15 07:06:36'),
+	(211, 'ACAD-03', 'ELIAS RUBEN', 'CALIZAYA MAMANI', 'ecalizaya@ucb.edu.bo', NULL, '$2y$12$MUakPjjE5J5CD8.YVof6leHK3eKC2xfS5sOufALykRSgs2tHb5lRi', NULL, 'user', NULL, 167, NULL, 12, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-01-15 07:07:34', '2024-01-15 07:07:34'),
+	(213, NULL, 'JAVIER', 'GRIFFITHS', 'javier@correo.com', NULL, '$2y$12$Fyb6E6t/VziGdm20yZrn2e1Q2zwCTYtfYCzTyw0dlNo67jp4cqDsu', NULL, 'admin', NULL, 159, 4, 12, NULL, 13, NULL, NULL, NULL, NULL, 1, '2024-05-07 07:08:45', '2024-05-07 07:08:45');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -23,8 +23,8 @@ class UserController extends Controller
 {
     public function index() {
 
-        $users = User::orderBy('apellido')->paginate(10);
-        $usersBusqueda = User::orderBy('apellido')->get();
+        // $users = User::orderBy('apellido')->paginate(10);
+        $usersBusqueda = User::orderBy('apellido')->where('estado',1)->get();
         // return view('users.index', compact('users','usersBusqueda'))
         //     ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
         return view('users.index', compact('usersBusqueda'))
@@ -186,11 +186,13 @@ class UserController extends Controller
         }
     
     }
-
+    
+    // Borrado lógico
     public function destroy($id)
     {
-        $user = User::find($id)->delete();
-
+        // $user = User::find($id)->delete();
+        $user = User::find($id)->update(['estado'=> 0]);
+        
         return redirect()->route('users.index')
             ->with('success', 'El usuario fue eliminado exitosamente');
     }
@@ -206,18 +208,34 @@ class UserController extends Controller
         // LEFT JOIN cargos ON usersJefes.dependiente_cargo_id = cargos.id
         // ORDER BY usersJefes.jefe_apellido;');
 
-        $reluser = DB::select('SELECT * FROM 
-        (SELECT DISTINCT usersJefes.jerarquia_id, usersJefes.jefe_id, usersJefes.jefe_apellido, usersJefes.jefe_name, usersJefes.cargo_jefe_id, usersJefes.cargo_jefe, usersJefes.jefe_area ,usersJefes.dependiente_cargo_id, cargos.cargo ,users.id AS dependiente_id, users.apellido AS dependiente_apellido, users.name AS dependiente_name, users.area_id
-        FROM
-        (SELECT DISTINCT jerarquias.id AS jerarquia_id, users.id AS jefe_id, users.apellido AS jefe_apellido, users.name AS jefe_name, jerarquias.cargo_jefe AS cargo_jefe_id, cargos.cargo AS cargo_jefe, users.area_id AS jefe_area ,jerarquias.cargo_dependiente AS dependiente_cargo_id
-        FROM jerarquias
-        LEFT JOIN users ON jerarquias.cargo_jefe = users.id_cargo
-        LEFT JOIN cargos ON jerarquias.cargo_jefe = cargos.id) AS usersJefes
-        LEFT JOIN users ON users.id_cargo = usersJefes.dependiente_cargo_id
-        LEFT JOIN cargos ON usersJefes.dependiente_cargo_id = cargos.id
-        ORDER BY usersJefes.jefe_apellido) AS relaciones
-        LEFT JOIN areas ON relaciones.area_id = areas.id;');
+        // $reluser = DB::select('SELECT * FROM 
+        // (SELECT DISTINCT usersJefes.jerarquia_id, usersJefes.jefe_id, usersJefes.jefe_apellido, usersJefes.jefe_name, usersJefes.cargo_jefe_id, usersJefes.cargo_jefe, usersJefes.jefe_area ,usersJefes.dependiente_cargo_id, cargos.cargo ,users.id AS dependiente_id, users.apellido AS dependiente_apellido, users.name AS dependiente_name, users.area_id
+        // FROM
+        // (SELECT DISTINCT jerarquias.id AS jerarquia_id, users.id AS jefe_id, users.apellido AS jefe_apellido, users.name AS jefe_name, jerarquias.cargo_jefe AS cargo_jefe_id, cargos.cargo AS cargo_jefe, users.area_id AS jefe_area ,jerarquias.cargo_dependiente AS dependiente_cargo_id
+        // FROM jerarquias
+        // LEFT JOIN users ON jerarquias.cargo_jefe = users.id_cargo
+        // LEFT JOIN cargos ON jerarquias.cargo_jefe = cargos.id) AS usersJefes
+        // LEFT JOIN users ON users.id_cargo = usersJefes.dependiente_cargo_id
+        // LEFT JOIN cargos ON usersJefes.dependiente_cargo_id = cargos.id
+        // ORDER BY usersJefes.jefe_apellido) AS relaciones
+        // LEFT JOIN areas ON relaciones.area_id = areas.id;');
 
+        $reluser = DB::select(
+            'SELECT * FROM 
+            (SELECT DISTINCT usersJefes.jerarquia_id, usersJefes.jefe_id, usersJefes.jefe_apellido, 
+            usersJefes.jefe_name, usersJefes.jefe_estado,usersJefes.cargo_jefe_id, usersJefes.cargo_jefe, 
+            usersJefes.jefe_area ,usersJefes.dependiente_cargo_id, cargos.cargo ,users.id AS dependiente_id, 
+            users.apellido AS dependiente_apellido, users.name AS dependiente_name, users.estado AS dependiente_estado ,users.area_id
+            FROM
+            (SELECT DISTINCT jerarquias.id AS jerarquia_id, users.id AS jefe_id, users.apellido AS jefe_apellido, users.name AS jefe_name, users.estado AS jefe_estado,jerarquias.cargo_jefe AS cargo_jefe_id, cargos.cargo AS cargo_jefe, users.area_id AS jefe_area ,jerarquias.cargo_dependiente AS dependiente_cargo_id
+            FROM jerarquias
+            LEFT JOIN users ON jerarquias.cargo_jefe = users.id_cargo 
+            LEFT JOIN cargos ON jerarquias.cargo_jefe = cargos.id) AS usersJefes
+            LEFT JOIN users ON users.id_cargo = usersJefes.dependiente_cargo_id
+            LEFT JOIN cargos ON usersJefes.dependiente_cargo_id = cargos.id
+            ORDER BY usersJefes.jefe_apellido) AS relaciones
+            LEFT JOIN areas ON relaciones.area_id = areas.id WHERE jefe_estado = 1 AND dependiente_estado = 1'
+        );
         return view('users.relacion', compact('reluser'))
         ->with('i');
     }

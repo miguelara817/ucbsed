@@ -70,10 +70,10 @@
                         </label>
                     </div> --}}
                     <br>
-                    <div class="d-flex align-items-center justify-content-center">
+                    {{-- <div class="d-flex align-items-center justify-content-center">
                         {!! NoCaptcha::renderJs('es', false) !!}
                         {!! NoCaptcha::display() !!}
-                    </div>
+                    </div> --}}
                     <div>
                         @if ($errors->has('g-recaptcha-response'))
                             <span class="help-block">

@@ -26,7 +26,7 @@
                         <label class="form-label">
                             Contraseña
                             <span class="form-label-description">
-                    <a href="{{route('password.request')}}">Olvide mi contraseña</a>
+                    <a href="{{route('password.request')}}">Olvidé mi contraseña</a>
                   </span>
                         </label>
                         <div class="input-group input-group-flat">

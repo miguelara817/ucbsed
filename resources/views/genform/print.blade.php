@@ -244,7 +244,7 @@
             </tbody>
         </table>
     </div>
-    <div style="page-break-before:always;"></div>
+    {{-- <div style="page-break-before:always;"></div> --}}
     <div class="section">
         <span>IV. RESUMEN DE LA EVALUACIÓN</span>
     </div>

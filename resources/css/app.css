@@ -123,3 +123,15 @@ table form{
     padding-right: 70px;
     font-weight: bold;
 }
+
+@media print {
+    .apexcharts-legend-marker:before {
+      content: "\25A0";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      line-height: 12px;
+      font-size: 15px;
+    }
+  }

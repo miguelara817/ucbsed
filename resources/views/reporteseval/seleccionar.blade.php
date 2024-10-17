@@ -14,7 +14,7 @@
                     Lista
                 </div> --}}
                 <h2 class="page-title">
-                    {{ __('Reporte individual ') }}
+                    {{ __('Proceso de evaluación') }}
                 </h2>
             </div>
             <!-- Page title actions -->
@@ -49,87 +49,147 @@
         <div class="row row-deck row-cards">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Datos del funcionario</h3>
-                    </div>
+                    {{-- <div class="card-header">
+                        <h3 class="card-title">Reporte de individual del proceso de evaluación</h3>
+                    </div> --}}
+                    {{-- <br> --}}
                     
                     @if ($evaluacion == true)
                         <div class="card-body">
-                            <div class="form-group">
-                                <strong>Funcionario:</strong>
-                                <span>{{$user->apellido}} {{$user->name}}</span>
-                            </div>
-                            <div class="form-group">
-                                <strong>Cargo:</strong>
-                                <span>{{$user->cargo->cargo}}</span>
-                            </div>
-                            <div class="form-group">
-                                <strong>Proceso de evaluación:</strong>
-                                <span>{{$evalprocess->id}}</span>
-                            </div>
-                            <div class="form-group">
-                                <strong>Periodo:</strong>
-                                <span>{{date('d/m/Y',strtotime($evalprocess->fecha_inicio))}} a {{date('d/m/Y',strtotime($evalprocess->fecha_inicio))}}</span>
-                            </div>
-                            <div class="form-group">
-                                <strong>Evaluador:</strong>
-                                <span>{{$evalresult[0]->user_evaluador->apellido}} {{$evalresult[0]->user_evaluador->name}}</span>
+                            <h3 class="card-title">Reporte individual del proceso de evaluación</h3>
+                            <hr>
+                            <div class="row align-items-center">
+                                <div class="row col-6">
+                                    <div class="col-3">
+                                        <label for="funcionario" class="col-form-label">FUNCIONARIO:</label>
+                                    </div>
+
+                                    <div class="col-9">
+                                        <input type="text" id="funcionario" class="form-control" value="{{$user->apellido}} {{$user->name}}" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="row col-6">
+                                    <div class="col-2">
+                                        <label for="cargo" class="col-form-label">CARGO:</label>
+                                    </div>
+                                    <div class="col-10">
+                                        <input type="text" id="cargo" class="form-control" value="{{$user->cargo->cargo}}" readonly>
+                                    </div>
+                                </div>
                             </div>
                             <br>
-                            <div class="card">
-                                <div class="card-body" style="background-color: #0054a6">
-                                    <h3 class="card-title" style="color: #fcfdfe">CALIFICACIÓN OBTENIDA: {{$evalresult[0]->nota_final}} / 100</h3>
+                            <div class="row align-items-center">
+                                <div class="row col-6">
+                                    <div class="col-3">
+                                        <label for="evaluador" class="col-form-label">EVALUADOR:</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="text" id="evaluador" class="form-control" value="{{$evalresult[0]->user_evaluador->apellido}} {{$evalresult[0]->user_evaluador->name}}" readonly>
+                                    </div>
+                                </div>
+                                <div class="row col-6">
+                                    <div class="col-6">
+                                        <label for="evaluacion" class="col-form-label">PROCESO DE EVALUACIÓN:</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" id="evaluacion" class="form-control" value="{{$evalprocess->id}}" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row align-items-center">
+                                <div class="row col-6">
+                                    <div class="col-3">
+                                        <label for="evaluacion" class="col-form-label">PERIODO:</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="text" id="evaluacion" class="form-control" value="{{date('d/m/Y',strtotime($evalprocess->fecha_inicio))}} - {{date('d/m/Y',strtotime($evalprocess->fecha_conclusion))}}" readonly>
+                                    </div>
+                                </div>
+                                <div class="row col-6">
+                                    <div class="col-8">
+                                        <label for="calificacion" class="col-form-label">CALIFICACIÓN OBTENIDA (SOBRE 100):</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="number" id="calificacion" class="form-control" value="{{$evalresult[0]->nota_final}}" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
 
-                                    @if ( (intval(round($evalresult[0]->nota_final)) <= 100) && ( intval(round($evalresult[0]->nota_final)) >= 91))
-                                        <h3 class="card-title" style="color: #fcfdfe">EXCELENTE</h3>
-                                    @elseif( (intval(round($evalresult[0]->nota_final)) <= 90 ) && (intval(round($evalresult[0]->nota_final)) >= 81))
-                                        <h3 class="card-title" style="color: #fcfdfe">MUY BUENO</h3>
-                                    @elseif( (intval(round($evalresult[0]->nota_final)) <= 80) && (intval(round($evalresult[0]->nota_final)) >= 71))
-                                        <h3 class="card-title" style="color: #fcfdfe">BUENO</h3>
-                                    @elseif((intval(round($evalresult[0]->nota_final)) <= 70) && (intval(round($evalresult[0]->nota_final)) >= 61))
-                                        <h3 class="card-title" style="color: #fcfdfe">SUFICIENTE</h3>
-                                    @elseif((intval(round($evalresult[0]->nota_final))) <= 60 && (intval(round($evalresult[0]->nota_final)) >= 51))
-                                        <h3 class="card-title" style="color: #fcfdfe">ACEPTABLE</h3>
-                                    @else
-                                        <h3 class="card-title">INSATISFACTORIO</h3>
-                                    @endif
-                                    <div class="btn-list flex-nowrap">
-                                        <div class="dropdown">
-                                            @if ($asignacion[0]->evaluado_deacuerdo == 0)
-                                            <button class="btn dropdown-toggle align-text-top btn-danger"
-                                                    data-bs-toggle="dropdown">
-                                                No conforme
-                                            </button>
-                                            @else
-                                            <button class="btn dropdown-toggle align-text-top btn-success"
-                                                    data-bs-toggle="dropdown">
-                                                Conforme
-                                            </button>
-                                            @endif
-                                            
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <form action="{{ route('genform.formResult') }}" method="post"> 
-                                                    @csrf
-                                                    <input hidden type="number" name="nivel_id" id="" value="{{$user->cargo->nivel_id}}">
-                                                    <input hidden type="number" name="evalprocess_id" id="" value="{{$evalprocess->id}}">
-                                                    <input hidden type="text" name="cargo" id="" value="{{$user->cargo->cargo}}">
-                                                    <input hidden type="number" name="user_id" id="" value="{{$user->id}}">
-                                                    <input type="submit" class="dropdown-item" value="Ver formulario">
-                                                </form>
-                                                <form action="{{ route('genform.print') }}" method="post" target="_blank"> 
-                                                    @csrf
-                                                    <input hidden type="number" name="nivel_id" id="" value="{{$user->cargo->nivel_id}}">
-                                                    <input hidden type="number" name="evalprocess_id" id="" value="{{$evalprocess->id}}">
-                                                    <input hidden type="text" name="cargo" id="" value="{{$user->cargo->cargo}}">
-                                                    <input hidden type="number" name="user_id" id="" value="{{$user->id}}">
-                                                    <input type="submit" class="dropdown-item" value="Imprimir">
-                                                </form>
+                            <div class="row align-items-center">
+                                <div class="row col-6 align-items-center">
+                                    <div class="col-6">
+                                        <label for="rango" class="col-form-label">RANGO DE EVALUACIÓN:</label>
+                                    </div>
+                                    <div class="col-6">
+                                        @if ( (intval(round($evalresult[0]->nota_final)) <= 100) && ( intval(round($evalresult[0]->nota_final)) >= 91))
+                                            <input type="text" id="rango" class="form-control" value="EXCELENTE" readonly>
+                                            {{-- <h3 class="card-title" style="color: #fcfdfe">EXCELENTE</h3> --}}
+                                        @elseif( (intval(round($evalresult[0]->nota_final)) <= 90 ) && (intval(round($evalresult[0]->nota_final)) >= 81))
+                                            <input type="text" id="rango" class="form-control" value="MUY BUENO" readonly>
+                                            {{-- <h3 class="card-title" style="color: #fcfdfe">MUY BUENO</h3> --}}
+                                        @elseif( (intval(round($evalresult[0]->nota_final)) <= 80) && (intval(round($evalresult[0]->nota_final)) >= 71))
+                                            <input type="text" id="rango" class="form-control" value="BUENO" readonly>
+                                            {{-- <h3 class="card-title" style="color: #fcfdfe">BUENO</h3> --}}
+                                        @elseif((intval(round($evalresult[0]->nota_final)) <= 70) && (intval(round($evalresult[0]->nota_final)) >= 61))
+                                            <input type="text" id="rango" class="form-control" value="SUFICIENTE" readonly>    
+                                            {{-- <h3 class="card-title" style="color: #fcfdfe">SUFICIENTE</h3> --}}
+                                        @elseif((intval(round($evalresult[0]->nota_final))) <= 60 && (intval(round($evalresult[0]->nota_final)) >= 51))
+                                            <input type="text" id="rango" class="form-control" value="ACEPTABLE" readonly>    
+                                            {{-- <h3 class="card-title" style="color: #fcfdfe">ACEPTABLE</h3> --}}
+                                        @else
+                                            <input type="text" id="rango" class="form-control" value="INSATISFACTORIO" readonly>
+                                            {{-- <h3 class="card-title">INSATISFACTORIO</h3> --}}
+                                        @endif
+                                        
+                                    </div>
+                                </div>
+                                <div class="row col-6 align-items-center">
+                                    <div class="col-8">
+                                        <label for="conformidad" class="col-form-label">CONFORMIDAD DEL EVALUADO:</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="btn-list flex-nowrap">
+                                            <div class="dropdown">
+                                                @if ($asignacion[0]->evaluado_deacuerdo == 0)
+                                                <button class="btn dropdown-toggle align-text-top btn-danger"
+                                                        data-bs-toggle="dropdown">
+                                                    NO CONFORME
+                                                </button>
+                                                @else
+                                                <button class="btn dropdown-toggle align-text-top btn-success"
+                                                        data-bs-toggle="dropdown">
+                                                    CONFORME
+                                                </button>
+                                                @endif
+                                                
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <form action="{{ route('genform.formResult') }}" method="post"> 
+                                                        @csrf
+                                                        <input hidden type="number" name="nivel_id" id="" value="{{$user->cargo->nivel_id}}">
+                                                        <input hidden type="number" name="evalprocess_id" id="" value="{{$evalprocess->id}}">
+                                                        <input hidden type="text" name="cargo" id="" value="{{$user->cargo->cargo}}">
+                                                        <input hidden type="number" name="user_id" id="" value="{{$user->id}}">
+                                                        <input type="submit" class="dropdown-item" value="Ver formulario">
+                                                    </form>
+                                                    <form action="{{ route('genform.print') }}" method="post" target="_blank"> 
+                                                        @csrf
+                                                        <input hidden type="number" name="nivel_id" id="" value="{{$user->cargo->nivel_id}}">
+                                                        <input hidden type="number" name="evalprocess_id" id="" value="{{$evalprocess->id}}">
+                                                        <input hidden type="text" name="cargo" id="" value="{{$user->cargo->cargo}}">
+                                                        <input hidden type="number" name="user_id" id="" value="{{$user->id}}">
+                                                        <input type="submit" class="dropdown-item" value="Imprimir">
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <br>
+                            
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="card-title">Calificación obtenida en cada factor</h3>
@@ -162,18 +222,18 @@
                                     chart: {
                                         type: "line",
                                         fontFamily: 'inherit',
-                                        height: 300,
-                                        parentHeightOffset: 0,
+                                        height: 400,
+                                        // parentHeightOffset: 0,
                                         toolbar: {
-                                        show: true,
+                                            show: true,
                                         },
                                         animations: {
-                                        enabled: true
+                                            enabled: true
                                         },
                                     },
-                                    fill: {
-                                        opacity: 1,
-                                    },
+                                    // fill: {
+                                    //     opacity: 1,
+                                    // },
                                     stroke: {
                                         width: 2,
                                         lineCap: "round",
@@ -191,50 +251,68 @@
                                     },
                                     grid: {
                                         padding: {
-                                        top: -20,
-                                        right: 0,
-                                        left: 4,
-                                        bottom: -4
+                                        // top: 20,
+                                        // right: 30,
+                                        // left: 4,
+                                            bottom: 100
                                         },
-                                        strokeDashArray: 4,
+                                        // strokeDashArray: 4,
                                     },
                                     dataLabels: {
                                         enabled: true,
+                                        formatter: function (val, opts) {
+                                            // console.log(opts)
+                                            // let text;
+                                            // text = opts.w.globals.categoryLabels[opts.dataPointIndex]+"\n"+val
+                                            // return opts.w.globals.categoryLabels[opts.dataPointIndex]
+                                            return val
+                                        },
                                     },
                                     xaxis: {
+                                        tickPlacement: 'between',
+                                        // max: 20,
+                                        position: 'bottom',
+                                        lines:{
+                                            show: false,
+                                        },
                                         labels: {
-                                            padding: 0,
+                                            rotate: -90,
+                                            rotateAlways: true,
+                                            show: true,
+                                            trim: false,
                                             style: {
-                                                fontSize: '10px'
+                                                fontSize: '13px',
+                                                fontWeight: 500,
                                             },
                                         },
                                         tooltip: {
-                                        enabled: false
+                                            enabled: false
+                                        },
+                                        title: {
+                                            text: 'Factores',
+                                            offsetY: 300,
+                                            style: {
+                                                fontSize: '15px',
+                                                fontFamily: 'Helvetica, Arial, sans-serif',
+                                            }
                                         },
                                         
                                     },
                                     yaxis: {
                                         labels: {
-                                        padding: 4
+                                        // padding: 4
                                         },
+                                        title: {
+                                            text: 'Calificación',
+                                            style: {
+                                                fontSize: '15px',
+                                                fontFamily: 'Helvetica, Arial, sans-serif',
+                                            }
+                                        }
                                     },
                                     labels: {!! json_encode($evaldetailsresult->pluck('factor')->toArray()) !!},
 
                                     colors: [tabler.getColor("primary"), tabler.getColor("green")],
-                                    legend: {
-                                        show: true,
-                                        position: 'bottom',
-                                        offsetY: 12,
-                                        markers: {
-                                        width: 10,
-                                        height: 10,
-                                        radius: 100,
-                                        },
-                                        itemMargin: {
-                                        horizontal: 8,
-                                        vertical: 8
-                                        },
-                                    },
                                     
                                     })).render();
                                 });
@@ -246,22 +324,30 @@
                                         type: "bar",
                                         fontFamily: 'inherit',
                                         height: 300,
-                                        parentHeightOffset: 0,
+                                        // height: 500,
+                                        // parentHeightOffset: 0,
                                         toolbar: {
-                                        show: true,
+                                            show: true,
                                         },
                                         animations: {
-                                        enabled: true
+                                            enabled: true
                                         },
                                     },
-                                    fill: {
-                                        opacity: 1,
+                                    plotOptions: {
+                                        bar: {
+                                            distributed: true, // this line is mandatory
+                                            horizontal: false,
+                                            // barHeight: '85%',
+                                        },
                                     },
-                                    stroke: {
-                                        width: 2,
-                                        lineCap: "round",
-                                        curve: "straight",
-                                    },
+                                    // fill: {
+                                    //     opacity: 1,
+                                    // },
+                                    // stroke: {
+                                    //     width: 2,
+                                    //     lineCap: "round",
+                                    //     curve: "straight",
+                                    // },
                                     series: [{
                                         name: "Nota total obtenida",
                                         data: {!! json_encode($evalxcomp->pluck('nota')->toArray()) !!}
@@ -271,40 +357,86 @@
                                     },
                                     grid: {
                                         padding: {
-                                        top: -20,
-                                        right: 0,
-                                        left: 4,
-                                        bottom: -4
+                                        // top: -20,
+                                        // right: 0,
+                                        // left: 4,
+                                        // bottom: -4
+                                        // bottom: 120
                                         },
-                                        strokeDashArray: 4,
+                                        // strokeDashArray: 4,
                                     },
                                     xaxis: {
+                                        tickPlacement: 'between',
+                                        // max: 50,
+                                        position: 'bottom',
+                                        lines:{
+                                            show: false,
+                                        },
                                         labels: {
-                                            padding: 0,
+                                            rotate: -90,
+                                            rotateAlways: true,
+                                            // padding: 0,
+                                            show: false,
+                                            trim: true,
+                                            // minHeight: 100,
+                                            // maxHeight: 120,
                                             style: {
-                                                fontSize: '10px'
+                                                fontSize: '10px',
+                                                fontWeight: 500,
                                             },
                                         },
                                         tooltip: {
-                                        enabled: false
+                                            enabled: false
+                                        },
+                                        title: {
+                                            text: 'Competencias',
+                                            offsetY: 80,
+                                            style: {
+                                                fontSize: '15px',
+                                                fontFamily: 'Helvetica, Arial, sans-serif',
+                                            }
                                         },
                                         
                                     },
+                                    yaxis: {
+                                        labels: {
+                                        // padding: 4
+                                        },
+                                        title: {
+                                            text: 'Calificación',
+                                            style: {
+                                                fontSize: '15px',
+                                                fontFamily: 'Helvetica, Arial, sans-serif',
+                                            }
+                                        }
+                                    },
                                     labels: {!! json_encode($evalxcomp->pluck('competencia')->toArray()) !!},
-                                    colors: [tabler.getColor("primary")],
+                                    // colors: [tabler.getColor("primary")],
+                                    colors: [ // this array contains different color code for each data
+                                        "#33b2df",
+                                        "#546E7A",
+                                        "#d4526e",
+                                        "#13d8aa",
+                                        "#A5978B",
+                                        "#2b908f",
+                                        "#f9a3a4",
+                                        "#90ee7e",
+                                        "#f48024",
+                                        "#69d2e7"
+                                    ],
                                     legend: {
                                         show: true,
                                         position: 'bottom',
-                                        offsetY: 12,
-                                        markers: {
-                                        width: 10,
-                                        height: 10,
-                                        radius: 100,
-                                        },
-                                        itemMargin: {
-                                        horizontal: 8,
-                                        vertical: 8
-                                        },
+                                        offsetY: -10,
+                                        // markers: {
+                                        // width: 10,
+                                        // height: 10,
+                                        // radius: 100,
+                                        // },
+                                        // itemMargin: {
+                                        // horizontal: 8,
+                                        // vertical: 8
+                                        // },
                                     },
                                     })).render();
                                 });
@@ -315,7 +447,6 @@
                                         type: "line",
                                         fontFamily: 'inherit',
                                         height: 300,
-                                        parentHeightOffset: 0,
                                         toolbar: {
                                             show: true,
                                         },
@@ -323,66 +454,56 @@
                                             enabled: true
                                         },
                                     },
-                                    fill: {
-                                        opacity: 1,
-                                    },
+                                    
                                     stroke: {
                                         width: 2,
                                         lineCap: "round",
                                         curve: "straight",
                                     },
                                     series: [{
-                                        name: "CALIFICACIÓNL",
+                                        name: "CALIFICACIÓN",
                                         data: {!! json_encode($result_process->pluck('nota_final')->toArray()) !!}
                                     }],
                                     tooltip: {
                                         theme: 'dark'
                                     },
-                                    grid: {
-                                        padding: {
-                                        top: -20,
-                                        right: 0,
-                                        left: 4,
-                                        bottom: -4
-                                        },
-                                        strokeDashArray: 4,
-                                    },
                                     dataLabels: {
                                         enabled: true,
                                     },
                                     xaxis: {
-                                        labels: {
-                                            padding: 4,
+                                        tickPlacement: 'between',
+                                        lines:{
+                                            show: false,
+                                        },
+                                        title: {
+                                            text: 'Proceso',
+                                            offsetY: 90,
+                                            style: {
+                                                fontSize: '15px',
+                                                fontFamily: 'Helvetica, Arial, sans-serif',
+                                            }
                                         },
                                         tooltip: {
-                                        enabled: false
+                                            enabled: false
                                         },
                                         
                                     },
                                     yaxis: {
+                                        title: {
+                                            text: 'Calificación',
+                                            // offsetY: 80,
+                                            style: {
+                                                fontSize: '15px',
+                                                fontFamily: 'Helvetica, Arial, sans-serif',
+                                            }
+                                        },
                                         labels: {
-                                        padding: 4
+                                        // padding: 4
                                         },
                                     },
                                     labels: {!! json_encode($result_process->pluck('evalprocess_id')->toArray()) !!},
 
                                     colors: [tabler.getColor("primary")],
-                                    legend: {
-                                        show: true,
-                                        position: 'bottom',
-                                        offsetY: 12,
-                                        offsetX: 10,
-                                        markers: {
-                                        width: 10,
-                                        height: 10,
-                                        radius: 100,
-                                        },
-                                        itemMargin: {
-                                        horizontal: 8,
-                                        vertical: 8
-                                        },
-                                    },
-                                    
                                     })).render();
                                 });
                             </script>
